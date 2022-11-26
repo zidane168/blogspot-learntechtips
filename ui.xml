@@ -1,29 +1,178 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html>
 <html xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
-  
-  	<b:skin><![CDATA[ ]]></b:skin>
-    <head>
-        <title><data:blog.pageTitle/></title>
-        <script src='https://cdn.tailwindcss.com'/>
-       	<script>
-          tailwind.config = {
-            theme: {
-              extend: {
-                colors: {
-                  clifford: &#39;#da373d&#39;,
-                }
-              }
-            }
+	<b:skin>
+		<![CDATA[
+		 
+	]]>
+	</b:skin>
+	<head>
+		<title>
+			<blog.pageTitle/>
+		</title>
+		<script src='https://cdn.tailwindcss.com'/>
+		<script>
+			tailwind.config = {
+			theme: {
+        extend: {
+          colors: {
+            clifford: &#39;#da373d&#39;,
           }
-        </script>
-      
-    </head>
+        }
+        }
+			}
+		</script>
+	</head>
+	<body>
+		<section id='playgamenow'/>
+		<div class='w-[1536px] mx-auto'>
+			<b:section class='menu' id='menu' maxwidgets='1' name='Main Menu' showaddelement='yes'/>
+			<div class='bg-orange-700 rounded-md'>
+				<div class='mx-auto max-w-7xl px-2 sm:px-6 lg:px-8'>
+					<div class='relative flex h-16 items-center justify-between'>
+						<div class='absolute inset-y-0 left-0 flex items-center sm:hidden'>
+							<button aria-controls='mobile-menu' aria-expanded='false' class='inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white' type='button'>
+								<span class='sr-only'>
+									Open main menu
+								</span>
+								<svg aria-hidden='true' class='block h-6 w-6' fill='none' stroke='currentColor' stroke-width='1.5' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+									<path d='M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5' stroke-linecap='round' stroke-linejoin='round'/>
+								</svg>
+								<svg aria-hidden='true' class='hidden h-6 w-6' fill='none' stroke='currentColor' stroke-width='1.5' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+									<path d='M6 18L18 6M6 6l12 12' stroke-linecap='round' stroke-linejoin='round'/>
+								</svg>
+							</button>
+						</div>
+						<div class='flex flex-1 items-center justify-center sm:items-stretch sm:justify-start'>
+							<div class='flex flex-shrink-0 items-center'>
+								<img alt='Your Company' class='block h-8 w-auto lg:hidden' src=' '/>
+								<img alt='Your Company' class='hidden h-8 w-auto lg:block' src=' '/>
+							</div>
+							<div class='hidden sm:ml-6 sm:block'>
+								<div class='flex space-x-4'>
+									<a aria-current='page' class='bg-orange-500 text-white px-3 py-2 rounded-md text-sm font-medium' href='#'>
+										Dashboard
+									</a>
+									<a class='text-white hover:bg-orange-500 hover:text-white px-3 py-2 rounded-md text-sm font-medium' href='#'>
+										Learn Tech Tips
+									</a>
+									<a class='text-white hover:bg-orange-500 hover:text-white px-3 py-2 rounded-md text-sm font-medium' href='#'>
+										Zidane
+									</a>
+									<a class='text-white hover:bg-orange-500 hover:text-white px-3 py-2 rounded-md text-sm font-medium' href='#'>
+										Calendar
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class='absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0'>
+							<button class='rounded-full   p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800' type='button'>
+								<span class='sr-only'>
+									View notifications
+								</span>
+								<svg aria-hidden='true' class='h-6 w-6' fill='none' stroke='currentColor' stroke-width='1.5' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+									<path d='M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0' stroke-linecap='round' stroke-linejoin='round'/>
+								</svg>
+							</button>
+							<div class='relative ml-3'>
+								<div>
+									<button aria-expanded='false' aria-haspopup='true' class='flex rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800' id='user-menu-button' type='button'>
+										<span class='sr-only'>
+											Open user menu
+										</span>
+										<img alt='' class='h-8 w-8 rounded-full' src=' '/>
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class='sm:hidden' id='mobile-menu'>
+					<div class='space-y-1 px-2 pt-2 pb-3'>
+						<a aria-current='page' class='bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium' href='#'>
+							Dashboard
+						</a>
+						<a class='text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium' href='#'>
+							Team
+						</a>
+						<a class='text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium' href='#'>
+							Projects
+						</a>
+						<a class='text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium' href='#'>
+							Calendar
+						</a>
+					</div>
+				</div>
+			</div>
 
-    <body>
-        <b:section id='playgamenow'/>
-      	<h1 class='text-3xl font-bold underline'>
-    		Hello world!
-  		</h1>
-    </body>
+			<b:if cond='!data:mobile'> 
+				<b:section class='main'  id='post' name='Blog spot' > 
+					<b:widget id='Blog1'  title='Blog Posts' type='Blog' version='1'>
+						<b:widget-settings>
+							<b:widget-setting name='showDateHeader'>true</b:widget-setting>
+							<b:widget-setting name='style.textcolor'>#ffffff</b:widget-setting>
+							<b:widget-setting name='showShareButtons'>true</b:widget-setting>
+							<b:widget-setting name='showCommentLink'>true</b:widget-setting>
+							<b:widget-setting name='style.urlcolor'>#ffffff</b:widget-setting>
+							<b:widget-setting name='showAuthor'>true</b:widget-setting>
+							<b:widget-setting name='style.linkcolor'>#ffffff</b:widget-setting>
+							<b:widget-setting name='style.unittype'>TextAndImage</b:widget-setting>
+							<b:widget-setting name='style.bgcolor'>#ffffff</b:widget-setting>
+							<b:widget-setting name='reactionsLabel'/>
+							<b:widget-setting name='showAuthorProfile'>true</b:widget-setting>
+							<b:widget-setting name='style.layout'>1x1</b:widget-setting>
+							<b:widget-setting name='showLabels'>true</b:widget-setting>
+							<b:widget-setting name='showLocation'>true</b:widget-setting>
+							<b:widget-setting name='showTimestamp'>true</b:widget-setting>
+							<b:widget-setting name='postsPerAd'>1</b:widget-setting>
+							<b:widget-setting name='showBacklinks'>false</b:widget-setting>
+							<b:widget-setting name='style.bordercolor'>#ffffff</b:widget-setting>
+							<b:widget-setting name='showInlineAds'>true</b:widget-setting>
+							<b:widget-setting name='showReactions'>false</b:widget-setting>
+						</b:widget-settings>
+						<b:includable id='main' var='top'>
+							<b:if cond='!data:mobile'>
+								<!-- posts -->
+								<div class='blog-posts hfeed'>
+									<b:include data='top' name='status-message'/>
+									<b:loop values='data:posts' var='post'>
+										<hr />
+										<h1 class="mt-[30px] text-xl bg-orange-600 text-white p-4 shadow-lg rounded-md"> <data:post.title/> </h1>
+										<hr />
+										<b:if cond='data:post.isDateStart and not data:post.isFirstPost'> &lt;/div&gt;&lt;/div&gt;  </b:if>
+										<b:if cond='data:post.isDateStart'>  &lt;div class=&quot;date-outer&quot;&gt;  </b:if>
+										<b:if cond='data:post.dateHeader'>
+											<h2 class='text-right text-sm text-rose-500 m-[10px]'>
+												<span>
+													<data:post.dateHeader/>
+												</span>
+											</h2>
+										</b:if>
+										<b:if cond='data:post.isDateStart'>  &lt;div class=&quot;date-posts&quot;&gt;  </b:if>
+										<div class='post-outer'>
+											<div class="bg-gray-100 p-[10px] rounded-md shadow-lg">
+												<b:include data='post' name='post'/>
+											</div>
+											<b:include cond='data:blog.pageType in {&quot;static_page&quot;,&quot;item&quot;}' data='post' name='comment_picker'/>
+										</div>
+										<!-- Ad -->
+										<b:if cond='data:post.includeAd'>
+											<div class='inline-ad'>
+												<data:adCode/>
+											</div>
+										</b:if>
+									</b:loop>
+									<b:if cond='data:numPosts != 0'>  &lt;/div&gt;&lt;/div&gt; </b:if>
+								</div> 
+
+								<!-- navigation -->								
+								<b:include name='nextprev'/>
+							</b:if>
+						</b:includable>
+					</b:widget> 
+
+				</b:section>
+			</b:if> 
+		</div>
+	</body>
 </html>

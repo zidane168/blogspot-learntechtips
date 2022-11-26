@@ -214,6 +214,8 @@ data:post.oldestLinkText         <data:post.oldestLinkText/>
 data:post.hasNewerLinks
 data:postCommentMsg         <data:postCommentMsg/>
 
+data:mobile <b:if cond='!data:mobile'>
+
 data:comment.timestamp <data:comment.timestamp/>
 
 data:post.oldLinkClass  expr:class='data:post.oldLinkClass' 

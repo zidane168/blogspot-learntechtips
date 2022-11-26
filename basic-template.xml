@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:version='2' class='v2' expr:dir='data:blog.languageDirection' expr:lang='data:blog.locale' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+	<head>
+		<title>
+			<data:blog.pageTitle/>
+		</title>
+		<b:skin />
+	</head>
+	<body>
+		<b:section id="sidebar" class="sidebar" maxwidgets="" showaddelement="yes">
+			<b:widget id='PopularPosts1' locked='false' title='Popular On Relatemein' type='PopularPosts'/>
+		</b:section>
+
+		<b:section class='main' id='post' name='Blog spot' >
+			<b:widget id='Blog1'  title='Blog Posts' type='Blog' version='1'>
+				<b:widget-settings>
+					<b:widget-setting name='showDateHeader'>true</b:widget-setting>
+					<b:widget-setting name='style.textcolor'>#ffffff</b:widget-setting>
+					<b:widget-setting name='showShareButtons'>true</b:widget-setting>
+					<b:widget-setting name='showCommentLink'>true</b:widget-setting>
+					<b:widget-setting name='style.urlcolor'>#ffffff</b:widget-setting>
+					<b:widget-setting name='showAuthor'>true</b:widget-setting>
+					<b:widget-setting name='style.linkcolor'>#ffffff</b:widget-setting>
+					<b:widget-setting name='style.unittype'>TextAndImage</b:widget-setting>
+					<b:widget-setting name='style.bgcolor'>#ffffff</b:widget-setting>
+					<b:widget-setting name='reactionsLabel'/>
+					<b:widget-setting name='showAuthorProfile'>true</b:widget-setting>
+					<b:widget-setting name='style.layout'>1x1</b:widget-setting>
+					<b:widget-setting name='showLabels'>true</b:widget-setting>
+					<b:widget-setting name='showLocation'>true</b:widget-setting>
+					<b:widget-setting name='showTimestamp'>true</b:widget-setting>
+					<b:widget-setting name='postsPerAd'>1</b:widget-setting>
+					<b:widget-setting name='showBacklinks'>false</b:widget-setting>
+					<b:widget-setting name='style.bordercolor'>#ffffff</b:widget-setting>
+					<b:widget-setting name='showInlineAds'>true</b:widget-setting>
+					<b:widget-setting name='showReactions'>false</b:widget-setting>
+				</b:widget-settings>
+				<b:includable id='main' var='top'>
+					<b:if cond='!data:mobile'>
+						<!-- posts -->
+						<div class='blog-posts hfeed'>
+							<b:include data='top' name='status-message'/>
+							<b:loop values='data:posts' var='post'>
+								<b:if cond='data:post.isDateStart and not data:post.isFirstPost'>
+									&lt;/div&gt;&lt;/div&gt;
+									</b:if>
+								<b:if cond='data:post.isDateStart'>
+								&lt;div class=&quot;date-outer&quot;&gt;
+								</b:if>
+								<b:if cond='data:post.dateHeader'>
+									<h2 class='date-header'>
+										<span>
+											<data:post.dateHeader/>
+										</span>
+									</h2>
+								</b:if>
+								<b:if cond='data:post.isDateStart'>
+									&lt;div class=&quot;date-posts&quot;&gt;
+									</b:if>
+								<div class='post-outer'>
+									<b:include data='post' name='post'/>
+									<b:include cond='data:blog.pageType in {&quot;static_page&quot;,&quot;item&quot;}' data='post' name='comment_picker'/>
+								</div>
+								<!-- Ad -->
+								<b:if cond='data:post.includeAd'>
+									<div class='inline-ad'>
+										<data:adCode/>
+									</div>
+								</b:if>
+							</b:loop>
+							<b:if cond='data:numPosts != 0'>
+								&lt;/div&gt;&lt;/div&gt;
+							</b:if>
+						</div>
+						<!-- navigation -->
+						<b:include name='nextprev'/>
+						<!-- feed links -->
+						<b:include name='feedLinks'/>
+						<b:else/>
+						<b:include name='mobile-main'/>
+					</b:if>
+				</b:includable>
+			</b:widget>
+		</b:section>
+	</body>
+</html>
