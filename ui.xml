@@ -74,12 +74,20 @@
 				}
 			}  
 		</script>
+		<style type="text/tailwindcss">
+			@layer utilities {
+				html {
+					font-family: "Verdana";
+				}
+			}
+		</style>
+
 		<style> 
 			:root {
 				--orange: #FF7E00;
 				--blue:   #00AEFF;
-			}
-		</style>
+			} 
+		</style> 
 	</head>
 	<body>
 		<b:if cond='!data:mobile'>
