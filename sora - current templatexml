@@ -3098,7 +3098,7 @@ body#layout .lowerbar {
                   <b:widget-setting name='sorting'>NONE</b:widget-setting>
                   <b:widget-setting name='text-1'>Android Snippet</b:widget-setting>
                   <b:widget-setting name='link-1'>https://learn-tech-tips.blogspot.com/p/android-code-snippet.html</b:widget-setting>
-                  <b:widget-setting name='text-0'>Hello, nice to meet you!!! I am Zidane</b:widget-setting>
+                  <b:widget-setting name='text-0'>Hello, nice to meet yo:link.nameu!!! I am Zidane</b:widget-setting>
                   <b:widget-setting name='link-2'>https://learn-tech-tips.blogspot.com/p/c-code-snipet.html</b:widget-setting>
                   <b:widget-setting name='text-3'>Cakephp 2+ CodeSnippet</b:widget-setting>
                   <b:widget-setting name='link-0'>https://learn-tech-tips.blogspot.com/p/about_83.html</b:widget-setting>
@@ -3298,7 +3298,7 @@ body#layout .lowerbar {
                   <b:loop values='data:links' var='link'>
                     <li itemprop='name'>
                       <a expr:href='data:link.target' itemprop='url'>
-                        <data:link.name/>
+                        <data:link.name />
                       </a>
                     </li>
                   </b:loop>

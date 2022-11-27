@@ -37,7 +37,7 @@
             <b:if cond='data:post.featuredImage.isResizable or data:post.thumbnail'>
               <div class='item-thumbnail'>
                 <a expr:href='data:post.href' target='_blank'>
-                  <b:with value='data:post.featuredImage.isResizable                                  ? resizeImage(data:post.featuredImage, 72, &quot;1:1&quot;)                                  : data:post.thumbnail' var='image'>
+                  <b:with value='data:post.featuredImage.isResizable ? resizeImage(data:post.featuredImage, 72, &quot;1:1&quot;)                                  : data:post.thumbnail' var='image'>
                     <img alt='' border='0' expr:src='data:image'/>
                   </b:with>
                 </a>

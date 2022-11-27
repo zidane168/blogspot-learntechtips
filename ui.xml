@@ -7,9 +7,60 @@
 	]]>
 	</b:skin>
 	<head>
+		<!-- title -->
 		<title>
-			<blog.pageTitle/>
+			<b:if cond='data:blog.pageType == &quot;index&quot;'>
+				<data:blog.pageTitle/>
+				<b:else/>
+				<b:if cond='data:blog.pageType != &quot;error_page&quot;'>
+					<data:blog.pageName/> -
+					<data:blog.title/>
+					<b:else/>  ERROR 404 -
+					<data:blog.title/>
+				</b:if>
+			</b:if>
 		</title>
+		<!-- Description and Keywords (start) -->
+		<b:if cond='data:blog.pageType == &quot;index&quot;'>
+			<meta content='Learn Tech Tips blogspot provide you a tips and tricks for it development skill, include: C#, C++, PHP, Gaming, Photoshop, Android, MacOS System' name='description'/>
+		</b:if>
+		<meta content='C#, PHP, CakePHP, C++, dotnet, android, IOS, macos, window' name='keywords'/>
+		<b:if cond='data:blog.pageType == &quot;item&quot;'>
+			<meta expr:content='data:blog.pageName' property='og:title'/>
+			<meta expr:content='data:blog.canonicalUrl' property='og:url'/>
+			<meta content='article' property='og:type'/>
+		</b:if>
+		<b:if cond='data:blog.postImageUrl'>
+			<meta expr:content='data:blog.postImageUrl' property='og:image'/>
+			<b:else/>
+			<b:if cond='data:blog.postImageThumbnailUrl'>
+				<meta expr:content='data:blog.postImageThumbnailUrl' property='og:image'/>
+			</b:if>
+		</b:if>
+		<b:if cond='data:blog.metaDescription != &quot;&quot;'>
+			<meta expr:content='data:blog.metaDescription' name='og:description'/>
+		</b:if>
+		<meta expr:content='data:blog.title' property='og:site_name'/>
+		<meta expr:content='data:blog.homepageUrl' name='twitter:domain'/>
+		<meta expr:content='data:blog.pageName' name='twitter:title'/>
+		<b:if cond='data:blog.postImageUrl'>
+			<meta content='summary_large_image' name='twitter:card'/>
+			<meta expr:content='data:blog.postImageUrl' name='twitter:image'/>
+			<b:else/>
+			<meta content='summary' name='twitter:card'/>
+			<b:if cond='data:blog.postImageThumbnailUrl'>
+				<meta expr:content='data:blog.postImageThumbnailUrl' name='twitter:image'/>
+			</b:if>
+		</b:if>
+		<meta expr:content='data:blog.pageName' name='twitter:title'/>
+		<b:if cond='data:blog.metaDescription'>
+			<meta expr:content='data:blog.metaDescription' name='twitter:description'/>
+		</b:if>
+		<!-- Social Media meta tag need customer customization -->
+		<meta content='Facebook App ID here' property='fb:app_id'/>
+		<meta content='Facebook Admin ID here' property='fb:admins'/>
+		<meta content='@username' name='twitter:site'/>
+		<meta content='@username' name='twitter:creator'/>
 		<script src='https://cdn.tailwindcss.com'/>
 		<script>
 			tailwind.config = {
@@ -24,8 +75,58 @@
 		</script>
 	</head>
 	<body>
-		<section id='playgamenow'/>
 		<div class='w-[1536px] mx-auto'>
+			<b:section class='top-bar-social blue' id='header social widget' maxwidgets='1' name='Top Social Widget' showaddelement='no'>
+				<b:widget id='LinkList230' locked='true' title='Social Media Icons' type='LinkList' version='1'>
+					<b:widget-settings>
+						<b:widget-setting name='text-1'>Discord</b:widget-setting>
+						<b:widget-setting name='text-0'>Bitbucket</b:widget-setting>
+						<b:widget-setting name='text-3'>Github</b:widget-setting>
+						<b:widget-setting name='text-2'>Facebook</b:widget-setting>
+						<b:widget-setting name='text-5'>Tiktok</b:widget-setting>
+						<b:widget-setting name='text-4'>Linkin</b:widget-setting>
+						<b:widget-setting name='text-6'>Youtube</b:widget-setting>
+						<b:widget-setting name='sorting'>ALPHABETICAL</b:widget-setting>
+						<b:widget-setting name='link-0'>https://bitbucket.org/zidane168/</b:widget-setting>
+						<b:widget-setting name='link-1'>https://discord.gg/J9AsQSA</b:widget-setting>
+						<b:widget-setting name='link-2'>https://www.facebook.com/learntechtips168/</b:widget-setting>
+						<b:widget-setting name='link-3'>https://github.com/zidane168/</b:widget-setting>
+						<b:widget-setting name='link-4'>https://www.linkedin.com/in/lyhuuvi/</b:widget-setting>
+						<b:widget-setting name='link-5'>https://www.tiktok.com/@learntechtips</b:widget-setting>
+						<b:widget-setting name='link-6'>https://www.youtube.com/freegameszidane</b:widget-setting>
+					</b:widget-settings>
+					<b:includable id='main'>
+						<div class='widget-content'>
+							<div id='social  flex items-center'>
+								<b:loop values='data:links' var='link'>
+									<div>
+										<a expr:class='data:link.name' expr:href='data:link.target' target="_blank" rel="noopener" expr:title='data:link.name'>
+											<b:switch var='data:link.name'>
+												<b:case value="Github" />
+												<img class="w-6" src="https://cdn4.iconfinder.com/data/icons/social-media-logos-6/512/71-github-48.png" alt="data:link.name"/>
+												<b:case value="Bitbucket" />
+												<img class="w-6" src="https://cdn0.iconfinder.com/data/icons/brands-colored-2/220/bitbucket-social-network-brand-logo-48.png" alt="data:link.name"/>
+												<b:case value="Discord" />
+												<img class="w-6" src="https://cdn1.iconfinder.com/data/icons/unicons-line-vol-3/24/discord-48.png" alt="data:link.name"/>
+												<b:case value="Facebook" />
+												<img class="w-6" src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Facebook_colored_svg_copy-48.png" alt="data:link.name"/>
+												<b:case value="Tiktok" />
+												<img class="w-6" src="https://cdn2.iconfinder.com/data/icons/social-media-2421/512/TikTok-48.png" alt="data:link.name"/>
+												<b:case value="Linkin" />
+												<img class="w-6" src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Facebook_colored_svg_copy-48.png" alt="data:link.name"/>
+												<b:case value="Youtube" />
+												<img class="w-6" src="https://cdn3.iconfinder.com/data/icons/2018-social-media-logotypes/1000/2018_social_media_popular_app_logo_youtube-48.png" alt="data:link.name"/>
+												<b:default />
+											</b:switch>
+											<data:link.name />
+										</a>
+									</div>
+								</b:loop>
+							</div>
+						</div>
+					</b:includable>
+				</b:widget>
+			</b:section>
 			<b:section class='menu' id='menu' maxwidgets='1' name='Main Menu' showaddelement='yes'/>
 			<div class='bg-orange-700 rounded-md'>
 				<div class='mx-auto max-w-7xl px-2 sm:px-6 lg:px-8'>
@@ -104,9 +205,8 @@
 					</div>
 				</div>
 			</div>
-
-			<b:if cond='!data:mobile'> 
-				<b:section class='main'  id='post' name='Blog spot' > 
+			<b:if cond='!data:mobile'>
+				<b:section class='main'  id='post' name='Blog spot' >
 					<b:widget id='Blog1'  title='Blog Posts' type='Blog' version='1'>
 						<b:widget-settings>
 							<b:widget-setting name='showDateHeader'>true</b:widget-setting>
@@ -137,7 +237,9 @@
 									<b:include data='top' name='status-message'/>
 									<b:loop values='data:posts' var='post'>
 										<hr />
-										<h1 class="mt-[30px] text-xl bg-orange-600 text-white p-4 shadow-lg rounded-md"> <data:post.title/> </h1>
+										<h1 class="mt-[30px] text-xl bg-orange-600 text-white p-4 shadow-lg rounded-md">
+											<data:post.title/>
+										</h1>
 										<hr />
 										<b:if cond='data:post.isDateStart and not data:post.isFirstPost'> &lt;/div&gt;&lt;/div&gt;  </b:if>
 										<b:if cond='data:post.isDateStart'>  &lt;div class=&quot;date-outer&quot;&gt;  </b:if>
@@ -163,16 +265,14 @@
 										</b:if>
 									</b:loop>
 									<b:if cond='data:numPosts != 0'>  &lt;/div&gt;&lt;/div&gt; </b:if>
-								</div> 
-
-								<!-- navigation -->								
+								</div>
+								<!-- navigation -->
 								<b:include name='nextprev'/>
 							</b:if>
 						</b:includable>
-					</b:widget> 
-
+					</b:widget>
 				</b:section>
-			</b:if> 
+			</b:if>
 		</div>
 	</body>
 </html>
