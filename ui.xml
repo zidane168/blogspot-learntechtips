@@ -101,7 +101,7 @@
 							<div class="flex space-x-2 justify-around uppercase">
 								<b:loop values='data:links' var='link'>
 									<div itemprop='name' class="hover:font-bold">
-										<a expr:href='data:link.target' itemprop='url'>
+										<a expr:href='data:link.target' itemprop='url' target="_blank"   rel="noopener noreferrer">
 											<data:link.name/>
 										</a>
 									</div>
@@ -115,6 +115,7 @@
 				class="w-full mt-[10px]"
 				src="https://2.bp.blogspot.com/-RLlmjiAE_8E/XTv8tHaYSoI/AAAAAAAADjo/khJZT27ztm8qRX3cfJcfkfnhluFiILxxwCK4BGAYYCw/s1600/learn-tech-tips%2B1400.gif" alt="background"	 />
 			<div class='w-[1536px] mx-auto mt-[10px]'>
+				<!-- Social media -->
 				<b:section class='top-bar-social blue' id='header social widget' maxwidgets='1' name='Top Social Widget' showaddelement='no'>
 					<b:widget id='LinkList230' locked='true' title='Social Media Icons' type='LinkList' version='1'>
 						<b:widget-settings>
@@ -139,12 +140,12 @@
 							<div class='widget-content mt-[10px]'>
 								<div id='social' class='flex items-center space-x-[10px] justify-between mb-[10px]'>
 									<div>
-										<a href="https://learn-tech-tips.blogspot.com" class="hover:text-[color:var(--blue)]"> Welcome to Learn Tech Tips Blogspot, I am Zidane </a>
+										<a target="_blank" rel="noopener noreferrer" href="https://learn-tech-tips.blogspot.com" class="hover:text-[color:var(--blue)]"> Welcome to Learn Tech Tips Blogspot, I am Zidane </a>
 									</div>
 									<div class="bg-white shadow-lg p-4 flex space-x-2 rounded-lg">
 										<b:loop values='data:links' var='link'>
 											<div>
-												<a expr:class='data:link.name' expr:href='data:link.target' target="_blank" rel="noopener" expr:title='data:link.name'>
+												<a expr:class='data:link.name' expr:href='data:link.target' target="_blank" rel="noopener noreferrer" expr:title='data:link.name'>
 													<b:switch var='data:link.name'>
 														<b:case value="Github" />
 														<img class="w-6 hover:scale-125 " src="https://cdn4.iconfinder.com/data/icons/social-media-logos-6/512/71-github-48.png" loading="lazy"  alt="data:link.name"/>
@@ -171,6 +172,7 @@
 						</b:includable>
 					</b:widget>
 				</b:section>
+				<!-- Menu -->
 				<b:section class='menu' id='menu' maxwidgets='1' name='Main Menu' showaddelement='yes'/>
 				<div class='bg-[color:var(--blue)]  rounded-md'>
 					<div class='mx-auto max-w-7xl px-2 sm:px-6 lg:px-8'>
@@ -190,19 +192,19 @@
 							</div>
 							<div class='flex items-center justify-center'>
 								<div class='flex space-x-4'>
-									<a class='hover:scale-125' target="_blank" href='https://learn-tech-tips.blogspot.com'>
+									<a class='hover:scale-125'  target="_blank" rel="noopener noreferrer" href='https://learn-tech-tips.blogspot.com'>
 										<img class="w-[40px]" src="https://learn-tech-tips.blogspot.com/favicon.ico" alt="learn tech tips logo"/>
 									</a>
-									<a aria-current='page' class='text-white hover:bg-[color:var(--orange)] block px-3 py-2 rounded-md text-base font-medium' target="_blank" href='/search/max-results=20?q=tips'>
+									<a aria-current='page' class='text-white hover:bg-[color:var(--orange)] block px-3 py-2 rounded-md text-base font-medium'  target="_blank" rel="noopener noreferrer" href='/search/max-results=20?q=tips'>
 											Tips
 										</a>
-									<a class='text-white hover:bg-[color:var(--orange)]  block px-3 py-2 rounded-md text-base font-medium' target="_blank" href='/search/max-results=20?q=tips'>
+									<a class='text-white hover:bg-[color:var(--orange)]  block px-3 py-2 rounded-md text-base font-medium' target="_blank" rel="noopener noreferrer" href='/search/max-results=20?q=tips'>
 											Database
 										</a>
-									<a class='text-white hover:bg-[color:var(--orange)] h block px-3 py-2 rounded-md text-base font-medium' target="_blank" href='https://learn-tech-tips.blogspot.com/search/label/Design%20Pattern'>
+									<a class='text-white hover:bg-[color:var(--orange)] h block px-3 py-2 rounded-md text-base font-medium'  target="_blank" rel="noopener noreferrer" href='https://learn-tech-tips.blogspot.com/search/label/Design%20Pattern'>
 											Design Partner
 										</a>
-									<a class='text-white hover:bg-[color:var(--orange)] h block px-3 py-2 rounded-md text-base font-medium' target="_blank" href='https://learn-tech-tips.blogspot.com/search/label/Design%20Pattern'>
+									<a class='text-white hover:bg-[color:var(--orange)] h block px-3 py-2 rounded-md text-base font-medium'  target="_blank" rel="noopener noreferrer" href='https://learn-tech-tips.blogspot.com/search/label/Design%20Pattern'>
 											BlockChain Technology
 										</a>
 								</div>
@@ -211,18 +213,19 @@
 					</div>
 					<div class='sm:hidden' id='mobile-menu'>
 						<div class='space-y-1 px-2 pt-2 pb-3'>
-							<a aria-current='page' class='bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium' target="_blank" href='/search/max-results=20?q=tips'>
+							<a aria-current='page' class='bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium' target="_blank" rel="noopener noreferrer" href='/search/max-results=20?q=tips'>
 								Tips
 							</a>
-							<a class='text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium' target="_blank" href='/search/max-results=20?q=tips'>
+							<a class='text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium' target="_blank" rel="noopener noreferrer" href='/search/max-results=20?q=tips'>
 								Database
 							</a>
-							<a class='text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium' target="_blank" href='https://learn-tech-tips.blogspot.com/search/label/Design%20Pattern'>
+							<a class='text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium' target="_blank" rel="noopener noreferrer" href='https://learn-tech-tips.blogspot.com/search/label/Design%20Pattern'>
 								Design Partner
 							</a>
 						</div>
 					</div>
 				</div>
+				<!-- Break News -->
 				<div class="flex mt-[10px] items-center">
 					<div class="p-2 bg-[color:var(--blue)] text-white rounded-l-md rounded-r-none  w-[180px] flex space-x-2 items-center">
 						<div class="w-10">
@@ -238,81 +241,114 @@
 						<div> Blog 1 - Image 1 - Blog 1 Title,  Blog 2 - Image 2 - Blog 2 Title,  </div>
 					</marquee>
 				</div>
-				<b:section class='main'  id='post' name='Blog spot' >
-					<b:widget id='Blog1'  title='Blog Posts' type='Blog' version='1'>
-						<b:widget-settings>
-							<b:widget-setting name='showDateHeader'>true</b:widget-setting>
-							<b:widget-setting name='style.textcolor'>#ffffff</b:widget-setting>
-							<b:widget-setting name='showShareButtons'>true</b:widget-setting>
-							<b:widget-setting name='showCommentLink'>true</b:widget-setting>
-							<b:widget-setting name='style.urlcolor'>#ffffff</b:widget-setting>
-							<b:widget-setting name='showAuthor'>true</b:widget-setting>
-							<b:widget-setting name='style.linkcolor'>#ffffff</b:widget-setting>
-							<b:widget-setting name='style.unittype'>TextAndImage</b:widget-setting>
-							<b:widget-setting name='style.bgcolor'>#ffffff</b:widget-setting>
-							<b:widget-setting name='reactionsLabel'/>
-							<b:widget-setting name='showAuthorProfile'>true</b:widget-setting>
-							<b:widget-setting name='style.layout'>1x1</b:widget-setting>
-							<b:widget-setting name='showLabels'>true</b:widget-setting>
-							<b:widget-setting name='showLocation'>true</b:widget-setting>
-							<b:widget-setting name='showTimestamp'>true</b:widget-setting>
-							<b:widget-setting name='postsPerAd'>1</b:widget-setting>
-							<b:widget-setting name='showBacklinks'>false</b:widget-setting>
-							<b:widget-setting name='style.bordercolor'>#ffffff</b:widget-setting>
-							<b:widget-setting name='showInlineAds'>true</b:widget-setting>
-							<b:widget-setting name='showReactions'>false</b:widget-setting>
-						</b:widget-settings>
-						<b:includable id='main' var='top'>
-							<b:if cond='!data:mobile'>
-								<!-- posts -->
-								<div class='blog-posts hfeed mt-[10px]'>
-									<b:include data='top' name='status-message'/>
-									<b:loop values='data:posts' var='post'>
-										<hr />
-										<h1 class="mt-[30px] text-xl bg-orange-600 text-white p-4 shadow-lg rounded-md">
-											<data:post.title/>
-										</h1>
-										<hr />
-										<b:if cond='data:post.isDateStart and not data:post.isFirstPost'> &lt;/div&gt;&lt;/div&gt;  </b:if>
-										<b:if cond='data:post.isDateStart'>  &lt;div class=&quot;date-outer&quot;&gt;  </b:if>
-										<b:if cond='data:post.dateHeader'>
-											<h2 class='text-right text-sm text-rose-500 m-[10px]'>
-												<span>
-													<data:post.dateHeader/>
-												</span>
-											</h2>
-										</b:if>
-										<b:if cond='data:post.isDateStart'>  &lt;div class=&quot;date-posts&quot;&gt;  </b:if>
-										<div class='post-outer'>
-											<div class="bg-gray-100 p-[10px] rounded-md shadow-lg">
-												<b:include data='post' name='post'/>
-											</div>
-											<b:include cond='data:blog.pageType in {&quot;static_page&quot;,&quot;item&quot;}' data='post' name='comment_picker'/>
+				<!-- Blog -->
+				<div class="flex mt-[10px] space-x-4 ">
+					<div id="left" class='w-[1200px] bg-gray-200 rounded-lg shadow-lg p-2'>
+						<b:section class='main'  id='post' name='Blog spot' >
+							<b:widget id='Blog1'  title='Blog Posts' type='Blog' version='1'>
+								<b:widget-settings>
+									<b:widget-setting name='showDateHeader'>true</b:widget-setting>
+									<b:widget-setting name='style.textcolor'>#ffffff</b:widget-setting>
+									<b:widget-setting name='showShareButtons'>true</b:widget-setting>
+									<b:widget-setting name='showCommentLink'>true</b:widget-setting>
+									<b:widget-setting name='style.urlcolor'>#ffffff</b:widget-setting>
+									<b:widget-setting name='showAuthor'>true</b:widget-setting>
+									<b:widget-setting name='style.linkcolor'>#ffffff</b:widget-setting>
+									<b:widget-setting name='style.unittype'>TextAndImage</b:widget-setting>
+									<b:widget-setting name='style.bgcolor'>#ffffff</b:widget-setting>
+									<b:widget-setting name='reactionsLabel'/>
+									<b:widget-setting name='showAuthorProfile'>true</b:widget-setting>
+									<b:widget-setting name='style.layout'>1x1</b:widget-setting>
+									<b:widget-setting name='showLabels'>true</b:widget-setting>
+									<b:widget-setting name='showLocation'>true</b:widget-setting>
+									<b:widget-setting name='showTimestamp'>true</b:widget-setting>
+									<b:widget-setting name='postsPerAd'>1</b:widget-setting>
+									<b:widget-setting name='showBacklinks'>false</b:widget-setting>
+									<b:widget-setting name='style.bordercolor'>#ffffff</b:widget-setting>
+									<b:widget-setting name='showInlineAds'>true</b:widget-setting>
+									<b:widget-setting name='showReactions'>false</b:widget-setting>
+								</b:widget-settings>
+								<b:includable id='main' var='top'>
+									<b:if cond='!data:mobile'>
+										<!-- posts -->
+										<div class='blog-posts hfeed mt-[10px]'>
+											<b:include data='top' name='status-message'/>
+											<b:loop values='data:posts' var='post'>
+												<hr />
+												<h1 class="mt-[30px] text-xl bg-[color:var(--orange)] text-white p-4 shadow-lg rounded-md">
+													<data:post.title/>
+												</h1>
+												<hr />
+												<b:if cond='data:post.isDateStart and not data:post.isFirstPost'> &lt;/div&gt;&lt;/div&gt;  </b:if>
+												<b:if cond='data:post.isDateStart'>  &lt;div class=&quot;date-outer&quot;&gt;  </b:if>
+												<b:if cond='data:post.dateHeader'>
+													<!-- labels -->
+													<div class=" m-[10px] flex space-x-2">
+														<b:loop values='data:post.labels' var='label'>
+															<!-- <b:if cond='data:label.isLast == "true"'> -->
+															<div class='hover:scale-110 text-sm text-white font-medium bg-[color:var(--blue)] rounded-md p-2 ml-[-2px]'>
+																<a expr:href='data:label.url' rel='tag noopener noreferrer' target="_blank" >
+																	<data:label.name/>
+																</a>
+															</div>
+															<!-- </b:if> -->
+														</b:loop>
+														
+													</div>
+													<div class='text-sm italic m-[10px] flex justify-between '>
+														<div class="flex space-x-2 ">
+															<div>
+																<data:post.dateHeader/> 
+															</div>
+															<div> | </div>
+															<div> Comment: </div>
+															<div> 
+																<data:post.numComments/>
+															</div>
+														</div>
+														<div class="border-l-4 border-[color:var(--blue)] px-2"> Author: 
+															<a class="hover:text-lg font-bold"  href="https://learn-tech-tips.blogspot.com/p/about_83.html" target="_blank" rel="noopener noreferrer">
+																<data:post.author/>
+															</a>
+														</div>
+													</div>
+												</b:if>
+												<b:if cond='data:post.isDateStart'>  &lt;div class=&quot;date-posts&quot;&gt;  </b:if>
+												<div class='post-outer'>
+													<div class="bg-gray-100 p-[10px] rounded-md shadow-lg">
+														<b:include data='post' name='post'/>
+													</div>
+													<b:include cond='data:blog.pageType in {&quot;static_page&quot;,&quot;item&quot;}' data='post' name='comment_picker'/>
+												</div>
+												<!-- Ad -->
+												<b:if cond='data:post.includeAd'>
+													<div class='inline-ad'>
+														<data:adCode/>
+													</div>
+												</b:if>
+											</b:loop>
+											<b:if cond='data:numPosts != 0'>  &lt;/div&gt;&lt;/div&gt; </b:if>
 										</div>
-										<!-- Ad -->
-										<b:if cond='data:post.includeAd'>
-											<div class='inline-ad'>
-												<data:adCode/>
-											</div>
-										</b:if>
-									</b:loop>
-									<b:if cond='data:numPosts != 0'>  &lt;/div&gt;&lt;/div&gt; </b:if>
-								</div>
-								<!-- navigation -->
-								<b:include name='nextprev'/>
-							</b:if>
-						</b:includable>
-					</b:widget>
-				</b:section>
+										<!-- navigation -->
+										<b:include name='nextprev'/>
+									</b:if>
+								</b:includable>
+							</b:widget>
+						</b:section>
+					</div>
+					<div id="right" class="bg-gray-200 rounded-lg shadow-lg p-2">
+					</div>
+				</div>
 			</div>
 		</b:if>
-		<div class="flex justify-center flex-col w-full mx-auto bg-gray-900 text-white p-4 h-[200px] text-center">
+		<div class="mt-[10px] flex justify-center flex-col w-full mx-auto bg-gray-900 text-white p-4 h-[200px] text-center">
 			<div class="uppercase">
 				Copyright @2022(November) Version 1.0.0 - By
 				<span class="text-[color:var(--blue)] font-bold italic">Z</span>idane
 			</div>
 			<div class="mt-[10px]">
-				<a class="hover:bg-[color:var(--blue)] hover:p-2 hover:rounded-lg" href="https://learn-tech-tips.blogspot.com" target="_blank"> https://learn-tech-tips.blogspot.com </a>
+				<a class="hover:bg-[color:var(--blue)] hover:p-2 hover:rounded-lg" href="https://learn-tech-tips.blogspot.com" 
+				target="_blank" rel="noopener noreferrer"> https://learn-tech-tips.blogspot.com </a>
 			</div>
 		</div>
 	</body>
