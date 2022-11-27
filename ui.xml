@@ -61,151 +61,160 @@
 		<meta content='Facebook Admin ID here' property='fb:admins'/>
 		<meta content='@username' name='twitter:site'/>
 		<meta content='@username' name='twitter:creator'/>
-		<script src='https://cdn.tailwindcss.com'/>
+		<script src='https://cdn.tailwindcss.com'/> 
 		<script>
-			tailwind.config = {
-			theme: {
-        extend: {
-          colors: {
-            clifford: &#39;#da373d&#39;,
-          }
-        }
-        }
-			}
+			tailwind.config = 
+			{
+				theme: 
+				{
+					extend: 
+					{ 
+						 
+					}
+				}
+			}  
 		</script>
+
+		<style> 
+		</style>
 	</head>
 	<body>
-		<div class='w-[1536px] mx-auto'>
-			<b:section class='top-bar-social blue' id='header social widget' maxwidgets='1' name='Top Social Widget' showaddelement='no'>
-				<b:widget id='LinkList230' locked='true' title='Social Media Icons' type='LinkList' version='1'>
-					<b:widget-settings>
-						<b:widget-setting name='text-1'>Discord</b:widget-setting>
-						<b:widget-setting name='text-0'>Bitbucket</b:widget-setting>
-						<b:widget-setting name='text-3'>Github</b:widget-setting>
-						<b:widget-setting name='text-2'>Facebook</b:widget-setting>
-						<b:widget-setting name='text-5'>Tiktok</b:widget-setting>
-						<b:widget-setting name='text-4'>Linkin</b:widget-setting>
-						<b:widget-setting name='text-6'>Youtube</b:widget-setting>
-						<b:widget-setting name='sorting'>ALPHABETICAL</b:widget-setting>
-						<b:widget-setting name='link-0'>https://bitbucket.org/zidane168/</b:widget-setting>
-						<b:widget-setting name='link-1'>https://discord.gg/J9AsQSA</b:widget-setting>
-						<b:widget-setting name='link-2'>https://www.facebook.com/learntechtips168/</b:widget-setting>
-						<b:widget-setting name='link-3'>https://github.com/zidane168/</b:widget-setting>
-						<b:widget-setting name='link-4'>https://www.linkedin.com/in/lyhuuvi/</b:widget-setting>
-						<b:widget-setting name='link-5'>https://www.tiktok.com/@learntechtips</b:widget-setting>
-						<b:widget-setting name='link-6'>https://www.youtube.com/freegameszidane</b:widget-setting>
-					</b:widget-settings>
-					<b:includable id='main'>
-						<div class='widget-content'>
-							<div id='social  flex items-center'>
-								<b:loop values='data:links' var='link'>
-									<div>
-										<a expr:class='data:link.name' expr:href='data:link.target' target="_blank" rel="noopener" expr:title='data:link.name'>
-											<b:switch var='data:link.name'>
-												<b:case value="Github" />
-												<img class="w-6" src="https://cdn4.iconfinder.com/data/icons/social-media-logos-6/512/71-github-48.png" alt="data:link.name"/>
-												<b:case value="Bitbucket" />
-												<img class="w-6" src="https://cdn0.iconfinder.com/data/icons/brands-colored-2/220/bitbucket-social-network-brand-logo-48.png" alt="data:link.name"/>
-												<b:case value="Discord" />
-												<img class="w-6" src="https://cdn1.iconfinder.com/data/icons/unicons-line-vol-3/24/discord-48.png" alt="data:link.name"/>
-												<b:case value="Facebook" />
-												<img class="w-6" src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Facebook_colored_svg_copy-48.png" alt="data:link.name"/>
-												<b:case value="Tiktok" />
-												<img class="w-6" src="https://cdn2.iconfinder.com/data/icons/social-media-2421/512/TikTok-48.png" alt="data:link.name"/>
-												<b:case value="Linkin" />
-												<img class="w-6" src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Facebook_colored_svg_copy-48.png" alt="data:link.name"/>
-												<b:case value="Youtube" />
-												<img class="w-6" src="https://cdn3.iconfinder.com/data/icons/2018-social-media-logotypes/1000/2018_social_media_popular_app_logo_youtube-48.png" alt="data:link.name"/>
-												<b:default />
-											</b:switch>
-											<data:link.name />
-										</a>
+		<b:if cond='!data:mobile'>
+			<div class='w-[1536px] mx-auto'>
+				<b:section class='top-bar-social blue' id='header social widget' maxwidgets='1' name='Top Social Widget' showaddelement='no'>
+					<b:widget id='LinkList230' locked='true' title='Social Media Icons' type='LinkList' version='1'>
+						<b:widget-settings>
+							<b:widget-setting name='text-1'>Discord</b:widget-setting>
+							<b:widget-setting name='text-0'>Bitbucket</b:widget-setting>
+							<b:widget-setting name='text-3'>Github</b:widget-setting>
+							<b:widget-setting name='text-2'>Facebook</b:widget-setting>
+							<b:widget-setting name='text-5'>Tiktok</b:widget-setting>
+							<b:widget-setting name='text-4'>Linkin</b:widget-setting>
+							<b:widget-setting name='text-6'>Youtube</b:widget-setting>
+							<b:widget-setting name='sorting'>ALPHABETICAL</b:widget-setting>
+							<b:widget-setting name='link-0'>https://bitbucket.org/zidane168/</b:widget-setting>
+							<b:widget-setting name='link-1'>https://discord.gg/J9AsQSA</b:widget-setting>
+							<b:widget-setting name='link-2'>https://www.facebook.com/learntechtips168/</b:widget-setting>
+							<b:widget-setting name='link-3'>https://github.com/zidane168/</b:widget-setting>
+							<b:widget-setting name='link-4'>https://www.linkedin.com/in/lyhuuvi/</b:widget-setting>
+							<b:widget-setting name='link-5'>https://www.tiktok.com/@learntechtips</b:widget-setting>
+							<b:widget-setting name='link-6'>https://www.youtube.com/freegameszidane</b:widget-setting>
+						</b:widget-settings>
+						<b:includable id='main'>
+							<!-- cannot change id='main' -->
+							<div class='widget-content mt-[10px]'>
+								<div id='social' class='flex items-center space-x-[10px] justify-between mb-[10px]'>
+									<div> 
+										<a href="https://learn-tech-tips.blogspot.com" class="hover:text-sky-400"> Welcome to Learn Tech Tips Blogspot, I am Zidane </a> 
 									</div>
-								</b:loop>
+									<div class="bg-white shadow-lg p-4 flex space-x-2 rounded-lg">
+										<b:loop values='data:links' var='link'>
+											<div>
+												<a expr:class='data:link.name' expr:href='data:link.target' target="_blank" rel="noopener" expr:title='data:link.name'>
+													<b:switch var='data:link.name'>
+														<b:case value="Github" />
+														<img class="w-6 hover:scale-125 " src="https://cdn4.iconfinder.com/data/icons/social-media-logos-6/512/71-github-48.png" loading="lazy"  alt="data:link.name"/>
+														<b:case value="Bitbucket" />
+														<img class="w-6  hover:scale-125" src="https://cdn0.iconfinder.com/data/icons/brands-colored-2/220/bitbucket-social-network-brand-logo-48.png" loading="lazy"  alt="data:link.name"/>
+														<b:case value="Discord" />
+														<img class="w-6 hover:scale-125" src="https://cdn1.iconfinder.com/data/icons/unicons-line-vol-3/24/discord-48.png" loading="lazy" alt="data:link.name"/>
+														<b:case value="Facebook" />
+														<img class="w-6 hover:scale-125" src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Facebook_colored_svg_copy-48.png" loading="lazy" alt="data:link.name"/>
+														<b:case value="Tiktok" />
+														<img class="w-6 hover:scale-125" src="https://cdn2.iconfinder.com/data/icons/social-media-2421/512/TikTok-48.png" loading="lazy" alt="data:link.name"/>
+														<b:case value="Linkin" />
+														<img class="w-6 hover:scale-125" src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Facebook_colored_svg_copy-48.png" loading="lazy" alt="data:link.name"/>
+														<b:case value="Youtube" />
+														<img class="w-6 hover:scale-125" src="https://cdn3.iconfinder.com/data/icons/2018-social-media-logotypes/1000/2018_social_media_popular_app_logo_youtube-48.png" loading="lazy" alt="data:link.name"/>
+														<b:default />
+													</b:switch>
+												</a>
+											</div>
+										</b:loop>
+									</div>
+								</div>
 							</div>
-						</div>
-					</b:includable>
-				</b:widget>
-			</b:section>
-			<b:section class='menu' id='menu' maxwidgets='1' name='Main Menu' showaddelement='yes'/>
-			<div class='bg-orange-700 rounded-md'>
-				<div class='mx-auto max-w-7xl px-2 sm:px-6 lg:px-8'>
-					<div class='relative flex h-16 items-center justify-between'>
-						<div class='absolute inset-y-0 left-0 flex items-center sm:hidden'>
-							<button aria-controls='mobile-menu' aria-expanded='false' class='inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white' type='button'>
-								<span class='sr-only'>
+						</b:includable>
+					</b:widget>
+				</b:section>
+				<b:section class='menu' id='menu' maxwidgets='1' name='Main Menu' showaddelement='yes'/>
+				<div class='bg-orange-700 rounded-md'>
+					<div class='mx-auto max-w-7xl px-2 sm:px-6 lg:px-8'>
+						<div class='relative flex h-16 items-center justify-between'>
+							<div class='absolute inset-y-0 left-0 flex items-center sm:hidden'>
+								<button aria-controls='mobile-menu' aria-expanded='false' class='inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white' type='button'>
+									<span class='sr-only'>
 									Open main menu
 								</span>
-								<svg aria-hidden='true' class='block h-6 w-6' fill='none' stroke='currentColor' stroke-width='1.5' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
-									<path d='M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5' stroke-linecap='round' stroke-linejoin='round'/>
-								</svg>
-								<svg aria-hidden='true' class='hidden h-6 w-6' fill='none' stroke='currentColor' stroke-width='1.5' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
-									<path d='M6 18L18 6M6 6l12 12' stroke-linecap='round' stroke-linejoin='round'/>
-								</svg>
-							</button>
-						</div>
-						<div class='flex flex-1 items-center justify-center sm:items-stretch sm:justify-start'>
-							<div class='flex flex-shrink-0 items-center'>
-								<img alt='Your Company' class='block h-8 w-auto lg:hidden' src=' '/>
-								<img alt='Your Company' class='hidden h-8 w-auto lg:block' src=' '/>
+									<svg aria-hidden='true' class='block h-6 w-6' fill='none' stroke='currentColor' stroke-width='1.5' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+										<path d='M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5' stroke-linecap='round' stroke-linejoin='round'/>
+									</svg>
+									<svg aria-hidden='true' class='hidden h-6 w-6' fill='none' stroke='currentColor' stroke-width='1.5' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+										<path d='M6 18L18 6M6 6l12 12' stroke-linecap='round' stroke-linejoin='round'/>
+									</svg>
+								</button>
 							</div>
-							<div class='hidden sm:ml-6 sm:block'>
-								<div class='flex space-x-4'>
-									<a aria-current='page' class='bg-orange-500 text-white px-3 py-2 rounded-md text-sm font-medium' href='#'>
+							<div class='flex flex-1 items-center justify-center sm:items-stretch sm:justify-start'>
+								<div class='flex flex-shrink-0 items-center'>
+									<img alt='Your Company' class='block h-8 w-auto lg:hidden' src=' '/>
+									<img alt='Your Company' class='hidden h-8 w-auto lg:block' src=' '/>
+								</div>
+								<div class='hidden sm:ml-6 sm:block'>
+									<div class='flex space-x-4'>
+										<a aria-current='page' class='bg-orange-500 text-white px-3 py-2 rounded-md text-sm font-medium' href='#'>
 										Dashboard
 									</a>
-									<a class='text-white hover:bg-orange-500 hover:text-white px-3 py-2 rounded-md text-sm font-medium' href='#'>
+										<a class='text-white hover:bg-orange-500 hover:text-white px-3 py-2 rounded-md text-sm font-medium' href='#'>
 										Learn Tech Tips
 									</a>
-									<a class='text-white hover:bg-orange-500 hover:text-white px-3 py-2 rounded-md text-sm font-medium' href='#'>
+										<a class='text-white hover:bg-orange-500 hover:text-white px-3 py-2 rounded-md text-sm font-medium' href='#'>
 										Zidane
 									</a>
-									<a class='text-white hover:bg-orange-500 hover:text-white px-3 py-2 rounded-md text-sm font-medium' href='#'>
+										<a class='text-white hover:bg-orange-500 hover:text-white px-3 py-2 rounded-md text-sm font-medium' href='#'>
 										Calendar
 									</a>
+									</div>
 								</div>
 							</div>
-						</div>
-						<div class='absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0'>
-							<button class='rounded-full   p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800' type='button'>
-								<span class='sr-only'>
+							<div class='absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0'>
+								<button class='rounded-full   p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800' type='button'>
+									<span class='sr-only'>
 									View notifications
 								</span>
-								<svg aria-hidden='true' class='h-6 w-6' fill='none' stroke='currentColor' stroke-width='1.5' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
-									<path d='M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0' stroke-linecap='round' stroke-linejoin='round'/>
-								</svg>
-							</button>
-							<div class='relative ml-3'>
-								<div>
-									<button aria-expanded='false' aria-haspopup='true' class='flex rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800' id='user-menu-button' type='button'>
-										<span class='sr-only'>
+									<svg aria-hidden='true' class='h-6 w-6' fill='none' stroke='currentColor' stroke-width='1.5' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+										<path d='M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0' stroke-linecap='round' stroke-linejoin='round'/>
+									</svg>
+								</button>
+								<div class='relative ml-3'>
+									<div>
+										<button aria-expanded='false' aria-haspopup='true' class='flex rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800' id='user-menu-button' type='button'>
+											<span class='sr-only'>
 											Open user menu
 										</span>
-										<img alt='' class='h-8 w-8 rounded-full' src=' '/>
-									</button>
+											<img alt='' class='h-8 w-8 rounded-full' src=' '/>
+										</button>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class='sm:hidden' id='mobile-menu'>
-					<div class='space-y-1 px-2 pt-2 pb-3'>
-						<a aria-current='page' class='bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium' href='#'>
+					<div class='sm:hidden' id='mobile-menu'>
+						<div class='space-y-1 px-2 pt-2 pb-3'>
+							<a aria-current='page' class='bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium' href='#'>
 							Dashboard
 						</a>
-						<a class='text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium' href='#'>
+							<a class='text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium' href='#'>
 							Team
 						</a>
-						<a class='text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium' href='#'>
+							<a class='text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium' href='#'>
 							Projects
 						</a>
-						<a class='text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium' href='#'>
+							<a class='text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium' href='#'>
 							Calendar
 						</a>
+						</div>
 					</div>
 				</div>
-			</div>
-			<b:if cond='!data:mobile'>
 				<b:section class='main'  id='post' name='Blog spot' >
 					<b:widget id='Blog1'  title='Blog Posts' type='Blog' version='1'>
 						<b:widget-settings>
@@ -272,7 +281,7 @@
 						</b:includable>
 					</b:widget>
 				</b:section>
-			</b:if>
-		</div>
+			</div>
+		</b:if>
 	</body>
 </html>
