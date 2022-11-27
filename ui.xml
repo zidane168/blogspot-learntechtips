@@ -148,7 +148,7 @@
 							<div class='widget-content mt-[10px]'>
 								<div id='social' class='flex items-center space-x-[10px] justify-between mb-[10px]'>
 									<div>
-										<a target="_blank" rel="noopener noreferrer" href="https://learn-tech-tips.blogspot.com" class="hover:text-[color:var(--blue)]"> Welcome to Learn Tech Tips Blogspot, I am Zidane </a>
+										<a target="_blank" rel="noopener noreferrer" href="https://learn-tech-tips.blogspot.com" class="hover:text-[color:var(--blue)] uppercase"> 👋 Welcome to Learn Tech Tips Blogspot, I am Zidane 🙇🏼 </a>
 									</div>
 									<div class="bg-white shadow-lg p-4 flex space-x-2 rounded-lg">
 										<b:loop values='data:links' var='link'>
@@ -166,7 +166,7 @@
 														<b:case value="Tiktok" />
 														<img class="w-6 hover:scale-125" src="https://cdn2.iconfinder.com/data/icons/social-media-2421/512/TikTok-48.png" loading="lazy" alt="data:link.name"/>
 														<b:case value="Linkin" />
-														<img class="w-6 hover:scale-125" src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Facebook_colored_svg_copy-48.png" loading="lazy" alt="data:link.name"/>
+														<img class="w-6 hover:scale-125" src="https://cdn4.iconfinder.com/data/icons/simplicity-vector-icon-set/128/linkin.png" loading="lazy" alt="data:link.name"/>
 														<b:case value="Youtube" />
 														<img class="w-6 hover:scale-125" src="https://cdn3.iconfinder.com/data/icons/2018-social-media-logotypes/1000/2018_social_media_popular_app_logo_youtube-48.png" loading="lazy" alt="data:link.name"/>
 														<b:default />
