@@ -121,7 +121,7 @@
 			<img 
 				class="w-full mt-[10px]"
 				src="https://2.bp.blogspot.com/-RLlmjiAE_8E/XTv8tHaYSoI/AAAAAAAADjo/khJZT27ztm8qRX3cfJcfkfnhluFiILxxwCK4BGAYYCw/s1600/learn-tech-tips%2B1400.gif" alt="background"	 />
-			<div class='w-[1536px] mx-auto mt-[10px]'>
+			<div class='w-[1420px] mx-auto mt-[10px]'>
 				<!-- Social media -->
 				<b:section class='top-bar-social blue' id='header social widget' maxwidgets='1' name='Top Social Widget' showaddelement='no'>
 					<b:widget id='LinkList230' locked='true' title='Social Media Icons' type='LinkList' version='1'>
@@ -270,7 +270,7 @@
 
 				<!-- Blog Detail-->
 				<div class="flex mt-[10px] space-x-2 ">
-					<div id="left" class='w-[1200px] bg-gray-200 rounded-lg shadow-lg p-2'>
+					<div id="left" class='w-[1100px] bg-gray-200 rounded-lg shadow-lg p-2'>
 						<b:section class='main'  id='post' name='Blog spot' >
 							<b:widget id='Blog1'  title='Blog Posts' type='Blog' version='1'>
 								<b:widget-settings>
@@ -438,7 +438,7 @@
 							</b:widget>
 						</b:section>
 					</div>
-					<div id="right" class="bg-gray-200 rounded-lg shadow-lg p-2 w-[334px]">
+					<div id="right" class="bg-gray-200 rounded-lg shadow-lg p-2 w-[320px]">
 						<!-- Feature Ads-->
 						<b:section class='FeatureAds' id='FeatureAds' maxwidgets='1' preferred='yes'>
 							<b:widget id='HTML1' locked='false' title='300x250 AD TOP' type='HTML'>
