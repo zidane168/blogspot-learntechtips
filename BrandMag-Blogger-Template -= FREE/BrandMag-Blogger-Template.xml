@@ -3440,12 +3440,12 @@ div.span-1,div.span-2,div.span-3,div.span-4,div.span-5,div.span-6,div.span-7,div
                       <b:loop values='data:posts' var='post'>
                         <b:if cond='data:post.isDateStart'>
                           <b:if cond='data:post.isFirstPost == &quot;false&quot;'>
-            &lt;/div&gt;&lt;/div&gt;
-          </b:if>
+                            &lt;/div&gt;&lt;/div&gt;
+                          </b:if>
                         </b:if>
                         <b:if cond='data:post.isDateStart'>
-          &lt;div class=&quot;date-outer&quot;&gt;
-        </b:if>
+                          &lt;div class=&quot;date-outer&quot;&gt;
+                        </b:if>
                         <b:if cond='data:post.dateHeader'>
                           <h2 class='date-header'>
                             <span>
@@ -3454,8 +3454,8 @@ div.span-1,div.span-2,div.span-3,div.span-4,div.span-5,div.span-6,div.span-7,div
                           </h2>
                         </b:if>
                         <b:if cond='data:post.isDateStart'>
-          &lt;div class=&quot;date-posts&quot;&gt;
-        </b:if>
+                          &lt;div class=&quot;date-posts&quot;&gt;
+                        </b:if>
                         <div class='post-outer'>
                           <b:include data='post' name='post'/>
                           <b:if cond='data:blog.pageType == &quot;static_page&quot;'>

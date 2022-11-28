@@ -3942,6 +3942,8 @@ body#layout .lowerbar {
               </div>
               <div class='clear'/>
             </b:includable>
+
+            
             <b:includable id='post' var='post'>
               <div class='post hentry'>
                 <b:if cond='data:blog.pageType == &quot;index&quot;'>
