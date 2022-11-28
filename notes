@@ -555,3 +555,30 @@ sora template update by me
 https://learn-tech-tips.blogspot.com/search?q=tips&updated-max=2021-12-31T09:34:00%2B07:00&max-results=100&start=7&by-date=false
 https://learn-tech-tips.blogspot.com/search?updated-max=2022-01-06T22%3A19%3A00%2B07%3A00&max-results=50#PageNo=2
 https://learn-tech-tips.blogspot.com/search?updated-max=2022-11-27T16%3A14%3A00%2B07%3A00&max-results=50#PageNo=3
+
+
+  <script type='text/javascript'>
+//
+                              <![CDATA[
+function bp_thumbnail_resize(image_url,post_title)
+{
+var image_size=300;
+var width_size=180;
+var height_size=180;
+var show_default_thumbnail=true;
+var default_thumbnail="http://2.bp.blogspot.com/-erTXCq61ULM/TmHYAQBZ0GI/AAAAAAAACCs/6cBX54Dn6Gs/s72-c/default.png";
+if(show_default_thumbnail == true && image_url == "") image_url= default_thumbnail;
+image_tag='<img src="'+image_url.replace('/s72-c/','/s'+image_size+'-a/')+'" class="postthumb" alt="'+post_title+'" width="'+width_size+'" height="'+height_size+'"/>';
+if(image_url!="") return image_tag; else return "";
+}
+//]]>
+                            </script>
+
+<a class='image_thumb_zoom' expr:href='data:post.url'>
+    <script type='text/javascript'>
+document.write(bp_thumbnail_resize(&quot;
+      <data:post.thumbnailUrl/>&quot;,&quot;
+      <data:post.title/>&quot;));
+    </script>
+  </a>
+</div>

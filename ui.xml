@@ -248,8 +248,28 @@
 						<div> Blog 1 - Image 1 - Blog 1 Title,  Blog 2 - Image 2 - Blog 2 Title,  </div>
 					</marquee>
 				</div>
-				<!-- Blog -->
-				<div class="flex mt-[10px] space-x-4 ">
+
+				<!-- Blog with Tag -->
+				<b:section class='feature' id='featuremain' preferred='yes'>
+					<b:widget id='HTML2' locked='false' title='Feature Label Area' type='HTML'>
+						<b:includable id='main'>
+							<!-- only display title if it's non-empty -->
+							<b:if cond='data:title != &quot;&quot;'>
+								<h2 class='title'>
+									<data:title/>
+								</h2>
+							</b:if>
+							<div class='widget-content'>
+								<data:content/>
+								// for here for display blog with image thumnail
+							</div>
+							<b:include name='quickedit'/>
+						</b:includable>
+					</b:widget>
+				</b:section>
+
+				<!-- Blog Detail-->
+				<div class="flex mt-[10px] space-x-2 ">
 					<div id="left" class='w-[1200px] bg-gray-200 rounded-lg shadow-lg p-2'>
 						<b:section class='main'  id='post' name='Blog spot' >
 							<b:widget id='Blog1'  title='Blog Posts' type='Blog' version='1'>
@@ -331,7 +351,6 @@
 																<!-- </b:if> -->
 															</b:loop>
 														</div>
-
 														<!-- Date && Author -->
 														<div class='text-sm italic m-[10px] flex justify-between '>
 															<div class="flex space-x-2 items-center ">
@@ -394,7 +413,6 @@
 																</a>
 															</div>
 														</div>
-
 													</div>
 												</b:if>
 												<b:if cond='data:post.isDateStart'>  &lt;div class=&quot;date-posts&quot;&gt;  </b:if>
@@ -420,7 +438,24 @@
 							</b:widget>
 						</b:section>
 					</div>
-					<div id="right" class="bg-gray-200 rounded-lg shadow-lg p-2">
+					<div id="right" class="bg-gray-200 rounded-lg shadow-lg p-2 w-[334px]">
+						<!-- Feature Ads-->
+						<b:section class='FeatureAds' id='FeatureAds' maxwidgets='1' preferred='yes'>
+							<b:widget id='HTML1' locked='false' title='300x250 AD TOP' type='HTML'>
+								<b:includable id='main'>
+									<!-- only display title if it's non-empty -->
+									<b:if cond='data:title != &quot;&quot;'>
+										<h2 class='title'>
+											<data:title/>
+										</h2>
+									</b:if>
+									<div class='widget-content'>
+										<data:content/>
+									</div>
+									<b:include name='quickedit'/>
+								</b:includable>
+							</b:widget>
+						</b:section>
 					</div>
 				</div>
 			</div>
