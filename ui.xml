@@ -265,9 +265,9 @@
 									</b:widget-settings>
 									<b:includable id='main'>
 										<b:if cond='data:title != &quot;&quot;'>
-											<h2>
-												<data:title/>
-											</h2>
+											<div class="w-full bg-[color:var(--orange)]  p-2 text-center text-white uppercase rounded-md ">
+												<a href="/search/label/Tips"> Tips </a>
+											</div> 
 										</b:if>
 										<div class='widget-content popular-posts'>
 											<ul>
@@ -296,8 +296,8 @@
 																<b:if cond='data:post.featuredImage.isResizable or data:post.thumbnail'>
 																	<div class='item-thumbnail'>
 																		<a expr:href='data:post.href' target='_blank'>
-																			<b:with value='data:post.featuredImage.isResizable  ? resizeImage(data:post.featuredImage, 300, &quot;1:1&quot;) : data:post.thumbnail' var='image'>
-																				<img alt='' border='0' expr:src='data:image' />
+																			<b:with value='data:post.featuredImage.isResizable  ? resizeImage(data:post.featuredImage, 200, &quot;1:1&quot;) : data:post.thumbnail' var='image'>
+																				<img alt='' border='0' expr:src='data:image' class='w-[300px] pr-0 rounded-md hover:scale-110 shadow-lg p-2 text-white object-contain object-center' />
 																			</b:with>
 																		</a>
 																	</div>
@@ -354,6 +354,17 @@
 										</div>
 										<div class="bg-gray-100 p-2 mt-[5px] rounded-md">
 											<b:loop values='data:posts' var='post'>
+
+												<b:loop values='data:post.labels' var='label'>
+													<!-- <b:if cond='data:label.isLast == "true"'> -->
+													<div class='hover:scale-110 text-sm text-white font-medium bg-[color:var(--blue)] rounded-md p-2 ml-[-2px]'>
+														<a expr:href='data:label.url' rel='tag noopener noreferrer' target="_blank" >
+															<data:label.name/>
+														</a>
+													</div>
+													<!-- </b:if> -->
+												</b:loop>
+
 												<div class="flex items-center space-x-2 mt-2">
 													<div class="hover:scale-110">
 														<b:with value='data:post.featuredImage.isResizable  ? resizeImage(data:post.featuredImage, 300, &quot;1:1&quot;) : data:post.thumbnail' var='image'>
