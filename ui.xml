@@ -252,9 +252,78 @@
 				<!-- Blog Detail-->
 				<div class="flex mt-[10px] space-x-2 ">
 					<div id="left" class='w-[1100px] bg-gray-200 rounded-lg shadow-lg p-2'>
-
 						<!-- display on home page ONLY -->
-						<b:if cond='data:blog.url == data:blog.homepageUrl'> 
+						<b:if cond='data:blog.url == data:blog.homepageUrl'>
+							
+							<b:section class='feature' id='Popular-Poss' name='Popular Posts' preferred='yes'>
+								<b:widget id='PopularPosts1' locked='false' title='Popular Posts' type='PopularPosts'>
+									<b:widget-settings>
+										<b:widget-setting name='numItemsToShow'>10</b:widget-setting>
+										<b:widget-setting name='showThumbnails'>true</b:widget-setting>
+										<b:widget-setting name='showSnippets'>true</b:widget-setting>
+										<b:widget-setting name='timeRange'>LAST_MONTH</b:widget-setting>
+									</b:widget-settings>
+									<b:includable id='main'>
+										<b:if cond='data:title != &quot;&quot;'>
+											<h2>
+												<data:title/>
+											</h2>
+										</b:if>
+										<div class='widget-content popular-posts'>
+											<ul>
+												<b:loop values='data:posts' var='post'>
+													<li>
+														<b:if cond='!data:showThumbnails'>
+															<b:if cond='!data:showSnippets'>
+																<!-- (1) No snippet/thumbnail -->
+																<a expr:href='data:post.href'>
+																	<data:post.title/>
+																</a>
+																<b:else/>
+																<!-- (2) Show only snippets -->
+																<div class='item-title'>
+																	<a expr:href='data:post.href'>
+																		<data:post.title/>
+																	</a>
+																</div>
+																<div class='item-snippet'>
+																	<data:post.snippet/>
+																</div>
+															</b:if>
+															<b:else/>
+															<!-- (3) Show only thumbnails or (4) Snippets and thumbnails. -->
+															<div expr:class='data:showSnippets ? &quot;item-content&quot; : &quot;item-thumbnail-only&quot;'>
+																<b:if cond='data:post.featuredImage.isResizable or data:post.thumbnail'>
+																	<div class='item-thumbnail'>
+																		<a expr:href='data:post.href' target='_blank'>
+																			<b:with value='data:post.featuredImage.isResizable  ? resizeImage(data:post.featuredImage, 300, &quot;1:1&quot;) : data:post.thumbnail' var='image'>
+																				<img alt='' border='0' expr:src='data:image' />
+																			</b:with>
+																		</a>
+																	</div>
+																</b:if>
+																<div class='item-title'>
+																	<a expr:href='data:post.href'>
+																		<data:post.title/>
+																	</a>
+																</div>
+																<b:if cond='data:showSnippets'>
+																	<div class='item-snippet'>
+																		<data:post.snippet/>
+																	</div>
+																</b:if>
+															</div>
+															<div style='clear: both;'/>
+														</b:if>
+													</li>
+												</b:loop>
+											</ul>
+											<b:include name='quickedit'/>
+										</div>
+									</b:includable>
+								</b:widget>
+							</b:section>
+
 							<b:section class='feature' id='blog-tag' name="Blog Tag" preferred='yes'>
 								<b:widget id='Blog2'  title='Blog Posts' type='Blog' version='1'>
 									<b:widget-settings>
@@ -281,13 +350,15 @@
 									</b:widget-settings>
 									<b:includable id='main' var='data:content'>
 										<div class="w-full bg-[color:var(--orange)]  p-2 text-center text-white uppercase rounded-md ">
-											<a href="/search/label/Tips"> Tips </a> 
+											<a href="/search/label/Tips"> Tips </a>
 										</div>
 										<div class="bg-gray-100 p-2 mt-[5px] rounded-md">
 											<b:loop values='data:posts' var='post'>
 												<div class="flex items-center space-x-2 mt-2">
-													<div class="w-[200px] hover:scale-110">
-														<img class="w-full p-2 shadow-lg rounded-md" expr:src='data:post.thumbnailUrl'/> 
+													<div class="hover:scale-110">
+														<b:with value='data:post.featuredImage.isResizable  ? resizeImage(data:post.featuredImage, 300, &quot;1:1&quot;) : data:post.thumbnail' var='image'>
+															<img class="w-full p-2 shadow-lg rounded-md" expr:src='data:post.thumbnailUrl'/>
+														</b:with>
 													</div>
 													<div>
 														<a class="hover:text-[color:var(--blue)]" expr:href="data:post.url" target="_blank" rel='noopener noreferrer'>
@@ -299,9 +370,8 @@
 										</div>
 									</b:includable>
 								</b:widget>
-							</b:section> 
+							</b:section>
 						</b:if>
-
 						<b:section class='main'  id='blog-detail' name='Blog Detail' >
 							<b:widget id='Blog1'  title='Blog Posts' type='Blog' version='1'>
 								<b:widget-settings>
