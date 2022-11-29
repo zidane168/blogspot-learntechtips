@@ -582,3 +582,47 @@ document.write(bp_thumbnail_resize(&quot;
     </script>
   </a>
 </div>
+
+
+
+
+
+https://www.templateify.com/2022/10/nurify-blogger-template.html
+
+
+
+<b:if cond='data:content contains &quot;getPosts&quot;
+
+
+
+show more / load more
+pagination
+display post with tags
+ad
+mega menu
+background impress
+
+
+
+
+<b:includable id='ajaxPagination'>
+                  <!-- Ajax Pagination on Index -->
+                  <div class='blog-pager' id='blog-pager'>
+                    <b:if cond='data:olderPageUrl'>
+                      <a class='blog-pager-older-link load-more' expr:data-load='data:olderPageUrl.canonical' href='#' id='devify-pro-load-more-link'>
+                        <b:include data='{ message: &quot;loadMorePosts&quot; }' name='theme-custom-lang'/>
+                      </a>
+                      <span class='loading'>
+                        <div class='loader'/>
+                      </span>
+                      <span class='no-more load-more'>
+                        <b:include data='{ message: &quot;noMorePosts&quot; }' name='theme-custom-lang'/>
+                      </span>
+                      <b:else/>
+                      <span class='no-more load-more show'>
+                        <b:include data='{ message: &quot;noMorePosts&quot; }' name='theme-custom-lang'/>
+                      </span>
+                    </b:if>
+                  </div>
+                </b:includable>
+
