@@ -230,7 +230,6 @@
 							</a>
 						</div>
 					</div>
-
 					<b:section class='menu' id='main-menu' maxwidgets='1' name='Main Menu' showaddelement='yes'>
 						<b:widget id='BlogSearch1' locked='false' title='Search This Blog' type='BlogSearch'>
 							<b:includable id='main'>
@@ -240,7 +239,7 @@
 											<b:attr cond='not data:view.isPreview' name='target' value='_top'/>
 											<div class="absolute top-[15px] right-[10px] flex space-x-2 items-center">
 												<input autocomplete='off' class='w-[250px] rounded-md p-2 h-[35px]' expr:value='data:view.isSearch ? data:view.search.query.escaped : &quot;&quot;' name='q' size='10' title='search' type='text'/>
-												<button class='bg-black text-white px-4 py-2 rounded-md' expr:value='data:messages.search' title='search' type='submit'> Search </button>
+												<button class='bg-[color:var(--orange)] text-white px-4 py-2 rounded-md' expr:value='data:messages.search' title='search' type='submit'> Search </button>
 											</div>
 										</form>
 									</div>
@@ -267,32 +266,30 @@
 					</marquee>
 				</div>
 				<!-- Main Tag -->
-				<!-- Blog Detail-->
 				<div class="flex mt-[10px] space-x-2 ">
 					<div id="left" class='w-[1100px] bg-gray-200 rounded-lg shadow-lg p-2'>
 						<!-- display on home page ONLY -->
 						<!-- <b:if cond='data:blog.url == data:blog.homepageUrl OR '> -->
-						<b:if cond='data:blog.pageType == "index" and data:blog.searchQuery'>
-							Search query
-							<b:elseif cond='data:blog.pageType == "index" and data:blog.searchLabel' />
-								Search Label
-							<data:blog.searchLabel />
-							<b:elseif cond='data:blog.pageType != "item"' />
-							<b:section class='feature' id='Popular-Poss' name='Popular Posts' preferred='yes'>
-								<b:widget id='PopularPosts1' locked='false' title='Popular Posts' type='PopularPosts'>
-									<b:widget-settings>
-										<b:widget-setting name='numItemsToShow'>10</b:widget-setting>
-										<b:widget-setting name='showThumbnails'>true</b:widget-setting>
-										<b:widget-setting name='showSnippets'>true</b:widget-setting>
-										<b:widget-setting name='timeRange'>LAST_MONTH</b:widget-setting>
-									</b:widget-settings>
-									<b:includable id='main'>
+						<b:section class='feature' id='Search-result' name='Search Results' preferred='yes'>
+							<b:widget id='PopularPosts2' locked='false' title='Search Results' type='PopularPosts'>
+								<b:widget-settings>
+									<b:widget-setting name='numItemsToShow'>10</b:widget-setting>
+									<b:widget-setting name='showThumbnails'>true</b:widget-setting>
+									<b:widget-setting name='showSnippets'>true</b:widget-setting>
+									<b:widget-setting name='timeRange'>LAST_MONTH</b:widget-setting>
+								</b:widget-settings>
+								<b:includable id='main'>
+									<b:if cond='data:blog.pageType != "item" and (!data:blog.searchQuery and !data:blog.searchLabel)'>
+										<!-- not detail page add this title -->
 										<b:if cond='data:title != &quot;&quot;'>
 											<div class="w-full bg-[color:var(--orange)]  p-2 text-center text-white uppercase rounded-md ">
 												<a href="/search/label/Tips"> Tips </a>
 											</div>
 										</b:if>
-										<div class='widget-content popular-posts'>
+									</b:if>
+									<div class='widget-content popular-posts'>
+										<b:if cond='(data:blog.pageType == "index") and (data:blog.searchQuery or data:blog.searchLabel)'>
+											<!-- search + label -->
 											<ul>
 												<b:loop values='data:posts' var='post'>
 													<li>
@@ -341,149 +338,151 @@
 													</li>
 												</b:loop>
 											</ul>
-											<b:include name='quickedit'/>
-										</div>
-									</b:includable>
-								</b:widget>
-							</b:section>
-							<div class="flex space-x-2 bg-white shadow-lg rounded-md p-2">
-								<div class="w-1/2">
-									<b:section class='feature' id='blog-tag' name="Blog Tag" preferred='yes'>
-										<b:widget id='Blog2'  title='Blog Posts' type='Blog' version='1'>
-											<b:widget-settings>
-												<b:widget-setting name='showDateHeader'>true</b:widget-setting>
-												<b:widget-setting name='style.textcolor'>#ffffff</b:widget-setting>
-												<b:widget-setting name='showShareButtons'>true</b:widget-setting>
-												<b:widget-setting name='showCommentLink'>true</b:widget-setting>
-												<b:widget-setting name='style.urlcolor'>#ffffff</b:widget-setting>
-												<b:widget-setting name='showAuthor'>true</b:widget-setting>
-												<b:widget-setting name='style.linkcolor'>#ffffff</b:widget-setting>
-												<b:widget-setting name='style.unittype'>TextAndImage</b:widget-setting>
-												<b:widget-setting name='style.bgcolor'>#ffffff</b:widget-setting>
-												<b:widget-setting name='reactionsLabel'/>
-												<b:widget-setting name='showAuthorProfile'>true</b:widget-setting>
-												<b:widget-setting name='style.layout'>1x1</b:widget-setting>
-												<b:widget-setting name='showLabels'>true</b:widget-setting>
-												<b:widget-setting name='showLocation'>true</b:widget-setting>
-												<b:widget-setting name='showTimestamp'>true</b:widget-setting>
-												<b:widget-setting name='postsPerAd'>1</b:widget-setting>
-												<b:widget-setting name='showBacklinks'>false</b:widget-setting>
-												<b:widget-setting name='style.bordercolor'>#ffffff</b:widget-setting>
-												<b:widget-setting name='showInlineAds'>true</b:widget-setting>
-												<b:widget-setting name='showReactions'>false</b:widget-setting>
-											</b:widget-settings>
-											<b:includable id='main' var='data:content'>
-												<div class="w-full bg-[color:var(--orange)]  p-2 text-center text-white uppercase rounded-md ">
-													<a href="/search/label/Tips"> Tips </a>
-												</div>
-												<div class="bg-gray-100 p-2 mt-[5px] rounded-md">
-													<b:loop values='data:posts' var='post'>
-														<b:loop values='data:post.labels' var='label'>
-															<b:if cond='data:label.name == "Tips"'>
-																<div class="flex items-center space-x-2 mt-2">
-																	<div class="hover:scale-110 hover:cursor-pointer">
-																		<b:with value='data:post.featuredImage.isResizable  ? resizeImage(data:post.featuredImage, 100, &quot;1:1&quot;) : data:post.thumbnail' var='image'>
-																			<img class="w-full p-2 shadow-lg rounded-md" expr:src='data:post.thumbnailUrl'/>
-																		</b:with>
-																	</div>
-																	<div>
-																		<a class="hover:text-[color:var(--blue)]" expr:href="data:post.url" target="_blank" rel='noopener noreferrer'>
-																			<data:post.title />
-																		</a>
-																	</div>
+										</b:if>
+										<b:include name='quickedit'/>
+									</div>
+								</b:includable>
+							</b:widget>
+						</b:section>
+						<div class="flex space-x-2 bg-white shadow-lg rounded-md p-2">
+							<div class="w-1/2">
+								<b:section class='feature' id='blog-tag' name="Blog Tag" preferred='yes'>
+									<b:widget id='Blog2'  title='Blog Posts' type='Blog' version='1'>
+										<b:widget-settings>
+											<b:widget-setting name='showDateHeader'>true</b:widget-setting>
+											<b:widget-setting name='style.textcolor'>#ffffff</b:widget-setting>
+											<b:widget-setting name='showShareButtons'>true</b:widget-setting>
+											<b:widget-setting name='showCommentLink'>true</b:widget-setting>
+											<b:widget-setting name='style.urlcolor'>#ffffff</b:widget-setting>
+											<b:widget-setting name='showAuthor'>true</b:widget-setting>
+											<b:widget-setting name='style.linkcolor'>#ffffff</b:widget-setting>
+											<b:widget-setting name='style.unittype'>TextAndImage</b:widget-setting>
+											<b:widget-setting name='style.bgcolor'>#ffffff</b:widget-setting>
+											<b:widget-setting name='reactionsLabel'/>
+											<b:widget-setting name='showAuthorProfile'>true</b:widget-setting>
+											<b:widget-setting name='style.layout'>1x1</b:widget-setting>
+											<b:widget-setting name='showLabels'>true</b:widget-setting>
+											<b:widget-setting name='showLocation'>true</b:widget-setting>
+											<b:widget-setting name='showTimestamp'>true</b:widget-setting>
+											<b:widget-setting name='postsPerAd'>1</b:widget-setting>
+											<b:widget-setting name='showBacklinks'>false</b:widget-setting>
+											<b:widget-setting name='style.bordercolor'>#ffffff</b:widget-setting>
+											<b:widget-setting name='showInlineAds'>true</b:widget-setting>
+											<b:widget-setting name='showReactions'>false</b:widget-setting>
+										</b:widget-settings>
+										<b:includable id='main' var='data:content'>
+											<div class="w-full bg-[color:var(--orange)]  p-2 text-center text-white uppercase rounded-md ">
+												<a href="/search/label/Tips"> Tips </a>
+											</div>
+											<div class="bg-gray-100 p-2 mt-[5px] rounded-md">
+												<b:loop values='data:posts' var='post'>
+													<b:loop values='data:post.labels' var='label'>
+														<b:if cond='data:label.name == "Tips"'>
+															<div class="flex items-center space-x-2 mt-2">
+																<div class="hover:scale-110 hover:cursor-pointer">
+																	<b:with value='data:post.featuredImage.isResizable  ? resizeImage(data:post.featuredImage, 100, &quot;1:1&quot;) : data:post.thumbnail' var='image'>
+																		<img class="w-full p-2 shadow-lg rounded-md" expr:src='data:post.thumbnailUrl'/>
+																	</b:with>
 																</div>
-															</b:if>
-														</b:loop>
-													</b:loop>
-												</div>
-											</b:includable>
-										</b:widget>
-									</b:section>
-								</div>
-								<div class="w-1/2">
-									<!-- Command -->
-									<b:section class='feature' id='blog-tag-tutorial' name="Blog (Command)" preferred='yes'>
-										<b:widget id='Blog3'  title='Blog Posts (Command)' type='Blog' version='1'>
-											<b:widget-settings>
-												<b:widget-setting name='showDateHeader'>true</b:widget-setting>
-												<b:widget-setting name='style.textcolor'>#ffffff</b:widget-setting>
-												<b:widget-setting name='showShareButtons'>true</b:widget-setting>
-												<b:widget-setting name='showCommentLink'>true</b:widget-setting>
-												<b:widget-setting name='style.urlcolor'>#ffffff</b:widget-setting>
-												<b:widget-setting name='showAuthor'>true</b:widget-setting>
-												<b:widget-setting name='style.linkcolor'>#ffffff</b:widget-setting>
-												<b:widget-setting name='style.unittype'>TextAndImage</b:widget-setting>
-												<b:widget-setting name='style.bgcolor'>#ffffff</b:widget-setting>
-												<b:widget-setting name='reactionsLabel'/>
-												<b:widget-setting name='showAuthorProfile'>true</b:widget-setting>
-												<b:widget-setting name='style.layout'>1x1</b:widget-setting>
-												<b:widget-setting name='showLabels'>true</b:widget-setting>
-												<b:widget-setting name='showLocation'>true</b:widget-setting>
-												<b:widget-setting name='showTimestamp'>true</b:widget-setting>
-												<b:widget-setting name='postsPerAd'>1</b:widget-setting>
-												<b:widget-setting name='showBacklinks'>false</b:widget-setting>
-												<b:widget-setting name='style.bordercolor'>#ffffff</b:widget-setting>
-												<b:widget-setting name='showInlineAds'>true</b:widget-setting>
-												<b:widget-setting name='showReactions'>false</b:widget-setting>
-											</b:widget-settings>
-											<b:includable id='main' var='data:content'>
-												<div class="w-full bg-[color:var(--orange)]  p-2 text-center text-white uppercase rounded-md ">
-													<a href="/search/label/Command"> Command </a>
-												</div>
-												<div class="bg-gray-100 p-2 mt-[5px] rounded-md">
-													<b:loop values='data:posts' var='post'>
-														<b:loop values='data:post.labels' var='label'>
-															<b:if cond='data:label.name == "Command"'>
-																<div class="flex items-center space-x-2 mt-2">
-																	<div class="hover:scale-110 hover:cursor-pointer">
-																		<b:with value='data:post.featuredImage.isResizable  ? resizeImage(data:post.featuredImage, 100, &quot;1:1&quot;) : data:post.thumbnail' var='image'>
-																			<img class="w-full p-2 shadow-lg rounded-md" expr:src='data:post.thumbnailUrl'/>
-																		</b:with>
-																	</div>
-																	<div>
-																		<a class="hover:text-[color:var(--blue)]" expr:href="data:post.url" target="_blank" rel='noopener noreferrer'>
-																			<data:post.title />
-																		</a>
-																	</div>
+																<div>
+																	<a class="hover:text-[color:var(--blue)]" expr:href="data:post.url" target="_blank" rel='noopener noreferrer'>
+																		<data:post.title />
+																	</a>
 																</div>
-															</b:if>
-														</b:loop>
+															</div>
+														</b:if>
 													</b:loop>
-												</div>
-											</b:includable>
-										</b:widget>
-									</b:section>
-								</div>
+												</b:loop>
+											</div>
+										</b:includable>
+									</b:widget>
+								</b:section>
 							</div>
-							<b:elseif cond='data:blog.pageType == &quot;item&quot;' />
-							<b:section class='main'  id='blog-detail' name='Blog Detail' >
-								<b:widget id='Blog1'  title='Blog Posts' type='Blog' version='1'>
-									<b:widget-settings>
-										<b:widget-setting name='showDateHeader'>true</b:widget-setting>
-										<b:widget-setting name='style.textcolor'>#ffffff</b:widget-setting>
-										<b:widget-setting name='showShareButtons'>true</b:widget-setting>
-										<b:widget-setting name='showCommentLink'>true</b:widget-setting>
-										<b:widget-setting name='style.urlcolor'>#ffffff</b:widget-setting>
-										<b:widget-setting name='showAuthor'>true</b:widget-setting>
-										<b:widget-setting name='style.linkcolor'>#ffffff</b:widget-setting>
-										<b:widget-setting name='style.unittype'>TextAndImage</b:widget-setting>
-										<b:widget-setting name='style.bgcolor'>#ffffff</b:widget-setting>
-										<b:widget-setting name='reactionsLabel'/>
-										<b:widget-setting name='showAuthorProfile'>true</b:widget-setting>
-										<b:widget-setting name='style.layout'>1x1</b:widget-setting>
-										<b:widget-setting name='showLabels'>true</b:widget-setting>
-										<b:widget-setting name='showLocation'>true</b:widget-setting>
-										<b:widget-setting name='showTimestamp'>true</b:widget-setting>
-										<b:widget-setting name='postsPerAd'>1</b:widget-setting>
-										<b:widget-setting name='showBacklinks'>false</b:widget-setting>
-										<b:widget-setting name='style.bordercolor'>#ffffff</b:widget-setting>
-										<b:widget-setting name='showInlineAds'>true</b:widget-setting>
-										<b:widget-setting name='showReactions'>false</b:widget-setting>
-									</b:widget-settings>
-									<b:includable id='main' var='top'>
-										<!-- posts -->
-										<div class='blog-posts hfeed'>
-											<b:include data='top' name='status-message'/>
+							<div class="w-1/2">
+								<!-- Command -->
+								<b:section class='feature' id='blog-tag-tutorial' name="Blog (Command)" preferred='yes'>
+									<b:widget id='Blog3'  title='Blog Posts (Command)' type='Blog' version='1'>
+										<b:widget-settings>
+											<b:widget-setting name='showDateHeader'>true</b:widget-setting>
+											<b:widget-setting name='style.textcolor'>#ffffff</b:widget-setting>
+											<b:widget-setting name='showShareButtons'>true</b:widget-setting>
+											<b:widget-setting name='showCommentLink'>true</b:widget-setting>
+											<b:widget-setting name='style.urlcolor'>#ffffff</b:widget-setting>
+											<b:widget-setting name='showAuthor'>true</b:widget-setting>
+											<b:widget-setting name='style.linkcolor'>#ffffff</b:widget-setting>
+											<b:widget-setting name='style.unittype'>TextAndImage</b:widget-setting>
+											<b:widget-setting name='style.bgcolor'>#ffffff</b:widget-setting>
+											<b:widget-setting name='reactionsLabel'/>
+											<b:widget-setting name='showAuthorProfile'>true</b:widget-setting>
+											<b:widget-setting name='style.layout'>1x1</b:widget-setting>
+											<b:widget-setting name='showLabels'>true</b:widget-setting>
+											<b:widget-setting name='showLocation'>true</b:widget-setting>
+											<b:widget-setting name='showTimestamp'>true</b:widget-setting>
+											<b:widget-setting name='postsPerAd'>1</b:widget-setting>
+											<b:widget-setting name='showBacklinks'>false</b:widget-setting>
+											<b:widget-setting name='style.bordercolor'>#ffffff</b:widget-setting>
+											<b:widget-setting name='showInlineAds'>true</b:widget-setting>
+											<b:widget-setting name='showReactions'>false</b:widget-setting>
+										</b:widget-settings>
+										<b:includable id='main' var='data:content'>
+											<div class="w-full bg-[color:var(--orange)]  p-2 text-center text-white uppercase rounded-md ">
+												<a href="/search/label/Command"> Command </a>
+											</div>
+											<div class="bg-gray-100 p-2 mt-[5px] rounded-md">
+												<b:loop values='data:posts' var='post'>
+													<b:loop values='data:post.labels' var='label'>
+														<b:if cond='data:label.name == "Command"'>
+															<div class="flex items-center space-x-2 mt-2">
+																<div class="hover:scale-110 hover:cursor-pointer">
+																	<b:with value='data:post.featuredImage.isResizable  ? resizeImage(data:post.featuredImage, 100, &quot;1:1&quot;) : data:post.thumbnail' var='image'>
+																		<img class="w-full p-2 shadow-lg rounded-md" expr:src='data:post.thumbnailUrl'/>
+																	</b:with>
+																</div>
+																<div>
+																	<a class="hover:text-[color:var(--blue)]" expr:href="data:post.url" target="_blank" rel='noopener noreferrer'>
+																		<data:post.title />
+																	</a>
+																</div>
+															</div>
+														</b:if>
+													</b:loop>
+												</b:loop>
+											</div>
+										</b:includable>
+									</b:widget>
+								</b:section>
+							</div>
+						</div>
+						<b:section class='main'  id='blog-detail' name='Blog Detail' >
+							<b:widget id='Blog1'  title='Blog Posts' type='Blog' version='1'>
+								<b:widget-settings>
+									<b:widget-setting name='showDateHeader'>true</b:widget-setting>
+									<b:widget-setting name='style.textcolor'>#ffffff</b:widget-setting>
+									<b:widget-setting name='showShareButtons'>true</b:widget-setting>
+									<b:widget-setting name='showCommentLink'>true</b:widget-setting>
+									<b:widget-setting name='style.urlcolor'>#ffffff</b:widget-setting>
+									<b:widget-setting name='showAuthor'>true</b:widget-setting>
+									<b:widget-setting name='style.linkcolor'>#ffffff</b:widget-setting>
+									<b:widget-setting name='style.unittype'>TextAndImage</b:widget-setting>
+									<b:widget-setting name='style.bgcolor'>#ffffff</b:widget-setting>
+									<b:widget-setting name='reactionsLabel'/>
+									<b:widget-setting name='showAuthorProfile'>true</b:widget-setting>
+									<b:widget-setting name='style.layout'>1x1</b:widget-setting>
+									<b:widget-setting name='showLabels'>true</b:widget-setting>
+									<b:widget-setting name='showLocation'>true</b:widget-setting>
+									<b:widget-setting name='showTimestamp'>true</b:widget-setting>
+									<b:widget-setting name='postsPerAd'>1</b:widget-setting>
+									<b:widget-setting name='showBacklinks'>false</b:widget-setting>
+									<b:widget-setting name='style.bordercolor'>#ffffff</b:widget-setting>
+									<b:widget-setting name='showInlineAds'>true</b:widget-setting>
+									<b:widget-setting name='showReactions'>false</b:widget-setting>
+								</b:widget-settings>
+								<b:includable id='main' var='top'>
+									<!-- posts -->
+									<div class='blog-posts hfeed'>
+										<b:include data='top' name='status-message'/>
+										<b:if cond='data:blog.pageType == "item"' >
+											<!-- if detail page will show -->
 											<b:loop values='data:posts' var='post'>
 												<hr />
 												<h1 class="mt-[5px] text-xl bg-[color:var(--blue)] text-white p-4 shadow-lg rounded-md">
@@ -590,8 +589,8 @@
 																	</svg>
 																</div>
 																<div>
-																		Author:
-																	</div>
+																					Author:
+																				</div>
 																<a class="hover:text-lg font-bold"  href="https://learn-tech-tips.blogspot.com/p/about_83.html" target="_blank" rel="noopener noreferrer">
 																	<data:post.author/>
 																</a>
@@ -613,12 +612,12 @@
 														</b:if>
 														<!-- item  -->
 														<!-- <b:if cond='data:blog.pageType == &quot;item&quot;'>
-																<b:if cond='data:post.showThreadedComments'>
-																	<b:include data='post' name='threaded_comments'/>
-																	<b:else/>
-																	<b:include data='post' name='comments'/>
-																</b:if>
-															</b:if> -->
+																			<b:if cond='data:post.showThreadedComments'>
+																				<b:include data='post' name='threaded_comments'/>
+																				<b:else/>
+																				<b:include data='post' name='comments'/>
+																			</b:if>
+																		</b:if> -->
 														<!-- Ad  -->
 														<b:if cond='data:post.includeAd'>
 															<b:if cond='data:post.isFirstPost'>
@@ -642,57 +641,57 @@
 												</b:if>
 											</b:loop>
 											<b:if cond='data:numPosts != 0'>  &lt;/div&gt;&lt;/div&gt; </b:if>
+										</b:if>
+									</div>
+									<b:if cond='data:blog.pageType != &quot;item&quot;'>
+										<!-- navigation -->
+										<b:include name='nextprev'/>
+									</b:if>
+								</b:includable>
+								<b:includable id='shareButtons' var='post'>
+									<b:if cond='data:top.showEmailButton'>
+										<a class='goog-inline-block share-button sb-email' expr:href='data:post.sharePostUrl + &quot;&amp;target=email&quot;' expr:title='data:top.emailThisMsg' target='_blank'>
+											<span class='share-button-link-text'>
+												<data:top.emailThisMsg/>
+											</span>
+										</a>
+									</b:if>
+									<b:if cond='data:top.showBlogThisButton'>
+										<a class='goog-inline-block share-button sb-blog' expr:href='data:post.sharePostUrl + &quot;&amp;target=blog&quot;' expr:onclick='&quot;window.open(this.href, \&quot;_blank\&quot;, \&quot;height=270,width=475\&quot;); return false;&quot;' expr:title='data:top.blogThisMsg' target='_blank'>
+											<span class='share-button-link-text'>
+												<data:top.blogThisMsg/>
+											</span>
+										</a>
+									</b:if>
+									<b:if cond='data:top.showTwitterButton'>
+										<a class='goog-inline-block share-button sb-twitter' expr:href='data:post.sharePostUrl + &quot;&amp;target=twitter&quot;' expr:title='data:top.shareToTwitterMsg' target='_blank'>
+											<span class='share-button-link-text'>
+												<data:top.shareToTwitterMsg/>
+											</span>
+										</a>
+									</b:if>
+									<b:if cond='data:top.showFacebookButton'>
+										<a class='goog-inline-block share-button sb-facebook' expr:href='data:post.sharePostUrl + &quot;&amp;target=facebook&quot;' expr:onclick='&quot;window.open(this.href, \&quot;_blank\&quot;, \&quot;height=430,width=640\&quot;); return false;&quot;' expr:title='data:top.shareToFacebookMsg' target='_blank'>
+											<span class='share-button-link-text'>
+												<data:top.shareToFacebookMsg/>
+											</span>
+										</a>
+									</b:if>
+									<b:if cond='data:top.showOrkutButton'>
+										<a class='goog-inline-block share-button sb-orkut' expr:href='data:post.sharePostUrl + &quot;&amp;target=orkut&quot;' expr:title='data:top.shareToOrkutMsg' target='_blank'>
+											<span class='share-button-link-text'>
+												<data:top.shareToOrkutMsg/>
+											</span>
+										</a>
+									</b:if>
+									<b:if cond='data:top.showDummy'>
+										<div class='goog-inline-block dummy-container'>
+											<data:post.dummyTag/>
 										</div>
-										<b:if cond='data:blog.pageType != &quot;item&quot;'>
-											<!-- navigation -->
-											<b:include name='nextprev'/>
-										</b:if>
-									</b:includable>
-									<b:includable id='shareButtons' var='post'>
-										<b:if cond='data:top.showEmailButton'>
-											<a class='goog-inline-block share-button sb-email' expr:href='data:post.sharePostUrl + &quot;&amp;target=email&quot;' expr:title='data:top.emailThisMsg' target='_blank'>
-												<span class='share-button-link-text'>
-													<data:top.emailThisMsg/>
-												</span>
-											</a>
-										</b:if>
-										<b:if cond='data:top.showBlogThisButton'>
-											<a class='goog-inline-block share-button sb-blog' expr:href='data:post.sharePostUrl + &quot;&amp;target=blog&quot;' expr:onclick='&quot;window.open(this.href, \&quot;_blank\&quot;, \&quot;height=270,width=475\&quot;); return false;&quot;' expr:title='data:top.blogThisMsg' target='_blank'>
-												<span class='share-button-link-text'>
-													<data:top.blogThisMsg/>
-												</span>
-											</a>
-										</b:if>
-										<b:if cond='data:top.showTwitterButton'>
-											<a class='goog-inline-block share-button sb-twitter' expr:href='data:post.sharePostUrl + &quot;&amp;target=twitter&quot;' expr:title='data:top.shareToTwitterMsg' target='_blank'>
-												<span class='share-button-link-text'>
-													<data:top.shareToTwitterMsg/>
-												</span>
-											</a>
-										</b:if>
-										<b:if cond='data:top.showFacebookButton'>
-											<a class='goog-inline-block share-button sb-facebook' expr:href='data:post.sharePostUrl + &quot;&amp;target=facebook&quot;' expr:onclick='&quot;window.open(this.href, \&quot;_blank\&quot;, \&quot;height=430,width=640\&quot;); return false;&quot;' expr:title='data:top.shareToFacebookMsg' target='_blank'>
-												<span class='share-button-link-text'>
-													<data:top.shareToFacebookMsg/>
-												</span>
-											</a>
-										</b:if>
-										<b:if cond='data:top.showOrkutButton'>
-											<a class='goog-inline-block share-button sb-orkut' expr:href='data:post.sharePostUrl + &quot;&amp;target=orkut&quot;' expr:title='data:top.shareToOrkutMsg' target='_blank'>
-												<span class='share-button-link-text'>
-													<data:top.shareToOrkutMsg/>
-												</span>
-											</a>
-										</b:if>
-										<b:if cond='data:top.showDummy'>
-											<div class='goog-inline-block dummy-container'>
-												<data:post.dummyTag/>
-											</div>
-										</b:if>
-									</b:includable>
-								</b:widget>
-							</b:section>
-						</b:if>
+									</b:if>
+								</b:includable>
+							</b:widget>
+						</b:section>
 					</div>
 					<div id="right" class="bg-gray-200 rounded-lg shadow-lg p-2 w-[320px]">
 						<!-- Feature Ads-->

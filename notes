@@ -724,3 +724,11 @@ define variable for
       body {
         min-width: $(content.width);
       }
+
+
+
+
+
+
+id must ======== type
+       <b:widget id='PopularPosts2' locked='false' title='Search Results' type='PopularPosts'> 
