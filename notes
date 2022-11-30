@@ -626,3 +626,81 @@ background impress
                   </div>
                 </b:includable>
 
+
+
+
+
+
+
+
+
+                <b:if cond='data:blog.pageType == &quot;archive&quot;'>
+                                    <b:if cond='data:post.thumbnailUrl'>
+                                        <div class='post-home-image'>
+                                            <span class='post-labels'>
+                                                <b:if cond='data:post.labels'>
+                                                    <i class='fa fa-folder-open-o'/>
+                                                    <b:loop values='data:post.labels' var='label'>
+                                                        <b:if cond='data:label.isLast == &quot;true&quot;'>
+                                                            <a expr:href='data:label.url' rel='tag'>
+                                                                <data:label.name/>
+                                                            </a>
+                                                        </b:if>
+                                                    </b:loop>
+                                                </b:if>
+                                            </span>
+                                            <div class='post-thumb'>
+               &lt;a href=&#39;
+                                                <data:post.url/>&#39; style=&#39;background:url(
+                                                <data:post.thumbnailUrl/>) no-repeat center center;background-size:cover&#39;&gt;&lt;/a&gt;
+                                            </div>
+                                        </div>
+                                        <b:else/>
+                                        <b:if cond='data:post.firstImageUrl'>
+                                            <div class='post-home-image'>
+                                                <span class='post-labels'>
+                                                    <b:if cond='data:post.labels'>
+                                                        <i class='fa fa-folder-open-o'/>
+                                                        <b:loop values='data:post.labels' var='label'>
+                                                            <b:if cond='data:label.isLast == &quot;true&quot;'>
+                                                                <a expr:href='data:label.url' rel='tag'>
+                                                                    <data:label.name/>
+                                                                </a>
+                                                            </b:if>
+                                                        </b:loop>
+                                                    </b:if>
+                                                </span>
+                                                <div class='post-thumb'>
+                  &lt;a href=&#39;
+                                                    <data:post.url/>&#39; style=&#39;background:url(
+                                                    <data:post.firstImageUrl/>) no-repeat center center;background-size:cover&#39;&gt;&lt;/a&gt;
+                                                </div>
+                                            </div>
+                                            <b:else/>
+                                            <div class='post-home-image'>
+                                                <span class='post-labels'>
+                                                    <b:if cond='data:post.labels'>
+                                                        <i class='fa fa-folder-open-o'/>
+                                                        <b:loop values='data:post.labels' var='label'>
+                                                            <b:if cond='data:label.isLast == &quot;true&quot;'>
+                                                                <a expr:href='data:label.url' rel='tag'>
+                                                                    <data:label.name/>
+                                                                </a>
+                                                            </b:if>
+                                                        </b:loop>
+                                                    </b:if>
+                                                </span>
+                                                <div class='post-thumb'>
+               &lt;a href=&#39;
+                                                    <data:post.url/>&#39; style=&#39;background:url(http://2.bp.blogspot.com/-IO-XEI1LgEs/VmPNKFp0BhI/AAAAAAAACOg/_JrYHMBXV5w/s1600-r/nothumb.jpg) no-repeat center center;background-size:cover&#39;&gt;&lt;/a&gt;
+                                                </div>
+                                            </div>
+                                        </b:if>
+                                    </b:if>
+                                </b:if>
+
+
+
+
+
+                                "sora template bi mo72 hin2h khi chinh sua them so luong hien thi post"

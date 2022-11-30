@@ -51,7 +51,7 @@
         <b:if cond='data:blog.pageType == &quot;index&quot;'>
             <meta content='Learn Tech Tips blogspot provide you a tips and tricks for development skill, include: C#, C++, PHP, CakePHP, Tailwind CSS, Gaming, Photoshop, Android, MacOS System' name='description'/>
         </b:if>
-        <meta content='C#, PHP, CakePHP, C++, dotnet, android, IOS, macos, window' name='keywords'/>
+        <meta content='C#, PHP, CakePHP, Tailwind CSS, BlockChain, NodeJS, NextJS, NestJS, C++, Dotnet, Android, IOS, macos, window' name='keywords'/>
         <!-- Description and Keywords (end) -->
         <b:if cond='data:blog.pageType == &quot;item&quot;'>
             <meta expr:content='data:blog.pageName' property='og:title'/>
@@ -3035,7 +3035,7 @@ body#layout .lowerbar {
                             <script type='text/javascript'>
               //
                                 <![CDATA[
-              var perPage = 7;
+              var perPage = 20;
               //]]>
                             </script>
                             <b:else/>
@@ -3310,7 +3310,7 @@ body#layout .lowerbar {
                 <div class='header-search'>
                     <li>
                         <a class='search'>
-                            <form action='/search/max-results=7' method='get'>
+                            <form action='/search/max-results=20' method='get'>
                                 <input id='s' name='q' placeholder='Type and hit enter...' type='text'/>
                             </form>
                         </a>
