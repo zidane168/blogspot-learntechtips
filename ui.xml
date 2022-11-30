@@ -22,9 +22,9 @@
 		</title>
 		<!-- Description and Keywords (start) -->
 		<b:if cond='data:blog.pageType == &quot;index&quot;'>
-			<meta content='Learn Tech Tips blogspot provide you a tips and tricks for it development skill, include: C#, C++, PHP, Gaming, Photoshop, Android, MacOS System' name='description'/>
+			<meta content='Learn Tech Tips blogspot provide you a tips and tricks for development skill, include: C#, C++, PHP, Gaming, NodeJS, NextJS, Tailwind CSS, Bootstrap, Photoshop, Android, MacOS System' name='description'/>
 		</b:if>
-		<meta content='C#, PHP, CakePHP, C++, dotnet, android, IOS, macos, window' name='keywords'/>
+		<meta content='C#, PHP, CakePHP, C++, Laravel, dotnet, android, IOS, macos, window' name='keywords'/>
 		<b:if cond='data:blog.pageType == &quot;item&quot;'>
 			<meta expr:content='data:blog.pageName' property='og:title'/>
 			<meta expr:content='data:blog.canonicalUrl' property='og:url'/>
@@ -96,13 +96,13 @@
 						<b:widget-settings>
 							<b:widget-setting name='link-3'>https://learn-tech-tips.blogspot.com/p/php-cakephp-20-codesnippet.html</b:widget-setting>
 							<b:widget-setting name='sorting'>NONE</b:widget-setting>
-							<b:widget-setting name='text-1'>🧑🏽‍🎨 Android Snippet</b:widget-setting>
+							<b:widget-setting name='text-1'>🎨 Android Snippet</b:widget-setting>
 							<b:widget-setting name='link-1'>https://learn-tech-tips.blogspot.com/p/android-code-snippet.html</b:widget-setting>
 							<b:widget-setting name='text-0'>👋 Hello, nice to meet you!!! I am Zidane 👋</b:widget-setting>
 							<b:widget-setting name='link-2'>https://learn-tech-tips.blogspot.com/p/c-code-snipet.html</b:widget-setting>
-							<b:widget-setting name='text-3'>🧑🏽‍🎨   Cakephp 2+ CodeSnippet</b:widget-setting>
+							<b:widget-setting name='text-3'>🎨   Cakephp 2+ CodeSnippet</b:widget-setting>
 							<b:widget-setting name='link-0'>https://learn-tech-tips.blogspot.com/p/about_83.html</b:widget-setting>
-							<b:widget-setting name='text-2'>🧑🏽‍🎨 C# Code Snippet</b:widget-setting>
+							<b:widget-setting name='text-2'>🎨 C# Code Snippet</b:widget-setting>
 						</b:widget-settings>
 						<b:includable id='main'>
 							<div class="flex space-x-2 justify-around uppercase">
@@ -254,7 +254,6 @@
 					<div id="left" class='w-[1100px] bg-gray-200 rounded-lg shadow-lg p-2'>
 						<!-- display on home page ONLY -->
 						<b:if cond='data:blog.url == data:blog.homepageUrl'>
-							
 							<b:section class='feature' id='Popular-Poss' name='Popular Posts' preferred='yes'>
 								<b:widget id='PopularPosts1' locked='false' title='Popular Posts' type='PopularPosts'>
 									<b:widget-settings>
@@ -267,7 +266,7 @@
 										<b:if cond='data:title != &quot;&quot;'>
 											<div class="w-full bg-[color:var(--orange)]  p-2 text-center text-white uppercase rounded-md ">
 												<a href="/search/label/Tips"> Tips </a>
-											</div> 
+											</div>
 										</b:if>
 										<div class='widget-content popular-posts'>
 											<ul>
@@ -323,7 +322,6 @@
 									</b:includable>
 								</b:widget>
 							</b:section>
-
 							<b:section class='feature' id='blog-tag' name="Blog Tag" preferred='yes'>
 								<b:widget id='Blog2'  title='Blog Posts' type='Blog' version='1'>
 									<b:widget-settings>
@@ -354,7 +352,6 @@
 										</div>
 										<div class="bg-gray-100 p-2 mt-[5px] rounded-md">
 											<b:loop values='data:posts' var='post'>
-
 												<b:loop values='data:post.labels' var='label'>
 													<!-- <b:if cond='data:label.isLast == "true"'> -->
 													<div class='hover:scale-110 text-sm text-white font-medium bg-[color:var(--blue)] rounded-md p-2 ml-[-2px]'>
@@ -364,7 +361,6 @@
 													</div>
 													<!-- </b:if> -->
 												</b:loop>
-
 												<div class="flex items-center space-x-2 mt-2">
 													<div class="hover:scale-110">
 														<b:with value='data:post.featuredImage.isResizable  ? resizeImage(data:post.featuredImage, 300, &quot;1:1&quot;) : data:post.thumbnail' var='image'>
