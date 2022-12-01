@@ -3425,23 +3425,6 @@ body#layout .lowerbar {
           </b:section>
           <div style='clear: both;'/>
       </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <b:section class='main' id='main' showaddelement='yes'>
           <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog' version='1'>
             <b:widget-settings>
@@ -4630,14 +4613,14 @@ body#layout .lowerbar {
               <script type='text/javascript'>
               (function() {
                 var items =
-                          <data:post.commentJso/>;
+                <data:post.commentJso/>;
                 var msgs =
-                          <data:post.commentMsgs/>;
+                <data:post.commentMsgs/>;
                 var config =
-                          <data:post.commentConfig/>;
+                <data:post.commentConfig/>;
 
                       //
-                                      <![CDATA[
+                <![CDATA[
                             var cursor = null;
                             if (items && items.length > 0) {
                               cursor = parseInt(items[items.length - 1].timestamp) + 1;
