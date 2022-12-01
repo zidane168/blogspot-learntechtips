@@ -23,11 +23,10 @@
 		<!-- Description and Keywords (start) -->
 		<b:if cond='data:blog.pageType == &quot;index&quot;'>
 			<meta content='Learn Tech Tips blogspot provide you a tips and tricks for development skill, include: C#, C++, PHP, Gaming, NodeJS, NextJS, Tailwind CSS, Bootstrap, Photoshop, Android, MacOS System' name='description'/>
-		</b:if> 
-		
-		<meta content='C#, PHP, CakePHP, C++, Laravel, dotnet, android, IOS, macos, window' name='keywords'/> 
+		</b:if>
+		<meta content='C#, PHP, CakePHP, C++, Laravel, dotnet, android, IOS, macos, window' name='keywords'/>
 		<b:if cond='data:blog.pageType == "item"'>
-			<meta expr:content='data:blog.pageName' property='og:title'/> 
+			<meta expr:content='data:blog.pageName' property='og:title'/>
 			<meta expr:content='data:blog.pageName' name='keywords'/>
 			<meta expr:content='data:blog.canonicalUrl' property='og:url'/>
 			<meta content='article' property='og:type'/>
@@ -255,7 +254,7 @@
 				<div class="flex mt-[10px] items-center">
 					<div class="p-2 bg-[color:var(--blue)] text-white rounded-l-md rounded-r-none  w-[180px] flex space-x-2 items-center">
 						<div class="w-10">
-							<svg id="Layer_1" style="  enable-background:new 0 0 128 128;" version="1.1" viewBox="0 0 128 128" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+							<svg id="Layer_1" fill="white" style="  enable-background:new 0 0 128 128;" version="1.1" viewBox="0 0 128 128" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 								<g>
 									<path d="M86.5,114.1c-0.5,2.9-3,4.9-5.9,4.9H34v8h46.6c6.8,0,12.6-4.9,13.8-11.5l6.4-36c0.7-4.1-0.4-8.3-3-11.4   c-2.7-3.2-6.6-5-10.7-5H71.2c1.2-3.7,2.8-9.1,4.1-16.2l0.6-4.2c0.9-6.6-3.7-12.6-10.2-13.5c-3.2-0.4-6.3,0.4-8.9,2.3   c-2.6,1.9-4.2,4.8-4.7,7.9l-0.6,4c-0.1,0.5-0.2,1-0.2,1.5c-0.1,0.5-0.2,1-0.3,1.5C47.9,61,36.3,72.8,21.3,76.6L16,77.9V127h8V84.1   c17.5-4.7,31.2-18.7,34.9-36c0.1-0.6,0.2-1.2,0.4-1.8c0.1-0.6,0.2-1.2,0.3-1.8l0.6-4c0.1-1.1,0.7-2,1.6-2.6c0.9-0.6,1.9-0.9,3-0.8   c2.2,0.3,3.7,2.3,3.4,4.5l-0.5,3.9c-2.1,11.6-5,18.3-5.5,19.6l-0.3,0.8l0,5.2h25.5c1.8,0,3.5,0.8,4.6,2.1c1.1,1.4,1.6,3.2,1.3,4.9   L86.5,114.1z"/>
 								</g>
@@ -540,7 +539,6 @@
 									</b:widget-settings>
 									<b:includable id='main'>
 										<!-- popular -->
-									
 										<div class="bg-white shadow-lg rounded-md p-2 ">
 											<b:if cond='data:blog.url == data:blog.homepageUrl'>
 												<!-- home page will show this -->
@@ -550,7 +548,7 @@
 													</div>
 												</b:if>
 											</b:if>
-											<div class='widget-content popular-posts'> 
+											<div class='widget-content popular-posts'>
 												<div class="bg-gray-100 pt-2 grid grid-cols-3 gap-4" >
 													<b:loop values='data:posts' var='post'>
 														<div class="basis-[330px]">
@@ -586,7 +584,7 @@
 																		</b:if>
 																		<h1 class='p-4 absolute top-0  bg-[color:var(--blue)] text-white uppercase rounded-md shadow-lg'>
 																			<a expr:href='data:post.href' class="font-bold" >
-																				 <data:post.title/> 
+																				<data:post.title/>
 																			</a>
 																		</h1>
 																		<b:if cond='data:showSnippets'>
@@ -735,20 +733,37 @@
 									<b:widget-setting name='chronological'>false</b:widget-setting>
 									<b:widget-setting name='showPosts'>true</b:widget-setting>
 									<b:widget-setting name='frequency'>MONTHLY</b:widget-setting>
-								</b:widget-settings> 
-
-								<b:includable id='main'> 
+								</b:widget-settings>
+								<b:includable id='main'>
 									<b:if cond='data:title != ""'>
-										<div class="bg-[color:var(--orange)] text-white p-2 rounded-t-md flex space-x-4 items-center"> 
+										<div class="bg-[color:var(--orange)] text-white p-2 rounded-t-md flex space-x-4 items-center">
 											<div>
 												<svg id="Layer_1" width="30px" fill="white" style="enable-background:new 0 0 100 100;" version="1.1" viewBox="0 0 100 100" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-													<g><path d="M71.1,86H28.9c-2.7,0-4.9-2.2-4.9-4.9V18.9c0-2.7,2.2-4.9,4.9-4.9H51v2H28.9c-1.6,0-2.9,1.3-2.9,2.9v62.2   c0,1.6,1.3,2.9,2.9,2.9h42.2c1.6,0,2.9-1.3,2.9-2.9V40h2v41.1C76,83.8,73.8,86,71.1,86z"/></g><g><path d="M75,41H54.9c-2.7,0-4.9-2.2-4.9-4.9V15c0-0.6,0.4-1,1-1s1,0.4,1,1v21.1c0,1.6,1.3,2.9,2.9,2.9H75c0.6,0,1,0.4,1,1   S75.6,41,75,41z"/></g><g><path d="M75,41c-0.3,0-0.5-0.1-0.7-0.3l-24-25c-0.4-0.4-0.4-1,0-1.4c0.4-0.4,1-0.4,1.4,0l24,25c0.4,0.4,0.4,1,0,1.4   C75.5,40.9,75.2,41,75,41z"/></g><g><path d="M65,58H35c-0.6,0-1-0.4-1-1s0.4-1,1-1h30c0.6,0,1,0.4,1,1S65.5,58,65,58z"/></g><g><path d="M65,52H35c-0.6,0-1-0.4-1-1s0.4-1,1-1h30c0.6,0,1,0.4,1,1S65.5,52,65,52z"/></g><g><path d="M65,46H35c-0.6,0-1-0.4-1-1s0.4-1,1-1h30c0.6,0,1,0.4,1,1S65.5,46,65,46z"/></g></svg>
+													<g>
+														<path d="M71.1,86H28.9c-2.7,0-4.9-2.2-4.9-4.9V18.9c0-2.7,2.2-4.9,4.9-4.9H51v2H28.9c-1.6,0-2.9,1.3-2.9,2.9v62.2   c0,1.6,1.3,2.9,2.9,2.9h42.2c1.6,0,2.9-1.3,2.9-2.9V40h2v41.1C76,83.8,73.8,86,71.1,86z"/>
+													</g>
+													<g>
+														<path d="M75,41H54.9c-2.7,0-4.9-2.2-4.9-4.9V15c0-0.6,0.4-1,1-1s1,0.4,1,1v21.1c0,1.6,1.3,2.9,2.9,2.9H75c0.6,0,1,0.4,1,1   S75.6,41,75,41z"/>
+													</g>
+													<g>
+														<path d="M75,41c-0.3,0-0.5-0.1-0.7-0.3l-24-25c-0.4-0.4-0.4-1,0-1.4c0.4-0.4,1-0.4,1.4,0l24,25c0.4,0.4,0.4,1,0,1.4   C75.5,40.9,75.2,41,75,41z"/>
+													</g>
+													<g>
+														<path d="M65,58H35c-0.6,0-1-0.4-1-1s0.4-1,1-1h30c0.6,0,1,0.4,1,1S65.5,58,65,58z"/>
+													</g>
+													<g>
+														<path d="M65,52H35c-0.6,0-1-0.4-1-1s0.4-1,1-1h30c0.6,0,1,0.4,1,1S65.5,52,65,52z"/>
+													</g>
+													<g>
+														<path d="M65,46H35c-0.6,0-1-0.4-1-1s0.4-1,1-1h30c0.6,0,1,0.4,1,1S65.5,46,65,46z"/>
+													</g>
+												</svg>
 											</div>
 											<data:title/>
 										</div>
 									</b:if>
 									<div class='widget-content'>
-										<div id='ArchiveList' class="bg-white p-2">
+										<div id='ArchiveList' class="bg-white p-2 rounded-b-md">
 											<div expr:id='data:widget.instanceId + &quot;_ArchiveList&quot;'>
 												<b:include cond='data:style == &quot;HIERARCHY&quot;' data='data' name='interval'/>
 												<b:include cond='data:style == &quot;FLAT&quot;' data='data' name='flat'/>
@@ -772,14 +787,14 @@
 								<b:includable id='interval' var='intervalData'>
 									<b:loop values='data:intervalData' var='interval'>
 										<ul class='hierarchy text-sm'>
-											<li  expr:class='&quot;archivedate &quot; + data:interval.expclass'> 
+											<li  expr:class='&quot;archivedate &quot; + data:interval.expclass'>
 												<b:include cond='data:interval.toggleId' data='interval' name='toggle'/>
 												<strong>
 													<a class='post-count-link' expr:href='data:interval.url'>
-														<data:interval.name/>  
+														<data:interval.name/>
 													</a>
 													<span class='post-count text-[color:var(--orange)]' dir='ltr'>
-														(<data:interval.post-count/>) 
+														(<data:interval.post-count/>)
 													</span>
 												</strong>
 												<b:include cond='data:interval.data' data='interval.data' name='interval'/>
@@ -825,6 +840,70 @@
 									</a>
 								</b:includable>
 							</b:widget>
+
+
+
+							<b:widget id='Label1' locked='false' title='Labels' type='Label'>
+								<b:widget-settings>
+									<b:widget-setting name='sorting'>FREQUENCY</b:widget-setting>
+									<b:widget-setting name='display'>LIST</b:widget-setting>
+									<b:widget-setting name='selectedLabelsList'/>
+									<b:widget-setting name='showType'>ALL</b:widget-setting>
+									<b:widget-setting name='showFreqNumbers'>true</b:widget-setting>
+								</b:widget-settings>
+								<b:includable id='main'>
+									<b:if cond='data:title != &quot;&quot;'>
+										<div class="mt-[10px] bg-[color:var(--orange)] text-white p-2 rounded-t-md flex space-x-4 items-center">
+											<data:title/>
+										</div>
+									</b:if>
+									<div class="grid grid-cols-2 gap-4 text-sm bg-white p-2 rounded-b-md w-full" >  <!-- expr:class='&quot;widget-content &quot; + data:display + &quot;-label-widget-content&quot;' -->
+										<b:if cond='data:display == &quot;list&quot;'>
+										 
+											<b:loop values='data:labels' var='label'>
+												<div class="flex items-center">
+													<b:if cond='data:blog.url == data:label.url'>
+														<svg enable-background="new 0 0 512 512" width="20px" id="Calque_1" version="1.1" viewBox="0 0 512 512"   xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><g id="XMLID_1_"><g><g><path d="M273.02,154.63l-3.98-0.44c-2.05,18.67-8.99,36.59-20.08,51.8c-0.03,0.05-0.07,0.1-0.1,0.15      c1.16,0.66,2.27,1.4,3.33,2.22s2.07,1.7,3.01,2.65c0.07-0.1,0.15-0.2,0.22-0.3c0.05-0.05,0.09-0.11,0.12-0.17      c11.84-16.31,19.26-35.49,21.46-55.47L273.02,154.63z" fill="#FFC035"/><path d="M453.39,366.78L316.27,476.51c-11.31,9.04-27.8,7.19-36.83-4.09L143.46,302.48l4.94-44.51l0.88-7.96      l5.17-46.64l6.78-61.16L222.4,149l46.64,5.19c-2.05,18.67-8.99,36.59-20.08,51.8c-0.03,0.05-0.07,0.1-0.1,0.15      c-4.5-2.63-9.74-4.13-15.32-4.13c-16.88,0-30.57,13.68-30.57,30.56c0,3.2,0.49,6.29,1.4,9.18c0.4,1.28,0.89,2.53,1.45,3.73      c0.57,1.22,1.22,2.39,1.94,3.52c5.42,8.5,14.94,14.14,25.78,14.14c16.88,0,30.56-13.69,30.56-30.57c0-8.42-3.4-16.04-8.9-21.56      c0.07-0.1,0.15-0.2,0.22-0.3c0.05-0.05,0.09-0.11,0.12-0.17c11.84-16.31,19.26-35.49,21.46-55.47l44.5,4.95l26,32.49      l109.98,137.45C466.51,341.24,464.7,357.74,453.39,366.78z" fill="#FFC035"/><g opacity="0.2"><path d="M460.1,358.75c-1.62,3.01-3.87,5.76-6.71,8.03L316.27,476.51c-11.31,9.04-27.8,7.19-36.83-4.09       L143.46,302.48l4.94-44.51l0.88-7.96l5.17-46.64l6.78-61.16l11.71,1.3l-5.16,46.53l-5.17,46.64l-0.88,7.96l-4.94,44.51       l135.98,169.94c9.03,11.28,25.52,13.13,36.83,4.09L460.1,358.75z" fill="#303C44"/></g></g></g><g><path d="M347.5,192.51l109.98,137.45c9.03,11.28,7.22,27.78-4.09,36.82L316.27,476.51     c-11.31,9.04-27.8,7.19-36.83-4.09L143.46,302.48" fill="none"/><polyline fill="none" points="143.46,302.48 148.84,253.99 154.45,203.37 161.23,142.21 222.4,149 273.02,154.63 321.5,160.02      347.5,192.51    "/><path d="M205.82,245.48c-1.83-3.92-2.85-8.3-2.85-12.91c0-16.88,13.69-30.56,30.57-30.56     c7.02,0,13.49,2.37,18.65,6.35c7.24,5.58,11.91,14.35,11.91,24.21c0,16.88-13.68,30.57-30.56,30.57     C221.27,263.14,210.69,255.91,205.82,245.48z" fill="none"/><path d="M277.7,142.21c0,4.29-0.24,8.62-0.7,12.86c-2.2,19.98-9.62,39.16-21.46,55.47     c-0.03,0.06-0.07,0.12-0.12,0.17c-0.07,0.1-0.15,0.2-0.22,0.3c-12.2,16.65-28.59,29.78-47.44,37.99     c-0.72-1.13-1.37-2.3-1.94-3.52c-0.56-1.2-1.05-2.45-1.45-3.73c17.68-7.66,33.05-19.96,44.47-35.58     c0.01-0.01,0.01-0.02,0.02-0.03c0.03-0.05,0.07-0.1,0.1-0.15c11.09-15.21,18.03-33.13,20.08-51.8c0.44-3.95,0.66-7.98,0.66-11.98     c0-59.81-48.65-108.46-108.46-108.46c-59.8,0-108.46,48.65-108.46,108.46c0,55.43,41.48,101.77,96.5,107.8l-0.88,7.96     c-59.07-6.48-103.62-56.24-103.62-115.76c0-64.22,52.24-116.46,116.46-116.46S277.7,77.99,277.7,142.21z" fill="#303C44"/></g></g></g></svg> 
+														<div expr:dir='data:blog.languageDirection' class='hover:scale-110 hover:text-[color:var(--orange)]'>
+															<data:label.name/>
+														</div>
+														<b:else/>
+														
+														<svg enable-background="new 0 0 512 512" width="20px" id="Calque_1" version="1.1" viewBox="0 0 512 512"   xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><g id="XMLID_1_"><g><g><path d="M273.02,154.63l-3.98-0.44c-2.05,18.67-8.99,36.59-20.08,51.8c-0.03,0.05-0.07,0.1-0.1,0.15      c1.16,0.66,2.27,1.4,3.33,2.22s2.07,1.7,3.01,2.65c0.07-0.1,0.15-0.2,0.22-0.3c0.05-0.05,0.09-0.11,0.12-0.17      c11.84-16.31,19.26-35.49,21.46-55.47L273.02,154.63z" fill="#FFC035"/><path d="M453.39,366.78L316.27,476.51c-11.31,9.04-27.8,7.19-36.83-4.09L143.46,302.48l4.94-44.51l0.88-7.96      l5.17-46.64l6.78-61.16L222.4,149l46.64,5.19c-2.05,18.67-8.99,36.59-20.08,51.8c-0.03,0.05-0.07,0.1-0.1,0.15      c-4.5-2.63-9.74-4.13-15.32-4.13c-16.88,0-30.57,13.68-30.57,30.56c0,3.2,0.49,6.29,1.4,9.18c0.4,1.28,0.89,2.53,1.45,3.73      c0.57,1.22,1.22,2.39,1.94,3.52c5.42,8.5,14.94,14.14,25.78,14.14c16.88,0,30.56-13.69,30.56-30.57c0-8.42-3.4-16.04-8.9-21.56      c0.07-0.1,0.15-0.2,0.22-0.3c0.05-0.05,0.09-0.11,0.12-0.17c11.84-16.31,19.26-35.49,21.46-55.47l44.5,4.95l26,32.49      l109.98,137.45C466.51,341.24,464.7,357.74,453.39,366.78z" fill="#FFC035"/><g opacity="0.2"><path d="M460.1,358.75c-1.62,3.01-3.87,5.76-6.71,8.03L316.27,476.51c-11.31,9.04-27.8,7.19-36.83-4.09       L143.46,302.48l4.94-44.51l0.88-7.96l5.17-46.64l6.78-61.16l11.71,1.3l-5.16,46.53l-5.17,46.64l-0.88,7.96l-4.94,44.51       l135.98,169.94c9.03,11.28,25.52,13.13,36.83,4.09L460.1,358.75z" fill="#303C44"/></g></g></g><g><path d="M347.5,192.51l109.98,137.45c9.03,11.28,7.22,27.78-4.09,36.82L316.27,476.51     c-11.31,9.04-27.8,7.19-36.83-4.09L143.46,302.48" fill="none"/><polyline fill="none" points="143.46,302.48 148.84,253.99 154.45,203.37 161.23,142.21 222.4,149 273.02,154.63 321.5,160.02      347.5,192.51    "/><path d="M205.82,245.48c-1.83-3.92-2.85-8.3-2.85-12.91c0-16.88,13.69-30.56,30.57-30.56     c7.02,0,13.49,2.37,18.65,6.35c7.24,5.58,11.91,14.35,11.91,24.21c0,16.88-13.68,30.57-30.56,30.57     C221.27,263.14,210.69,255.91,205.82,245.48z" fill="none"/><path d="M277.7,142.21c0,4.29-0.24,8.62-0.7,12.86c-2.2,19.98-9.62,39.16-21.46,55.47     c-0.03,0.06-0.07,0.12-0.12,0.17c-0.07,0.1-0.15,0.2-0.22,0.3c-12.2,16.65-28.59,29.78-47.44,37.99     c-0.72-1.13-1.37-2.3-1.94-3.52c-0.56-1.2-1.05-2.45-1.45-3.73c17.68-7.66,33.05-19.96,44.47-35.58     c0.01-0.01,0.01-0.02,0.02-0.03c0.03-0.05,0.07-0.1,0.1-0.15c11.09-15.21,18.03-33.13,20.08-51.8c0.44-3.95,0.66-7.98,0.66-11.98     c0-59.81-48.65-108.46-108.46-108.46c-59.8,0-108.46,48.65-108.46,108.46c0,55.43,41.48,101.77,96.5,107.8l-0.88,7.96     c-59.07-6.48-103.62-56.24-103.62-115.76c0-64.22,52.24-116.46,116.46-116.46S277.7,77.99,277.7,142.21z" fill="#303C44"/></g></g></g></svg>
+														<a expr:dir='data:blog.languageDirection' expr:href='data:label.url' class='hover:scale-110 hover:text-[color:var(--orange)]'>
+															<data:label.name/>
+														</a>
+													</b:if>
+													<b:if cond='data:showFreqNumbers'>
+														<div dir='ltr'>(<data:label.count/>)
+														</div>
+													</b:if>
+												</div>
+											</b:loop> 
+											<b:else/>
+											<b:loop values='data:labels' var='label'>
+												<span class="text-sm" > <!-- expr:class='&quot;label-size label-size-&quot; + data:label.cssSize' -->
+													<b:if cond='data:blog.url == data:label.url'>
+														<span expr:dir='data:blog.languageDirection'>
+															<data:label.name/>
+														</span>
+														<b:else/>
+														<a expr:dir='data:blog.languageDirection' expr:href='data:label.url'>
+															<data:label.name/>
+														</a>
+													</b:if>
+													<b:if cond='data:showFreqNumbers'>
+														<span class='text-[color:var(--orange)] label-count' dir='ltr'>(
+															<data:label.count/>)
+														</span>
+													</b:if>
+												</span>
+											</b:loop>
+										</b:if>
+										<b:include name='quickedit'/>
+									</div>
+								</b:includable>
+							</b:widget>
 						</b:section>
 					</div>
 				</div>
@@ -832,7 +911,8 @@
 		</b:if>
 		<div class="mt-[10px] flex justify-center flex-col w-full mx-auto bg-gray-900 text-white p-4 h-[200px] text-center">
 			<div>
-				Copyright @2022(November) Version 1.0.0 - By <span class="bg-[color:var(--orange)] text-white p-2 ">Learn Tech Tips</span>
+				Copyright @2022(November) Version 1.0.0 - By
+				<span class="bg-[color:var(--orange)] text-white p-2 ">Learn Tech Tips</span>
 				<span class="text-[color:var(--blue)] font-bold italic">Z</span>idane
 			</div>
 			<div class="mt-[10px]">
@@ -841,261 +921,45 @@
 			</div>
 		</div>
 		<script src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js'/>
-		<b:if cond='data:blog.pageType != &quot;static_page&quot;'>
-			<b:if cond='data:blog.pageType != &quot;item&quot;'>
-				<script type='text/javascript'> 
-				 /*
+		<b:if cond='data:blog.pageType != "item"'>
+			<b:if cond='data:blog.pageType != "static_page"'>
+				<script type='text/javascript'>
+  /*
 					<![CDATA[*/
-  if (typeof firstText == "undefined") firstText = "First";
-  if (typeof lastText == "undefined") lastText = "Last";
-  var noPage;
-  var currentPage;
-  var currentPageNo;
-  var postLabel;
-  pagecurrentg();
+    var perPage=3;
+    var numPages=3;
+    var firstText ='First';
+    var lastText ='Last';
+    var prevText ='« Previous';
+    var nextText ='Next »';
+    var urlactivepage=location.href;
+    var home_page="/";
 
-  function looppagecurrentg(pageInfo) {
-      var html = '';
-      pageNumber = parseInt(numPages / 2);
-      if (pageNumber == numPages - pageNumber) {
-          numPages = pageNumber * 2 + 1
-      }
-      pageStart = currentPageNo - pageNumber;
-      if (pageStart < 1) pageStart = 1;
-      lastPageNo = parseInt(pageInfo / perPage) + 1;
-      if (lastPageNo - 1 == pageInfo / perPage) lastPageNo = lastPageNo - 1;
-      pageEnd = pageStart + numPages - 1;
-      if (pageEnd > lastPageNo) pageEnd = lastPageNo;
-      html += "
-					<span class='showpageOf'>Page " + currentPageNo + ' of ' + lastPageNo + "</span>";
-      var prevNumber = parseInt(currentPageNo) - 1;
+if(typeof firstText=="undefined")firstText="First";if(typeof lastText=="undefined")lastText="Last";var noPage;var currentPage;var currentPageNo;var postLabel;pagecurrentg();function looppagecurrentg(pageInfo){var html='';pageNumber=parseInt(numPages / 2);if(pageNumber==numPages-pageNumber){numPages=pageNumber*2+1}
+pageStart=currentPageNo-pageNumber;if(pageStart<1)pageStart=1;lastPageNo=parseInt(pageInfo / perPage)+1;if(lastPageNo-1==pageInfo / perPage)lastPageNo=lastPageNo-1;pageEnd=pageStart+numPages-1;if(pageEnd>lastPageNo)pageEnd=lastPageNo;html+="<span class='showpageOf'>Page "+currentPageNo+' of '+lastPageNo+"</span>";var prevNumber=parseInt(currentPageNo)-1;if(currentPageNo>1){if(currentPage=="page"){html+='<span class="showpage firstpage"><a href="'+home_page+'">'+firstText+'</a></span>'}else{html+='<span class="displaypageNum firstpage"><a href="/search/label/'+postLabel+'?&max-results='+perPage+'">'+firstText+'</a></span>'}}
+if(currentPageNo>2){if(currentPageNo==3){if(currentPage=="page"){html+='<span class="showpage"><a href="'+home_page+'">'+prevText+'</a></span>'}else{html+='<span class="displaypageNum"><a href="/search/label/'+postLabel+'?&max-results='+perPage+'">'+prevText+'</a></span>'}}else{if(currentPage=="page"){html+='<span class="displaypageNum"><a href="#" onclick="redirectpage('+prevNumber+');return false">'+prevText+'</a></span>'}else{html+='<span class="displaypageNum"><a href="#" onclick="redirectlabel('+prevNumber+');return false">'+prevText+'</a></span>'}}}
+if(pageStart>1){if(currentPage=="page"){html+='<span class="displaypageNum"><a href="'+home_page+'">1</a></span>'}else{html+='<span class="displaypageNum"><a href="/search/label/'+postLabel+'?&max-results='+perPage+'">1</a></span>'}}
+if(pageStart>2){html+=' ... '}
+for(var jj=pageStart;jj<=pageEnd;jj++){if(currentPageNo==jj){html+='<span class="pagecurrent">'+jj+'</span>'}else if(jj==1){if(currentPage=="page"){html+='<span class="displaypageNum"><a href="'+home_page+'">1</a></span>'}else{html+='<span class="displaypageNum"><a href="/search/label/'+postLabel+'?&max-results='+perPage+'">1</a></span>'}}else{if(currentPage=="page"){html+='<span class="displaypageNum"><a href="#" onclick="redirectpage('+jj+');return false">'+jj+'</a></span>'}else{html+='<span class="displaypageNum"><a href="#" onclick="redirectlabel('+jj+');return false">'+jj+'</a></span>'}}}
+if(pageEnd<lastPageNo-1){html+='...'}
+if(pageEnd<lastPageNo){if(currentPage=="page"){html+='<span class="displaypageNum"><a href="#" onclick="redirectpage('+lastPageNo+');return false">'+lastPageNo+'</a></span>'}else{html+='<span class="displaypageNum"><a href="#" onclick="redirectlabel('+lastPageNo+');return false">'+lastPageNo+'</a></span>'}}
+var nextnumber=parseInt(currentPageNo)+1;if(currentPageNo<(lastPageNo-1)){if(currentPage=="page"){html+='<span class="displaypageNum"><a href="#" onclick="redirectpage('+nextnumber+');return false">'+nextText+'</a></span>'}else{html+='<span class="displaypageNum"><a href="#" onclick="redirectlabel('+nextnumber+');return false">'+nextText+'</a></span>'}}
+if(currentPageNo<lastPageNo){if(currentPage=="page"){html+='<span class="displaypageNum lastpage"><a href="#" onclick="redirectpage('+lastPageNo+');return false">'+lastText+'</a></span>'}else{html+='<span class="displaypageNum lastpage"><a href="#" onclick="redirectlabel('+lastPageNo+');return false">'+lastText+'</a></span>'}}
+var pageArea=document.getElementsByName("pageArea");var blogPager=document.getElementById("blog-pager");for(var p=0;p<pageArea.length;p++){pageArea[p].innerHTML=html}
+if(pageArea&&pageArea.length>0){html=''}
+if(blogPager){blogPager.innerHTML=html}}
+function totalcountdata(root){var feed=root.feed;var totaldata=parseInt(feed.openSearch$totalResults.$t,10);looppagecurrentg(totaldata)}
+function pagecurrentg(){var thisUrl=urlactivepage;if(thisUrl.indexOf("/search/label/")!=-1){if(thisUrl.indexOf("?updated-max")!=-1){postLabel=thisUrl.substring(thisUrl.indexOf("/search/label/")+14,thisUrl.indexOf("?updated-max"))}else{postLabel=thisUrl.substring(thisUrl.indexOf("/search/label/")+14,thisUrl.indexOf("?&max"))}}
+if(thisUrl.indexOf("?q=")==-1&&thisUrl.indexOf(".html")==-1){if(thisUrl.indexOf("/search/label/")==-1){currentPage="page";if(urlactivepage.indexOf("#PageNo=")!=-1){currentPageNo=urlactivepage.substring(urlactivepage.indexOf("#PageNo=")+8,urlactivepage.length)}else{currentPageNo=1}
+document.write("<script src=\""+home_page+"feeds/posts/summary?max-results=1&alt=json-in-script&callback=totalcountdata\"><\/script>")}else{currentPage="label";if(thisUrl.indexOf("&max-results=")==-1){perPage=20}
+if(urlactivepage.indexOf("#PageNo=")!=-1){currentPageNo=urlactivepage.substring(urlactivepage.indexOf("#PageNo=")+8,urlactivepage.length)}else{currentPageNo=1}
+document.write('<script src="'+home_page+'feeds/posts/summary/-/'+postLabel+'?alt=json-in-script&callback=totalcountdata&max-results=1" ><\/script>')}}}
+function redirectpage(numberpage){jsonstart=(numberpage-1)*perPage;noPage=numberpage;var nameBody=document.getElementsByTagName('head')[0];var newInclude=document.createElement('script');newInclude.type='text/javascript';newInclude.setAttribute("src",home_page+"feeds/posts/summary?start-index="+jsonstart+"&max-results=1&alt=json-in-script&callback=finddatepost");nameBody.appendChild(newInclude)}
+function redirectlabel(numberpage){jsonstart=(numberpage-1)*perPage;noPage=numberpage;var nameBody=document.getElementsByTagName('head')[0];var newInclude=document.createElement('script');newInclude.type='text/javascript';newInclude.setAttribute("src",home_page+"feeds/posts/summary/-/"+postLabel+"?start-index="+jsonstart+"&max-results=1&alt=json-in-script&callback=finddatepost");nameBody.appendChild(newInclude)}
+function finddatepost(root){post=root.feed.entry[0];var timestamp1=post.published.$t.substring(0,19)+post.published.$t.substring(23,29);var timestamp=encodeURIComponent(timestamp1);if(currentPage=="page"){var pAddress="/search?updated-max="+timestamp+"&max-results="+perPage+"#PageNo="+noPage}else{var pAddress="/search/label/"+postLabel+"?updated-max="+timestamp+"&max-results="+perPage+"#PageNo="+noPage}
+location.href=pAddress}
 
-      //Iccsi was here, doing magic      
-      if (currentPageNo > 1) {
-          if (currentPage == "page") {
-              html += '
-					<span class="showpage firstpage">
-						<a href="' + home_page + '">' + firstText + '</a>
-					</span>'
-          } else {
-              html += '
-					<span class="displaypageNum firstpage">
-						<a href="/search/label/' + postLabel + '?&max-results=' + perPage + '">' + firstText + '</a>
-					</span>'
-          }
-      }
-
-      if (currentPageNo > 2) {
-          if (currentPageNo == 3) {
-              if (currentPage == "page") {
-                  html += '
-					<span class="showpage">
-						<a href="' + home_page + '">' + prevText + '</a>
-					</span>'
-              } else {
-                  html += '
-					<span class="displaypageNum">
-						<a href="/search/label/' + postLabel + '?&max-results=' + perPage + '">' + prevText + '</a>
-					</span>'
-              }
-          } else {
-              if (currentPage == "page") {
-                  html += '
-					<span class="displaypageNum">
-						<a href="#" onclick="redirectpage(' + prevNumber + ');return false">' + prevText + '</a>
-					</span>'
-              } else {
-                  html += '
-					<span class="displaypageNum">
-						<a href="#" onclick="redirectlabel(' + prevNumber + ');return false">' + prevText + '</a>
-					</span>'
-              }
-          }
-      }
-      if (pageStart > 1) {
-          if (currentPage == "page") {
-              html += '
-					<span class="displaypageNum">
-						<a href="' + home_page + '">1</a>
-					</span>'
-          } else {
-              html += '
-					<span class="displaypageNum">
-						<a href="/search/label/' + postLabel + '?&max-results=' + perPage + '">1</a>
-					</span>'
-          }
-      }
-      if (pageStart > 2) {
-          html += ' ... '
-      }
-      for (var jj = pageStart; jj
-					<= pageEnd; jj++) {
-          if (currentPageNo == jj) {
-              html += '
-						<span class="pagecurrent">' + jj + '</span>'
-          } else if (jj == 1) {
-              if (currentPage == "page") {
-                  html += '
-						<span class="displaypageNum">
-							<a href="' + home_page + '">1</a>
-						</span>'
-              } else {
-                  html += '
-						<span class="displaypageNum">
-							<a href="/search/label/' + postLabel + '?&max-results=' + perPage + '">1</a>
-						</span>'
-              }
-          } else {
-              if (currentPage == "page") {
-                  html += '
-						<span class="displaypageNum">
-							<a href="#" onclick="redirectpage(' + jj + ');return false">' + jj + '</a>
-						</span>'
-              } else {
-                  html += '
-						<span class="displaypageNum">
-							<a href="#" onclick="redirectlabel(' + jj + ');return false">' + jj + '</a>
-						</span>'
-              }
-          }
-      }
-      if (pageEnd < lastPageNo - 1) {
-          html += '...'
-      }
-      if (pageEnd < lastPageNo) {
-          if (currentPage == "page") {
-              html += '
-						<span class="displaypageNum">
-							<a href="#" onclick="redirectpage(' + lastPageNo + ');return false">' + lastPageNo + '</a>
-						</span>'
-          } else {
-              html += '
-						<span class="displaypageNum">
-							<a href="#" onclick="redirectlabel(' + lastPageNo + ');return false">' + lastPageNo + '</a>
-						</span>'
-          }
-      }
-
-
-      var nextnumber = parseInt(currentPageNo) + 1;
-      if (currentPageNo < (lastPageNo - 1)) {
-          if (currentPage == "page") {
-              html += '
-						<span class="displaypageNum">
-							<a href="#" onclick="redirectpage(' + nextnumber + ');return false">' + nextText + '</a>
-						</span>'
-          } else {
-              html += '
-						<span class="displaypageNum">
-							<a href="#" onclick="redirectlabel(' + nextnumber + ');return false">' + nextText + '</a>
-						</span>'
-          }
-      }
-
-      if (currentPageNo < lastPageNo) {
-          //Iccsi was here, doing magic
-          if (currentPage == "page") {
-              html += '
-						<span class="displaypageNum lastpage">
-							<a href="#" onclick="redirectpage(' + lastPageNo + ');return false">' + lastText + '</a>
-						</span>'
-          } else {
-              html += '
-						<span class="displaypageNum lastpage">
-							<a href="#" onclick="redirectlabel(' + lastPageNo + ');return false">' + lastText + '</a>
-						</span>'
-          }
-      }
-
-      var pageArea = document.getElementsByName("pageArea");
-      var blogPager = document.getElementById("blog-pager");
-      for (var p = 0; p < pageArea.length; p++) {
-          pageArea[p].innerHTML = html
-      }
-      if (pageArea && pageArea.length > 0) {
-          html = ''
-      }
-      if (blogPager) {
-          blogPager.innerHTML = html
-      }
-  }
-
-  function totalcountdata(root) {
-      var feed = root.feed;
-      var totaldata = parseInt(feed.openSearch$totalResults.$t, 10);
-      looppagecurrentg(totaldata)
-  }
-
-  function pagecurrentg() {
-      var thisUrl = urlactivepage;
-      if (thisUrl.indexOf("/search/label/") != -1) {
-          if (thisUrl.indexOf("?updated-max") != -1) {
-              postLabel = thisUrl.substring(thisUrl.indexOf("/search/label/") + 14, thisUrl.indexOf("?updated-max"))
-          } else {
-              postLabel = thisUrl.substring(thisUrl.indexOf("/search/label/") + 14, thisUrl.indexOf("?&max"))
-          }
-      }
-      if (thisUrl.indexOf("?q=") == -1 && thisUrl.indexOf(".html") == -1) {
-          if (thisUrl.indexOf("/search/label/") == -1) {
-              currentPage = "page";
-              if (urlactivepage.indexOf("#PageNo=") != -1) {
-                  currentPageNo = urlactivepage.substring(urlactivepage.indexOf("#PageNo=") + 8, urlactivepage.length)
-              } else {
-                  currentPageNo = 1
-              }
-              document.write("
-						<script src=\"" + home_page + "feeds/posts/summary?max-results=1&alt=json-in-script&callback=totalcountdata\">
-							<\/script>")
-          } else {
-              currentPage = "label";
-              if (thisUrl.indexOf("&max-results=") == -1) {
-                  perPage = 20
-              }
-              if (urlactivepage.indexOf("#PageNo=") != -1) {
-                  currentPageNo = urlactivepage.substring(urlactivepage.indexOf("#PageNo=") + 8, urlactivepage.length)
-              } else {
-                  currentPageNo = 1
-              }
-              document.write('
-								<script src="' + home_page + 'feeds/posts/summary/-/' + postLabel + '?alt=json-in-script&callback=totalcountdata&max-results=1" ><\/script>')
-          }
-      }
-  }
-
-  function redirectpage(numberpage) {
-      jsonstart = (numberpage - 1) * perPage;
-      noPage = numberpage;
-      var nameBody = document.getElementsByTagName('head')[0];
-      var newInclude = document.createElement('script');
-      newInclude.type = 'text/javascript';
-      newInclude.setAttribute("src", home_page + "feeds/posts/summary?start-index=" + jsonstart + "&max-results=1&alt=json-in-script&callback=finddatepost");
-      nameBody.appendChild(newInclude)
-  }
-
-  function redirectlabel(numberpage) {
-      jsonstart = (numberpage - 1) * perPage;
-      noPage = numberpage;
-      var nameBody = document.getElementsByTagName('head')[0];
-      var newInclude = document.createElement('script');
-      newInclude.type = 'text/javascript';
-      newInclude.setAttribute("src", home_page + "feeds/posts/summary/-/" + postLabel + "?start-index=" + jsonstart + "&max-results=1&alt=json-in-script&callback=finddatepost");
-      nameBody.appendChild(newInclude)
-  }
-
-  function finddatepost(root) {
-	post = root.feed.entry[0];
-	var timestamp1 = post.published.$t.substring(0, 19) + post.published.$t.substring(23, 29);
-	var timestamp = encodeURIComponent(timestamp1);
-	if (currentPage == "page") {
-		var pAddress = "/search?updated-max=" + timestamp + "&max-results=" + perPage + "#PageNo=" + noPage
-	} else {
-		var pAddress = "/search/label/" + postLabel + "?updated-max=" + timestamp + "&max-results=" + perPage + "#PageNo=" + noPage
-	}
-	location.href = pAddress
-}
-
-
-           /*]]>*/
+  /*]]>*/
 				</script>
 			</b:if>
 		</b:if>
