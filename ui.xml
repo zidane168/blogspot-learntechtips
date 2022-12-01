@@ -268,7 +268,6 @@
 				<!-- Main Tag -->
 				<div class="flex mt-[10px] space-x-2 ">
 					<div id="left" class='w-[1100px] bg-gray-200 rounded-lg shadow-lg p-2'>
-						<!-- display on home page ONLY -->
 						<b:if cond='(data:blog.pageType == "item") or (data:blog.searchQuery) or (data:blog.pageType == "static_page")'>
 							<b:section class='main'  id='blog-detail' name='Blog Detail' showaddelement='yes'>
 								<b:widget id='Blog1'  locked='true' title='Blog Posts' type='Blog' version='1'>
@@ -302,7 +301,7 @@
 											</b:if>
 											<!-- if detail page will show -->
 											<b:loop values='data:posts' var='post'>
-												<h1 class="mt-[5px] text-xl bg-[color:var(--blue)] text-white p-4 shadow-lg rounded-md">
+												<h1 class="mt-[5px] text-xl bg-[color:var(--blue)] text-white p-4 shadow-lg rounded-md uppercase">
 													<data:post.title/>
 												</h1>
 												<b:if cond='data:post.isDateStart and not data:post.isFirstPost'> &lt;/div&gt;&lt;/div&gt;  </b:if>
@@ -431,13 +430,13 @@
 															</b:if>
 														</b:if>
 														<!-- item  -->
-														<!-- <b:if cond='data:blog.pageType == &quot;item&quot;'>
-																<b:if cond='data:post.showThreadedComments'>
-																	<b:include data='post' name='threaded_comments'/>
-																	<b:else/>
-																	<b:include data='post' name='comments'/>
-																</b:if>
-															</b:if> -->
+														<b:if cond='data:blog.pageType == "item"'>
+															<b:if cond='data:post.showThreadedComments'>
+																<b:include data='post' name='threaded_comments'/>
+																<b:else/>
+																<b:include data='post' name='comments'/>
+															</b:if>
+														</b:if>
 														<!-- Ad  -->
 														<b:if cond='data:post.includeAd'>
 															<b:if cond='data:post.isFirstPost'>
@@ -462,6 +461,35 @@
 											</b:loop>
 											<b:if cond='data:numPosts != 0'>  &lt;/div&gt;&lt;/div&gt; </b:if>
 										</div>
+									</b:includable>
+									<b:includable id='nextprev'>
+										<div class='blog-pager' id='blog-pager'>
+											<b:if cond='data:newerPageUrl'>
+												<span id='blog-pager-newer-link'>
+													<a class='blog-pager-newer-link' expr:href='data:newerPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-newer-link&quot;' expr:title='data:newerPageTitle'>
+														<data:newerPageTitle/>
+													</a>
+												</span>
+											</b:if>
+											<b:if cond='data:olderPageUrl'>
+												<span id='blog-pager-older-link'>
+													<a class='blog-pager-older-link' expr:href='data:olderPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-older-link&quot;' expr:title='data:olderPageTitle'>
+														<data:olderPageTitle/>
+													</a>
+												</span>
+											</b:if>
+											<a class='home-link' expr:href='data:blog.homepageUrl'>
+												<data:homeMsg/>
+											</a>
+											<b:if cond='data:mobileLinkUrl'>
+												<div class='blog-mobile-link'>
+													<a expr:href='data:mobileLinkUrl'>
+														<data:mobileLinkMsg/>
+													</a>
+												</div>
+											</b:if>
+										</div>
+										<div class='clear'/>
 									</b:includable>
 									<b:includable id='shareButtons' var='post'>
 										<b:if cond='data:top.showEmailButton'>
@@ -501,7 +529,7 @@
 												((data:blog.pageType == "index") and (data:blog.searchQuery or data:blog.searchLabel))'>
 							<!-- home page-->
 							<b:section class='feature' id='Search-result' name='Search Query, Search Label, Home Page' preferred='yes'>
-								<b:widget id='PopularPosts2' locked='false' title='Search Results' type='PopularPosts'>
+								<b:widget id='PopularPosts1' locked='false' title='Search Results' type='PopularPosts'>
 									<b:widget-settings>
 										<b:widget-setting name='numItemsToShow'>10</b:widget-setting>
 										<b:widget-setting name='showThumbnails'>true</b:widget-setting>
@@ -516,7 +544,7 @@
 												<!-- home page will show this -->
 												<b:if cond='data:title != &quot;&quot;'>
 													<div class="w-full bg-[color:var(--orange)]  p-2 text-center text-white uppercase rounded-md ">
-														<a href="/search/label/Tips"> Tips </a>
+														<a href="/search/label/Tips" class="font-bold"> Tips </a>
 													</div>
 												</b:if>
 											</b:if>
@@ -555,13 +583,13 @@
 																				</a>
 																			</div>
 																		</b:if>
-																		<div class='text-justify p-4 absolute bottom-[110px]  bg-[color:var(--blue)] text-white uppercase rounded-md shadow-lg'>
-																			<a expr:href='data:post.href'>
-																				<data:post.title/>
+																		<h1 class='p-4 absolute bottom-[110px]  bg-[color:var(--blue)] text-white uppercase rounded-md shadow-lg'>
+																			<a expr:href='data:post.href' class="font-bold" >
+																				 <data:post.title/> 
 																			</a>
-																		</div>
+																		</h1>
 																		<b:if cond='data:showSnippets'>
-																			<div class='item-snippet mt-6 p-2 text-justify bg-white'>
+																			<div class='item-snippet mt-6 p-2 text-justify bg-white text-sm'>
 																				<!-- <data:post.dateHeader/> ko co thuoc tinh nay -->
 																				<data:post.snippet/>
 																			</div>
@@ -720,29 +748,29 @@
 									</div>
 								</b:includable>
 								<b:includable id='flat' var='data'>
-									<ul class='flat'>
+									<ul class='flat text-sm'>
 										<b:loop values='data:data' var='i'>
 											<li class='archivedate'>
 												<a expr:href='data:i.url'>
 													<data:i.name/>
-												</a> (
-												<data:i.post-count/>)
+												</a> (<data:i.post-count/>)
 											</li>
 										</b:loop>
 									</ul>
 								</b:includable>
 								<b:includable id='interval' var='intervalData'>
 									<b:loop values='data:intervalData' var='interval'>
-										<ul class='hierarchy'>
-											<li expr:class='&quot;archivedate &quot; + data:interval.expclass'>
+										<ul class='hierarchy text-sm'>
+											<li  expr:class='&quot;archivedate &quot; + data:interval.expclass'> 
 												<b:include cond='data:interval.toggleId' data='interval' name='toggle'/>
-												<a class='post-count-link' expr:href='data:interval.url'>
-													<data:interval.name/>
-												</a>
-												<span class='post-count text-[color:var(--orange)]' dir='ltr'>
-													(
-													<data:interval.post-count/>)
-												</span>
+												<strong>
+													<a class='post-count-link' expr:href='data:interval.url'>
+														<data:interval.name/>  
+													</a>
+													<span class='post-count text-[color:var(--orange)]' dir='ltr'>
+														(<data:interval.post-count/>) 
+													</span>
+												</strong>
 												<b:include cond='data:interval.data' data='interval.data' name='interval'/>
 												<b:include cond='data:interval.posts' data='interval.posts' name='posts'/>
 											</li>
@@ -751,30 +779,29 @@
 								</b:includable>
 								<b:includable id='menu' var='data'>
 									<select expr:id='data:widget.instanceId + &quot;_ArchiveMenu&quot;'>
-										<option value=''>
+										<option value=''  class="text-sm">
 											<data:title/>
 										</option>
 										<b:loop values='data:data' var='i'>
-											<option expr:value='data:i.url'>
-												<data:i.name/> (
-												<data:i.post-count/>)
+											<option expr:value='data:i.url' class="text-sm" >
+												<data:i.name/> (<data:i.post-count/>)
 											</option>
 										</b:loop>
 									</select>
 								</b:includable>
-								<b:includable id='posts' var='posts'>
-									<ul class='posts'>
+								<!-- <b:includable id='posts' var='posts'>
+									<ul class='posts text-sm'>
 										<b:loop values='data:posts' var='post'>
-											<li>
+											<li class="">
 												<a expr:href='data:post.url'>
 													<data:post.title/>
 												</a>
 											</li>
 										</b:loop>
 									</ul>
-								</b:includable>
+								</b:includable> -->
 								<b:includable id='toggle' var='interval'>
-									<a class='toggle' href='javascript:void(0)'>
+									<a class='toggle text-sm' href='javascript:void(0)'>
 										<span expr:class='&quot;zippy&quot; + (data:interval.expclass == &quot;expanded&quot; ? &quot; toggle-open&quot; : &quot;&quot;)'>
 											<b:if cond='data:interval.expclass == &quot;expanded&quot;'>
        											&#9660;&#160;
@@ -793,23 +820,271 @@
 			</div>
 		</b:if>
 		<div class="mt-[10px] flex justify-center flex-col w-full mx-auto bg-gray-900 text-white p-4 h-[200px] text-center">
-			<div class="uppercase">
-				Copyright @2022(November) Version 1.0.0 - By
+			<div>
+				Copyright @2022(November) Version 1.0.0 - By <span class="bg-[color:var(--orange)] text-white p-2 ">Learn Tech Tips</span>
 				<span class="text-[color:var(--blue)] font-bold italic">Z</span>idane
 			</div>
 			<div class="mt-[10px]">
-				<a class="hover:bg-[color:var(--blue)] hover:p-2 hover:rounded-lg" href="https://learn-tech-tips.blogspot.com" 
+				<a class="hover:underline hover:p-2 hover:rounded-lg" href="https://learn-tech-tips.blogspot.com" 
 				target="_blank" rel="noopener noreferrer"> https://learn-tech-tips.blogspot.com </a>
 			</div>
 		</div>
 		<script src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js'/>
 		<b:if cond='data:blog.pageType != &quot;static_page&quot;'>
 			<b:if cond='data:blog.pageType != &quot;item&quot;'>
-				<script type='text/javascript'>
-					//
-					<![CDATA[
-					function resizeThumb(e,n){for(var t=document.getElementById(e).getElementsByTagName("img"),a=0;a<t.length;a++)t[a].src=t[a].src.replace(/\/s72\-c/,"/s"+n+"-c")}window.labelfx=function(){var e=function(e){var n=e||{},t=n.url_blog||window.location.host,a=n.id_labelcontent||"#labelfxn";$.ajax({url:"http://"+t+"/feeds/posts/summary?max-results=0&alt=json-in-script",type:"get",dataType:"jsonp",success:function(e){var n=e.feed.category,t="";if(void 0!==n){t="<ul class='labelx'>";for(var i=0;i<n.length;i++)t+='<li><a href="/search/label/'+encodeURIComponent(n[i].term)+'" target="_blank">'+n[i].term+"</a></li>";t+="</ul>",$(a).html(t)}else $(a).html("<span>No Label!</span>")},error:function(){$(a).html("<strong>Error Loading Feed!</strong>")}})};return function(n){e(n)}}(),resizeThumb("main",250),labelfx(),function(e){function n(n){e.getScript("http://"+n+".disqus.com/blogger_index.js")}function t(){s||(s=!0,o?(r.find("a").hide(),r.find("img").show(),e.ajax(o,{dataType:"html"}).done(function(t){var a=e("<div></div>").append(t.replace(l,"")),i=a.find("a.blog-pager-older-link");i?o=i.attr("href"):(o="",r.hide());var p=a.find(d).children(".date-outer");e(d).append(p),resizeThumb("main",250),window._gaq&&window._gaq.push(["_trackPageview",o]),window.gapi&&window.gapi.plusone&&window.gapi.plusone.go&&window.gapi.plusone.go(),window.disqus_shortname&&n(window.disqus_shortname),window.FB&&window.FB.XFBML&&window.FB.XFBML.parse&&window.FB.XFBML.parse(),window.twttr&&window.twttr.widgets&&window.twttr.widgets.load&&window.twttr.widgets.load(),r.find("img").hide(),r.find("a").show(),s=!1})):r.hide())}function a(){if("item"!=_WidgetManager._GetAllData().blog.pageType&&(o=e("a.blog-pager-older-link").attr("href"))){var n=e('<a class="loadpost" href="javascript:;" style="text-decoration:none;font:11px Open Sans, sans-serif;letter-spacing:1px;padding:10px 20px;background:#000000;color:#ffffff;">LOAD MORE POSTS</a>');n.click(t);var a=e('<img src="'+i+'" style="display: none;">');(r=e('<div style="display:block;text-align:center;margin:20px auto;"></div>')).append(n),r.append(a),r.insertBefore(e("#blog-pager")),e("#blog-pager").hide()}}var i="https://1.bp.blogspot.com/-6_Eha7PSRy0/WXI6jskHE9I/AAAAAAAAMB0/6iFQ2qywS2kaNA2evWgsUb51zjRFf69cQCLcBGAs/s1600/loader.gif",o="",r=null,d="div.blog-posts",s=!1,l=(e(window),e(document),/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi);e(document).ready(a)}(jQuery);
-					//]]>
+				<script type='text/javascript'> 
+				 /*
+					<![CDATA[*/
+  if (typeof firstText == "undefined") firstText = "First";
+  if (typeof lastText == "undefined") lastText = "Last";
+  var noPage;
+  var currentPage;
+  var currentPageNo;
+  var postLabel;
+  pagecurrentg();
+
+  function looppagecurrentg(pageInfo) {
+      var html = '';
+      pageNumber = parseInt(numPages / 2);
+      if (pageNumber == numPages - pageNumber) {
+          numPages = pageNumber * 2 + 1
+      }
+      pageStart = currentPageNo - pageNumber;
+      if (pageStart < 1) pageStart = 1;
+      lastPageNo = parseInt(pageInfo / perPage) + 1;
+      if (lastPageNo - 1 == pageInfo / perPage) lastPageNo = lastPageNo - 1;
+      pageEnd = pageStart + numPages - 1;
+      if (pageEnd > lastPageNo) pageEnd = lastPageNo;
+      html += "
+					<span class='showpageOf'>Page " + currentPageNo + ' of ' + lastPageNo + "</span>";
+      var prevNumber = parseInt(currentPageNo) - 1;
+
+      //Iccsi was here, doing magic      
+      if (currentPageNo > 1) {
+          if (currentPage == "page") {
+              html += '
+					<span class="showpage firstpage">
+						<a href="' + home_page + '">' + firstText + '</a>
+					</span>'
+          } else {
+              html += '
+					<span class="displaypageNum firstpage">
+						<a href="/search/label/' + postLabel + '?&max-results=' + perPage + '">' + firstText + '</a>
+					</span>'
+          }
+      }
+
+      if (currentPageNo > 2) {
+          if (currentPageNo == 3) {
+              if (currentPage == "page") {
+                  html += '
+					<span class="showpage">
+						<a href="' + home_page + '">' + prevText + '</a>
+					</span>'
+              } else {
+                  html += '
+					<span class="displaypageNum">
+						<a href="/search/label/' + postLabel + '?&max-results=' + perPage + '">' + prevText + '</a>
+					</span>'
+              }
+          } else {
+              if (currentPage == "page") {
+                  html += '
+					<span class="displaypageNum">
+						<a href="#" onclick="redirectpage(' + prevNumber + ');return false">' + prevText + '</a>
+					</span>'
+              } else {
+                  html += '
+					<span class="displaypageNum">
+						<a href="#" onclick="redirectlabel(' + prevNumber + ');return false">' + prevText + '</a>
+					</span>'
+              }
+          }
+      }
+      if (pageStart > 1) {
+          if (currentPage == "page") {
+              html += '
+					<span class="displaypageNum">
+						<a href="' + home_page + '">1</a>
+					</span>'
+          } else {
+              html += '
+					<span class="displaypageNum">
+						<a href="/search/label/' + postLabel + '?&max-results=' + perPage + '">1</a>
+					</span>'
+          }
+      }
+      if (pageStart > 2) {
+          html += ' ... '
+      }
+      for (var jj = pageStart; jj
+					<= pageEnd; jj++) {
+          if (currentPageNo == jj) {
+              html += '
+						<span class="pagecurrent">' + jj + '</span>'
+          } else if (jj == 1) {
+              if (currentPage == "page") {
+                  html += '
+						<span class="displaypageNum">
+							<a href="' + home_page + '">1</a>
+						</span>'
+              } else {
+                  html += '
+						<span class="displaypageNum">
+							<a href="/search/label/' + postLabel + '?&max-results=' + perPage + '">1</a>
+						</span>'
+              }
+          } else {
+              if (currentPage == "page") {
+                  html += '
+						<span class="displaypageNum">
+							<a href="#" onclick="redirectpage(' + jj + ');return false">' + jj + '</a>
+						</span>'
+              } else {
+                  html += '
+						<span class="displaypageNum">
+							<a href="#" onclick="redirectlabel(' + jj + ');return false">' + jj + '</a>
+						</span>'
+              }
+          }
+      }
+      if (pageEnd < lastPageNo - 1) {
+          html += '...'
+      }
+      if (pageEnd < lastPageNo) {
+          if (currentPage == "page") {
+              html += '
+						<span class="displaypageNum">
+							<a href="#" onclick="redirectpage(' + lastPageNo + ');return false">' + lastPageNo + '</a>
+						</span>'
+          } else {
+              html += '
+						<span class="displaypageNum">
+							<a href="#" onclick="redirectlabel(' + lastPageNo + ');return false">' + lastPageNo + '</a>
+						</span>'
+          }
+      }
+
+
+      var nextnumber = parseInt(currentPageNo) + 1;
+      if (currentPageNo < (lastPageNo - 1)) {
+          if (currentPage == "page") {
+              html += '
+						<span class="displaypageNum">
+							<a href="#" onclick="redirectpage(' + nextnumber + ');return false">' + nextText + '</a>
+						</span>'
+          } else {
+              html += '
+						<span class="displaypageNum">
+							<a href="#" onclick="redirectlabel(' + nextnumber + ');return false">' + nextText + '</a>
+						</span>'
+          }
+      }
+
+      if (currentPageNo < lastPageNo) {
+          //Iccsi was here, doing magic
+          if (currentPage == "page") {
+              html += '
+						<span class="displaypageNum lastpage">
+							<a href="#" onclick="redirectpage(' + lastPageNo + ');return false">' + lastText + '</a>
+						</span>'
+          } else {
+              html += '
+						<span class="displaypageNum lastpage">
+							<a href="#" onclick="redirectlabel(' + lastPageNo + ');return false">' + lastText + '</a>
+						</span>'
+          }
+      }
+
+      var pageArea = document.getElementsByName("pageArea");
+      var blogPager = document.getElementById("blog-pager");
+      for (var p = 0; p < pageArea.length; p++) {
+          pageArea[p].innerHTML = html
+      }
+      if (pageArea && pageArea.length > 0) {
+          html = ''
+      }
+      if (blogPager) {
+          blogPager.innerHTML = html
+      }
+  }
+
+  function totalcountdata(root) {
+      var feed = root.feed;
+      var totaldata = parseInt(feed.openSearch$totalResults.$t, 10);
+      looppagecurrentg(totaldata)
+  }
+
+  function pagecurrentg() {
+      var thisUrl = urlactivepage;
+      if (thisUrl.indexOf("/search/label/") != -1) {
+          if (thisUrl.indexOf("?updated-max") != -1) {
+              postLabel = thisUrl.substring(thisUrl.indexOf("/search/label/") + 14, thisUrl.indexOf("?updated-max"))
+          } else {
+              postLabel = thisUrl.substring(thisUrl.indexOf("/search/label/") + 14, thisUrl.indexOf("?&max"))
+          }
+      }
+      if (thisUrl.indexOf("?q=") == -1 && thisUrl.indexOf(".html") == -1) {
+          if (thisUrl.indexOf("/search/label/") == -1) {
+              currentPage = "page";
+              if (urlactivepage.indexOf("#PageNo=") != -1) {
+                  currentPageNo = urlactivepage.substring(urlactivepage.indexOf("#PageNo=") + 8, urlactivepage.length)
+              } else {
+                  currentPageNo = 1
+              }
+              document.write("
+						<script src=\"" + home_page + "feeds/posts/summary?max-results=1&alt=json-in-script&callback=totalcountdata\">
+							<\/script>")
+          } else {
+              currentPage = "label";
+              if (thisUrl.indexOf("&max-results=") == -1) {
+                  perPage = 20
+              }
+              if (urlactivepage.indexOf("#PageNo=") != -1) {
+                  currentPageNo = urlactivepage.substring(urlactivepage.indexOf("#PageNo=") + 8, urlactivepage.length)
+              } else {
+                  currentPageNo = 1
+              }
+              document.write('
+								<script src="' + home_page + 'feeds/posts/summary/-/' + postLabel + '?alt=json-in-script&callback=totalcountdata&max-results=1" ><\/script>')
+          }
+      }
+  }
+
+  function redirectpage(numberpage) {
+      jsonstart = (numberpage - 1) * perPage;
+      noPage = numberpage;
+      var nameBody = document.getElementsByTagName('head')[0];
+      var newInclude = document.createElement('script');
+      newInclude.type = 'text/javascript';
+      newInclude.setAttribute("src", home_page + "feeds/posts/summary?start-index=" + jsonstart + "&max-results=1&alt=json-in-script&callback=finddatepost");
+      nameBody.appendChild(newInclude)
+  }
+
+  function redirectlabel(numberpage) {
+      jsonstart = (numberpage - 1) * perPage;
+      noPage = numberpage;
+      var nameBody = document.getElementsByTagName('head')[0];
+      var newInclude = document.createElement('script');
+      newInclude.type = 'text/javascript';
+      newInclude.setAttribute("src", home_page + "feeds/posts/summary/-/" + postLabel + "?start-index=" + jsonstart + "&max-results=1&alt=json-in-script&callback=finddatepost");
+      nameBody.appendChild(newInclude)
+  }
+
+  function finddatepost(root) {
+	post = root.feed.entry[0];
+	var timestamp1 = post.published.$t.substring(0, 19) + post.published.$t.substring(23, 29);
+	var timestamp = encodeURIComponent(timestamp1);
+	if (currentPage == "page") {
+		var pAddress = "/search?updated-max=" + timestamp + "&max-results=" + perPage + "#PageNo=" + noPage
+	} else {
+		var pAddress = "/search/label/" + postLabel + "?updated-max=" + timestamp + "&max-results=" + perPage + "#PageNo=" + noPage
+	}
+	location.href = pAddress
+}
+
+
+           /*]]>*/
 				</script>
 			</b:if>
 		</b:if>
