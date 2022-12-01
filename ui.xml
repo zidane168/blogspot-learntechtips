@@ -509,11 +509,10 @@
 								</b:includable>
 							</b:widget>
 						</b:section>
-
 						<div class="bg-white shadow-lg rounded-md p-2 ">
 							<b:section class='feature' id='Search-result' name='Search Query, Search Label, Home Page' preferred='yes'>
 								<b:widget id='PopularPosts2' locked='false' title='Search Results' type='PopularPosts'>
-									<b:widget-settings>
+									<b:widget-settings> 
 										<b:widget-setting name='numItemsToShow'>10</b:widget-setting>
 										<b:widget-setting name='showThumbnails'>true</b:widget-setting>
 										<b:widget-setting name='showSnippets'>true</b:widget-setting>
@@ -522,8 +521,8 @@
 									<b:includable id='main'>
 										<!-- popular -->
 										<!-- <b:if cond='data:blog.pageType != "item" and (!data:blog.searchQuery and !data:blog.searchLabel)'> -->
-
-										<b:if cond='data:blog.url == data:blog.homepageUrl'> <!-- home page will show this -->
+										<b:if cond='data:blog.url == data:blog.homepageUrl'>
+											<!-- home page will show this -->
 											<!-- not detail page add this title -->
 											<b:if cond='data:title != &quot;&quot;'>
 												<div class="w-full bg-[color:var(--orange)]  p-2 text-center text-white uppercase rounded-md ">
@@ -534,9 +533,9 @@
 										<div class='widget-content popular-posts'>
 											<b:if cond='(data:blog.url == data:blog.homepageUrl) or ((data:blog.pageType == "index") and (data:blog.searchQuery or data:blog.searchLabel))'>
 												<!-- search + label + home page -->
-												<ul class="bg-gray-100 p-2">
+												<div class="bg-gray-100 pt-2 grid grid-cols-3 gap-4" >
 													<b:loop values='data:posts' var='post'>
-														<li>
+														<div class="basis-[330px]">
 															<b:if cond='!data:showThumbnails'>
 																<b:if cond='!data:showSnippets'>
 																	<!-- (1) No snippet/thumbnail -->
@@ -556,32 +555,35 @@
 																</b:if>
 																<b:else/>
 																<!-- (3) Show only thumbnails or (4) Snippets and thumbnails. -->
-																<div  expr:class='data:showSnippets ? &quot;item-content&quot; : &quot;item-thumbnail-only&quot;'>
-																	<b:if cond='data:post.featuredImage.isResizable or data:post.thumbnail'>
-																		<div class='item-thumbnail'>
-																			<a expr:href='data:post.href' target='_blank'>
-																				<b:with value='data:post.featuredImage.isResizable  ? resizeImage(data:post.featuredImage, 300, &quot;1:1&quot;) : data:post.thumbnail' var='image'>
-																					<img alt='' border='0' expr:src='data:image' class='w-[180px] pr-0 rounded-md hover:scale-110 shadow-lg border border-[color:var(--orange)] p-4 text-white object-contain object-center' />
-																				</b:with>
+																<div class="relative">
+																	<div  expr:class='data:showSnippets ? &quot;item-content&quot; : &quot;item-thumbnail-only&quot;'>
+																		<b:if cond='data:post.featuredImage.isResizable or data:post.thumbnail'>
+																			<div class='item-thumbnail w-full'>
+																				<a expr:href='data:post.href' target='_blank'>
+																					<b:with value='data:post.featuredImage.isResizable  ? resizeImage(data:post.featuredImage, 400, &quot;1:1&quot;) : data:post.thumbnail' var='image'>
+																						<img alt='' border='0' expr:src='data:image' class=' hover:scale-110 w-[330px] shadow-lg p-4 text-white  ' />
+																					</b:with>
+																				</a>
+																			</div>
+																		</b:if>
+																		<div class='text-justify p-4 absolute bottom-[110px]  bg-[color:var(--blue)] text-white uppercase rounded-md shadow-lg'>
+																			<a expr:href='data:post.href'>
+																				<data:post.title/>
 																			</a>
 																		</div>
-																	</b:if>
-																	<div class='item-title px-6'>
-																		<a expr:href='data:post.href'>
-																			<data:post.title/>
-																		</a>
+																		<b:if cond='data:showSnippets'>
+																			<div class='item-snippet mt-6 p-2 text-justify bg-white'>
+																				<!-- <data:post.dateHeader/> ko co thuoc tinh nay -->
+																				<data:post.snippet/>
+																			</div>
+																		</b:if>
 																	</div>
-																	<b:if cond='data:showSnippets'>
-																		<div class='item-snippet'>
-																			<data:post.snippet/>
-																		</div>
-																	</b:if>
 																</div>
 																<div style='clear: both;'/>
 															</b:if>
-														</li>
+														</div>
 													</b:loop>
-												</ul>
+												</div>
 											</b:if>
 											<b:include name='quickedit'/>
 										</div>
@@ -589,8 +591,7 @@
 								</b:widget>
 							</b:section>
 						</div>
-
-						<b:if cond='(data:blog.url == data:blog.homepageUrl)'>
+						<b:if cond='(data:blog.url == data:blog.homepageUrl)'>	<!-- home page-->
 							<div class="flex space-x-2 bg-white shadow-lg rounded-md p-2 mt-[10px]">
 								<div class="w-1/2">
 									<b:section class='feature' id='blog-tag' name="Blog Tag" preferred='yes'>
