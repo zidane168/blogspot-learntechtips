@@ -732,3 +732,35 @@ define variable for
 
 id must ======== type
        <b:widget id='PopularPosts2' locked='false' title='Search Results' type='PopularPosts'> 
+
+
+
+
+/////// ------------------------ Image
+<b:if cond='data:post.firstImageUrl'></b:if>
+
+        <b:if cond='data:post.thumbnailUrl'>
+                        <div class='mobile-index-thumbnail'>
+                          <div class='Image'>
+                            <img expr:src='data:post.thumbnailUrl'/>
+                          </div>
+                        </div>
+                      </b:if>
+
+
+
+
+                      <b:if cond='data:post.thumbnailUrl'>
+                        <meta expr:content='data:post.thumbnailUrl' itemprop='image_url'/>
+                      </b:if>
+
+                      <div class='post-thumb'>
+                        &lt;a href=&#39;
+                          <data:post.url/>&#39; style=&#39;background:url(
+                          <data:post.firstImageUrl/>) no-repeat center center;background-size:cover&#39;&gt;&lt;/a&gt;
+                        </div>
+                      </div>
+
+
+
+                        <b:if cond='data:post.firstImageUrl'></b:if>
