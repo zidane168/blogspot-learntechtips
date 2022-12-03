@@ -595,15 +595,6 @@ https://www.templateify.com/2022/10/nurify-blogger-template.html
 
 
 
-show more / load more
-pagination
-display post with tags
-ad
-mega menu
-background impress
-search with labels show the (thumbnailUrl + title) -> current show detail
-
-
 
 
 <b:includable id='ajaxPagination'>
@@ -764,3 +755,21 @@ id must ======== type
 
 
                         <b:if cond='data:post.firstImageUrl'></b:if>
+
+
+
+                        
+
+
+show more / load more
+pagination
+display post with tags (DONE)
+display post with search (DONE)
+main page (DONE)
+detail page (DONE)
+search with labels show the (thumbnailUrl + title) -> current show detail (DONE)
+
+related post
+ad
+mega menu
+background impress
