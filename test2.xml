@@ -267,7 +267,8 @@
 				<!-- Main Tag -->
 				<div class="flex mt-[10px] space-x-2 ">
 					<div id="left" class='w-[1100px] bg-gray-200 rounded-lg shadow-lg p-2'>
-						<b:if cond='(data:blog.searchQuery) or (data:blog.searchLabel)'>
+						 
+	<b:if cond='(data:blog.searchQuery) or (data:blog.searchLabel)'>
 							<b:section class='main'  id='blog-search-result' name='Blog Detail' showaddelement='yes'>
 								<b:widget id='Blog100'  locked='true' title='Blog Posts' type='Blog' version='1'>
 									<b:widget-settings>
@@ -422,6 +423,8 @@
 								</b:widget>
 							</b:section>
 						</b:if>
+
+
 						<!-- item, static_page -->
 						<b:if cond='(data:blog.pageType == "item") or (data:blog.pageType == "static_page")'>
 							<b:section class='main'  id='blog-detail' name='Blog Detail' showaddelement='yes'>
@@ -549,8 +552,7 @@
 																		<data:post.numComments/>
 																	</div>
 																</div>
-																<div class="flex items-center space-x-2">
-																	<!-- author -->
+																<div class="flex items-center space-x-2"> 
 																	<div>
 																		<svg enable-background="new 0 0 512 512"  width="32px"  id="Layer_1" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 																			<g>
@@ -614,8 +616,7 @@
 															<data:adStart/>
 														</b:if>
 													</div>
-													<!-- <b:include cond='data:blog.pageType in {&quot;static_page&quot;,&quot;item&quot;}' data='post' name='comment_picker'/> -->
-												</div>
+									 			</div>
 												<!-- Ad -->
 												<b:if cond='data:post.includeAd'>
 													<div class='inline-ad'>
@@ -676,19 +677,29 @@
 													<data:top.shareToTwitterMsg/>
 												</span>
 											</a>
-										</b:if>
-										<!-- <b:if cond='data:top.showFacebookButton'> -->
+										</b:if> 
 										<a class='goog-inline-block share-button sb-facebook' expr:href='data:post.sharePostUrl + &quot;&amp;target=facebook&quot;' expr:onclick='&quot;window.open(this.href, \&quot;_blank\&quot;, \&quot;height=430,width=640\&quot;); return false;&quot;' expr:title='data:top.shareToFacebookMsg' target='_blank'>
 											<span class='share-button-link-text'>
 												<data:top.shareToFacebookMsg/>
 											</span>
-										</a>
-										<!-- </b:if> -->
+										</a>  
 									</b:includable>
 								</b:widget>
 							</b:section>
 						</b:if>
-						<b:if cond='(data:blog.url == data:blog.homepageUrl) or (data:blog.pageType == "item") or
+						 
+
+
+
+
+
+
+
+
+
+
+
+						 	<b:if cond='(data:blog.url == data:blog.homepageUrl) or (data:blog.pageType == "item") or
 												(data:blog.pageType == "archive") or
 												((data:blog.pageType == "index") and (data:blog.searchLabel))'>
 							<!-- home page-->
