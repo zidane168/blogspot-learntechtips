@@ -317,7 +317,7 @@
 									<b:includable id='main' var='top'>
 										<!-- posts -->
 										<div class='blog-posts hfeed'>
-											<b:if cond='data:numPosts > 0' >
+											<!-- <b:if cond='data:numPosts > 0' > -->
 												<b:include data='top' name='status-message'/>
 												 
 												<div class="bg-rose-100 p-2 mt-[5px]">
@@ -410,12 +410,12 @@
 														</div>
 													</b:loop>
 												</div>
-											</b:if> 
+											<!-- </b:if>  -->
 										</div>
 
-										<b:if cond='data:numPosts > 0' >
+										<!-- <b:if cond='data:numPosts > 0' > -->
 											<b:include name='nextprev'/>
-										</b:if> 
+										<!-- </b:if>  -->
 									</b:includable>
 									<b:includable id='nextprev'>
 										<div class='blog-pager' id='blog-pager'>
@@ -858,8 +858,6 @@
 											<b:widget-setting name='showReactions'>false</b:widget-setting>
 										</b:widget-settings>
 										<b:includable id='main' var='data:content'>
-										
-											<b:if cond="n"></b:if>
 											<div class="bg-gray-100 p-2 mt-[5px] rounded-md">
 												<b:loop values='data:posts' var='post'>
 													<b:loop values='data:post.labels' var='label'>
