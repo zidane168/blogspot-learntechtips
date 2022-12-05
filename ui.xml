@@ -686,7 +686,7 @@
 											<b:if cond='data:numPosts != 0'>  &lt;/div&gt;&lt;/div&gt; </b:if>
 										</div>
 									</b:includable>
-									<b:includable id='nextprev'>
+									<!-- <b:includable id='nextprev'>
 										<div class='blog-pager' id='blog-pager'>
 											<b:if cond='data:newerPageUrl'>
 												<span id='blog-pager-newer-link'>
@@ -714,7 +714,7 @@
 											</b:if>
 										</div>
 										<div class='clear'/>
-									</b:includable>
+									</b:includable> -->
 									<b:includable id='shareButtons' var='post'>
 										<b:if cond='data:top.showEmailButton'>
 											<a class='goog-inline-block share-button sb-email' expr:href='data:post.sharePostUrl + &quot;&amp;target=email&quot;' expr:title='data:top.emailThisMsg' target='_blank'>
@@ -859,6 +859,7 @@
 										</b:widget-settings>
 										<b:includable id='main' var='data:content'>
 										
+											<b:if cond="n"></b:if>
 											<div class="bg-gray-100 p-2 mt-[5px] rounded-md">
 												<b:loop values='data:posts' var='post'>
 													<b:loop values='data:post.labels' var='label'>
