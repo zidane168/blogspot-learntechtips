@@ -476,6 +476,7 @@
 							</b:section>
 						</b:if>
 						<!-- item, static_page -->
+						
 						<b:if cond='(data:blog.pageType == "item") or (data:blog.pageType == "static_page")'>
 							<b:section class='main'  id='blog-detail' name='Blog Detail' showaddelement='yes'>
 								<b:widget id='Blog1'  locked='true' title='Blog Posts' type='Blog' version='1'>
