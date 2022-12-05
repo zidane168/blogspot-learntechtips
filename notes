@@ -767,6 +767,7 @@ display post with tags (DONE)
 display post with search (DONE)
 main page (DONE)
 detail page (DONE)
+pagination (index, homepageUrl) (DONE)
 search with labels show the (thumbnailUrl + title) -> current show detail (DONE)
 
 related post
