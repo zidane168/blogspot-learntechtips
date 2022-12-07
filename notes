@@ -762,7 +762,7 @@ id must ======== type
 
 
 show more / load more
-pagination
+pagination ((data:blog.pageType == "index") LA TRANG CHU / PAGINATION TRANG 2,3,4..... NEN PHAI CO TRONG DIEU KIEN PAGINATION)
 display post with tags (DONE)
 display post with search (DONE)
 main page (DONE)
@@ -779,3 +779,5 @@ tai sao bi nhoe hinh khi phong lon, xem sora.
 ko pagination dc
 
 https://www.youtube.com/watch?v=g3QfNOB_IKw
+
+
