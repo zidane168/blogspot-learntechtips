@@ -444,6 +444,8 @@
 								</b:widget>
 							</b:section>
 						</b:if>
+						<!-- <b:if  cond='(data:blog.pageType != "item") and (data:blog.pageType != "static_page")'> -->
+						
 						<b:if cond='(data:blog.url == data:blog.homepageUrl) or (data:blog.searchQuery) or (data:blog.searchLabel) or (data:blog.pageType == "index")'>
 							<!-- pagination -->
 							<div class="flex space-x-2 bg-white shadow-lg rounded-md p-2 mt-[10px]">
@@ -473,6 +475,7 @@
 												<b:widget-setting name='showReactions'>false</b:widget-setting>
 											</b:widget-settings>
 											<b:includable id='main' var='data:content'>
+												<b:include name='nextprev'/>
 												<div class="bg-gray-100 p-2 mt-[5px] rounded-md">
 													<b:loop values='data:posts' var='post'>
 														<div class="flex items-center space-x-2 mt-2">
@@ -1273,7 +1276,7 @@
 				<script type='text/javascript'>
   /*
 					<![CDATA[*/
-    var postperpage=10;
+    var postperpage=20;
     var numshowpage=1;
     var upPageWord ='« Previous';
     var downPageWord ='Next »';

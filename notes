@@ -762,7 +762,11 @@ id must ======== type
 
 
 show more / load more
-pagination ((data:blog.pageType == "index") LA TRANG CHU / PAGINATION TRANG 2,3,4..... NEN PHAI CO TRONG DIEU KIEN PAGINATION)
+pagination (
+                     
+- chinh pagination 2 cho: 1 là ở ngoài trang chủ blog (chỉnh số luong hiện thi, code ko quy định), 2 là chỉnh trong biến js postperpage)
+- LUU Y ĐIỆU KIEN HIEN THI, CÁI NÀY LÀM MÌNH TỐN 2-3 NGÀY ... (data:blog.pageType == "index") LA TRANG CHU / PAGINATION TRANG 2,3,4..... NEN PHAI CO TRONG DIEU KIEN PAGINATION)
+
 display post with tags (DONE)
 display post with search (DONE)
 main page (DONE)
