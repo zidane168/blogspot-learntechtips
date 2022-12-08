@@ -25,6 +25,14 @@
 
 }
 
+.post-thumb a {
+	width: 100%;
+	height: 180px;
+	display: block;
+	-webkit-transition: all .3s ease-out!important; 
+	transition: all .3s ease-out!important;
+}
+
  
 	/* ]]>*/
 	</b:skin>
@@ -478,23 +486,30 @@
 												<b:include name='nextprev'/>
 												<div class="bg-gray-100 p-2 mt-[5px] rounded-md">
 													<b:loop values='data:posts' var='post'>
-														<div class="flex items-center space-x-2 mt-2">
+														<div class="flex items-center space-x-2 mt-2"> 
 															<div class="hover:scale-110 hover:cursor-pointer">
-																<b:with value='data:post.featuredImage.isResizable  ? resizeImage(data:post.featuredImage, 300, &quot;1:1&quot;) : data:post.thumbnail' var='image'>
-																	<img expr:alt='data:post.title' class="p-2 shadow-lg rounded-md" border='0' expr:src='data:post.thumbnailUrl'/>
-																</b:with>
+																<img expr:alt='data:post.title' class="w-[350px] p-2 shadow-lg rounded-md" border='0' expr:src='data:post.firstImageUrl'/>
 															</div>
 															<div>
-																<a class="hover:text-[color:var(blue)]" expr:href="data:post.url" target="_blank" rel='noopener noreferrer'>
-																	<data:post.title />
-																</a>
+																<div>
+																	<a class="hover:text-[color:var(blue)]" expr:href="data:post.url" target="_blank" rel='noopener noreferrer'>
+																		<data:post.title />  
+																	</a>
+																</div>
+																<div class="flex space-x-2 p-2 rounded-r-lg"> 
+																	<b:loop values='data:post.labels' var='label'> 
+																		<data:label.name/>
+																	</b:loop>
+																</div>
+																
+																<div class="text-sm italic"> 
+																	Comment: <data:post.numComments/>
+																</div>
+																<div class="text-sm italic"> 
+																	<data:post.snippet/>
+																</div>
 															</div>
-														</div>
-														<!-- <b:include data='post' name='post'/>
-														<img 
-														class="w-full h-[180px] object-cover bg-no-repeat center bg-cover" 
-														src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhPt319vxLqCHl-JO7rM6hAvTojrLBQwGD26SeDZ2pPvTvUnafWEeVx0-irB9lrYvDPrrAcuGEUBKXtjpVSWSYVHxKlcosRP2DZJp8aqYHTEgZ6ZZIDLV8erETY-45JQUdphvQ3xYFsLcs4DlXelFTeO6RrxuCCLlFgIiiGFHNov-w09zOEOJy13KyT/s72-c/Recent%20search%20with%20Tailwind%20and%20NextJS.gif" style="" alt=""/>
-                         -->
+														</div> 
 													</b:loop>
 												</div>
 												<b:if cond='data:post.includeAd'>
@@ -1033,8 +1048,7 @@
 												<b:include name='quickedit'/> 
 											</div>
 										</div>
-									</b:includable>
-								 
+									</b:includable> 
 								</b:widget>
 							</b:section>
 						</b:if>
@@ -1379,12 +1393,9 @@
 			}
 		}
 		
-		var pageArea=document.getElementsByName("pageArea");
-		var blogPager2=document.getElementById("blog-pager");
+		var pageArea=document.getElementsByName("pageArea"); 
 		var blogPager=document.getElementsByClassName("blog-pager");
-
-		console.log(blogPager2)
-		console.log(blogPager)
+ 
 		for(var p=0;p<pageArea.length;p++) {
 			pageArea[p].innerHTML=html
 		} 
