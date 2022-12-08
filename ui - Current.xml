@@ -27,6 +27,26 @@
 .home-link, .blog-pager-older-link {
 	padding:4px 6px;
 }
+
+
+.btn-scroll-to-top {
+  display: none;
+  position: fixed;
+  bottom: 100px;
+  right: 30px;
+  z-index: 100;
+  border: none !important;
+  outline: none !important;
+  background-color: var(--blue) !important; 
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 16px;
+}
+.btn-scroll-to-top:hover {
+  background-color: var(--orange) !important; 
+}
  
 	/* ]]>*/
 	</b:skin>
@@ -111,10 +131,14 @@
 				--orange: #FF7E00;
 				--blue:   #00AEFF;
 			} 
+			html {
+				scroll-behavior: smooth;
+			}
 		</style>
 	</head>
 	<body>
 		<b:if cond='!data:mobile'>
+			<button class="btn-scroll-to-top" type="button" onclick="scrollWin()" id="myTopBtn">Top</button>
 			<div class="w-full bg-[color:var(--blue)] text-white p-4">
 				<b:section class='top-menu' id='top-static-page' maxwidgets='1' name='Top Static Page'  showaddelement='yes'>
 					<b:widget id='LinkList1' locked='true' title='' type='LinkList' version='1'>
@@ -287,7 +311,10 @@
 						Break News
 					</div>
 					<marquee width="100%" direction="left" class=" p-4 bg-gray-900 text-white rounded-l-none rounded-r-md  ">
-						<div> Blog 1 - Image 1 - Blog 1 Title,  Blog 2 - Image 2 - Blog 2 Title,  </div>
+						<div>
+							<a href="https://helloabd.blogspot.com/2016/07/tutorial-design-pattern-strategy-pattern.html"> What is blockchain? </a>
+							<a href="https://helloabd.blogspot.com/2016/07/tutorial-design-pattern-strategy-pattern.html"> What is blockchain? </a>
+						</div>
 					</marquee>
 				</div>
 				<!-- Main Tag -->
@@ -328,13 +355,13 @@
 												<b:include name='nextprev'/>
 											</div>
 											<div class="shadow-lg bg-white rounded-md p-2 mt-2">
-												<b:loop values='data:posts' var='post'> 
+												<b:loop values='data:posts' var='post'>
 													<div class="w-full  p-2">
 														<h1 class="mt-[5px] font-bold bg-[color:var(--blue)] text-white p-2">
 															<data:post.title/>
 														</h1>
 													</div>
-													<div class="flex items-center space-x-4 p-2"> 
+													<div class="flex items-center space-x-4 p-2">
 														<a expr:href='data:post.url' class="w-[350px]  main-image hover:scale-110 bg-white shadow-lg p-2">
 															<img expr:src='data:post.firstImageUrl' class="object-contain" />
 														</a>
@@ -414,7 +441,7 @@
 																<a expr:href='data:post.url'> Read now ... </a>
 															</div>
 														</div>
-													</div> 
+													</div>
 												</b:loop>
 											</div>
 											<div class="w-full bg-white rounded-md text-sm p-2 ">
@@ -713,13 +740,13 @@
 												</span>
 											</a>
 										</b:if>
-										<!-- <b:if cond='data:top.showFacebookButton'> -->
-										<a class='goog-inline-block share-button sb-facebook' expr:href='data:post.sharePostUrl + &quot;&amp;target=facebook&quot;' expr:onclick='&quot;window.open(this.href, \&quot;_blank\&quot;, \&quot;height=430,width=640\&quot;); return false;&quot;' expr:title='data:top.shareToFacebookMsg' target='_blank'>
-											<span class='share-button-link-text'>
-												<data:top.shareToFacebookMsg/>
-											</span>
-										</a>
-										<!-- </b:if> -->
+										<b:if cond='data:top.showFacebookButton'>
+											<a class='goog-inline-block share-button sb-facebook' expr:href='data:post.sharePostUrl + &quot;&amp;target=facebook&quot;' expr:onclick='&quot;window.open(this.href, \&quot;_blank\&quot;, \&quot;height=430,width=640\&quot;); return false;&quot;' expr:title='data:top.shareToFacebookMsg' target='_blank'>
+												<span class='share-button-link-text'>
+													<data:top.shareToFacebookMsg/>
+												</span>
+											</a>
+										</b:if>
 									</b:includable>
 								</b:widget>
 							</b:section>
@@ -738,12 +765,15 @@
 									</b:widget-settings>
 									<b:includable id='main'>
 										<!-- popular -->
-										<div class="bg-white shadow-lg rounded-md p-2 mt-2">   
+										<div class="bg-white shadow-lg rounded-md p-2 mt-2">
 											<b:if cond='data:title != &quot;&quot;'>
 												<div class="w-full bg-[color:var(--orange)]  p-2 text-center text-white uppercase rounded-md ">
-													Related technical topic maybe you will be like it - by <a href="https://learn-tech-tips.blogspot.com "><span class="bg-[color:var(--orange)] p-2">Learn Tech Tips</span> - Zidane </a>
+													Related technical topic maybe you will be like it - by
+													<a href="https://learn-tech-tips.blogspot.com ">
+														<span class="bg-[color:var(--orange)] p-2">Learn Tech Tips</span> - Zidane
+													</a>
 												</div>
-											</b:if> 
+											</b:if>
 											<div class='widget-content popular-posts'>
 												<div class="bg-gray-100 grid grid-cols-3 gap-4" >
 													<b:loop values='data:posts' var='post'>
@@ -1036,6 +1066,38 @@
 			</div>
 		</div>
 		<script src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js'/>
+		<script type='text/javascript'>
+  /*
+			<![CDATA[*/
+		 
+var mybutton = document.getElementById("myTopBtn"); 
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function () {
+    scrollFunction(); 
+};
+
+function scrollFunction() {
+    if (
+        document.body.scrollTop > 500 ||
+        document.documentElement.scrollTop > 500
+    ) {
+        mybutton.style.display = "block"; 
+    } else {
+        mybutton.style.display = "none"; 
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function scrollWin() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+} 
+
+
+
+  /*]]>*/
+		</script>
 		<b:if cond='data:blog.pageType != &quot;item&quot;'>
 			<b:if cond='data:blog.pageType != &quot;static_page&quot;'>
 				<script type='text/javascript'>
