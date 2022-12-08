@@ -1395,6 +1395,7 @@
 		
 		if(blogPager) {
 			blogPager[0].innerHTML=html
+			blogPager[1].innerHTML=html
 		}
 	}
 	
