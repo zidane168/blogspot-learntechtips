@@ -476,15 +476,15 @@
 													<img class=" w-full object-cover" src="https://2.bp.blogspot.com/-KGjxfUM32eQ/WD5Jl0hqAKI/AAAAAAAAC3I/enstvD1Qs5Qn77nFG0va_DO5WGg78YXtQCLcB/s1600/ls%2Bcommand.png"  />
 												</div>
 												<div class="content">
-													<div class="right"> 
+													<div class="right">
 														<h2> Tailwind for css </h2>
-														<div> This topic is show you how to coding with TailwindCSS </div> 
+														<div> This topic is show you how to coding with TailwindCSS </div>
 													</div>
 												</div>
 											</a>
 										</div>
 										<div class="item hover:cursor-pointer ">
-											<a href="https://helloabd.blogspot.com/2017/01/tips-how-to-use-google-authenticator-on.html"> 
+											<a href="https://helloabd.blogspot.com/2017/01/tips-how-to-use-google-authenticator-on.html">
 												<div class="image">
 													<img class=" w-full object-cover" src="https://2.bp.blogspot.com/-46hfMsf7Osg/V39iLMXfuOI/AAAAAAAACdw/U9hPCKxzcOUqkRldEoqVZlpIALZB_WcDQCLcB/s1600/oop2.png"  />
 												</div>
@@ -496,7 +496,7 @@
 														</a>
 													</div>
 												</div>
-											</a> 
+											</a>
 										</div>
 									</div>
 									<div class="directional">
@@ -1245,7 +1245,69 @@
 				</div>
 			</div>
 		</b:if>
-		<div class="mt-[10px] flex justify-center flex-col w-full mx-auto bg-gray-900 text-white p-4 h-[200px] text-center">
+		<div class="mt-[10px] flex justify-center w-full mx-auto bg-gray-900 text-white p-4 text-center space-x-2">
+			<div class="w-[360px] border rounded-md border-white text-justify p-2 text-sm">
+				<div>
+					<span class="text-[color:var(--orange)] text-[32px]">T</span>hanks for Blogspot, I was joined Blogspot community in the begin of the year 2014. Blogspot helped me so much when I was a student.
+					Now I had been working about 13 years (From 2009). Let Blogspot plentiful as thank its. So I decide sharing my little knowledge for help another students and developers.
+				</div>
+				<hr class="mt-8"/>
+				<div class="mt-4">
+					<span class="text-[color:var(--orange)] text-[32px]">I</span>f you got technical issue, you can visit my technical blog, maybe my blog can help you solved it. There is my blog address: https://learn-tech-tips.blogspot.com.
+				</div>
+				<div class="mt-4">
+					I would like to share many knowledge about Application, Web, Game, Programming languages: how to easy learn programming as PHP (CAKEPHP, LARAVEL), ... C#, C++, Web(HTML, CSS, javascript). Office (Excel, Photoshop) and another useful things :)
+				</div>
+				<hr class="mt-8"/>
+				<div class="mt-4">
+					Thanks and Best Regards!
+				</div>
+				<div class="mt-4 text-left">
+					<span class="text-[color:var(--orange)] text-[32px]">L</span>earn Tech Tips - <span class="text-[color:var(--blue)] text-[32px] italic">Z</span>idane (huuvi168@gmail.com)
+				</div>
+			</div>
+			<div class="w-[360px] border rounded-md border-white text-justify p-2 text-sm">
+				<div id="fb-root"></div>
+				<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v12.0&amp;appId=1023778454307695&amp;autoLogAppEvents=1" nonce="e3IwLNr5"></script>
+				<div class="fb-page" data-href="https://www.facebook.com/learntechtips168" data-tabs="timeline" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+					<blockquote cite="https://www.facebook.com/learntechtips168" class="fb-xfbml-parse-ignore">
+						<a href="https://www.facebook.com/learntechtips168">Learn Tech Tips - BlogSpot</a>
+					</blockquote>
+				</div>
+			</div>
+			<div class="w-[630px] border rounded-md border-white text-justify p-2 text-sm">
+				<div> <span class="text-[color:var(--orange)]  text-[32px]">I</span>'m developer, I like code, I like to learn new technology and want to be friend with people for learn each other </div>
+				<div>
+					My background is a full stack developer: I have experience for game development around 5+ year and web development around 8+ years. (from 2009)
+				</div>
+				<ul class="list-disc px-4">
+					<li> I would like to learn new technology, love research check and upgrade current framework to newest version for better. </li>
+					<li> My strength requirements analysis, work on Backend (BE) and Frontend (FE) too. BE skill is advanced </li>
+					<li> BE: good at with PHP (special CAKEPHP), NodeJS / NestJS, .NET C# (4.5), ASP.NET, Webservice, C++ 11, lua script 4.0 5.0.  </li>
+					<li> FE: I can work with HTML, CSS (TailwindCSS, bootstrap), Javascript ES6, JQuery, JS Framework, NextJS </li>
+					<li> Database: work well on Mysql, SQL Server, PostgreSQL, TypeORM </li>
+					<li> Experience in Aliyun Cloud Service (https://www.alibabacloud.com/): ECS, RDS (postgresQL) </li>
+					<li> Experience build docker compose file: SQL, Redis, PHP8: https://learn-tech-tips.blogspot.com/2022/09/how-to-create-a-dockerfile.html </li>
+					<li> Experienced in integrated with Paypal, Payme, AsiaPay, HANG SENG NTT Payment gateway (use CryptoJS.enc.Base64.stringify / base64_encode; CryptoJS.enc.Hex.stringify / bin2hex; CryptoJS.HmacSHA256 / hash_hmac, ...) </li>
+					<li> Technology used: Restful API, WebService, Process, WindowForm, Window Message, GraphQL, Network, Multi-thread, I/O Read Write File, Synchronous and Asynchronous, Inject DLL, Hook, Window Message, File, MFC, Firebase Push Notification, JWT authentication,  </li>
+					<li>  Obfuscation .net source code and reverse it </li>
+					<li>  Understand Assembly language (ASM) to compile engine code. </li>
+					<li> Create website, single page application with PHP (Cakephp 2+/ 4+ framework) </li>
+					<li> Using Log fluent in DEBUG things </li>
+					<li> Setup permission in SVN, comment history </li>
+					<li> Use shell script in Linux. </li>
+					<li> Use android for java, swift IOS development basic things </li>
+					<li> Experienced upload apps to Google Play</li>
+					<li> Use Photoshop for image editing, coloring, background decoration, banner, logo, ... </li>
+					<li> Experience in using Figma </li>
+					<li> Source management: Git, SVN </li>
+					<li>  Good communication in written English </li>
+					<li> Good communication in spoken/written Chinese (Cantonese/mandarin) </li>
+					<li> Server: setup VPS (Virtual Private Server): use Nginx for config balancing (Ip_hash, least_conn), IIS, Apache </li>
+				</ul>
+			</div>
+		</div>
+		<div class="flex justify-center flex-col w-full mx-auto bg-gray-900 text-white p-4 h-[200px] text-center">
 			<div>
 				Copyright @2022(November) Version 1.0.0 - By
 				<span class="bg-[color:var(--orange)] text-white p-2 ">Learn Tech Tips</span>
@@ -1283,9 +1345,7 @@ function scrollFunction() {
 function scrollWin() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
-} 
-
-
+}  
 
   /*]]>*/
 		</script>
@@ -1455,5 +1515,6 @@ function scrollWin() {
 	})
 /*]]> */
 		</script>
+		<script src='https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js'/>
 	</body>
 </html>
