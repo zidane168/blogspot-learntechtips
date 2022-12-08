@@ -7,32 +7,26 @@
 		
 .blog-pager{
 	text-align:center;
-	font-size:16px;line-height:normal;margin:0 20px;padding:2em 0
+	font-size:13px;line-height:normal;margin:0 20px;padding:2em 0
 }
 .showpageNum a,.showpage a,.showpagePoint {
 	background:var(--blue);border:none;
 	color:#FFF;
-	font-size:15px;
+	font-size:12px;
 	font-family:verdana  "open sans";
-	font-weight:700;margin-left:10px;border-radius:5px 5px 5px 5px;
+	font-weight:400;margin-left:10px;border-radius:5px 5px 5px 5px;
 	-webkit-border-radius:5px 5px 5px 5px;-moz-border-radius:5px;-o-border-radius:5px 5px 5px 5px;
 	transition:background 400ms;-webkit-transition:background 400ms;
 	-moz-transition:background 400ms;-o-transition:background 400ms;
 	padding:10px 20px
 }
 .showpageNum a:hover,.showpage a:hover,.showpagePoint,.blog-pager-newer-link,.blog-pager-older-link,.home-link{
-	background:var(--orange);color:#FFF
+	background:var(--orange);color:#FFF 
+} 
 
+.home-link, .blog-pager-older-link {
+	padding:4px 6px;
 }
-
-.post-thumb a {
-	width: 100%;
-	height: 180px;
-	display: block;
-	-webkit-transition: all .3s ease-out!important; 
-	transition: all .3s ease-out!important;
-}
-
  
 	/* ]]>*/
 	</b:skin>
@@ -300,7 +294,7 @@
 				<div class="flex mt-[10px] space-x-2 ">
 					<div id="left" class='w-[1100px] bg-gray-200 rounded-lg shadow-lg p-2'>
 						<b:if cond='(data:blog.searchQuery) or (data:blog.searchLabel) or (data:blog.url == data:blog.homepageUrl) or (data:blog.pageType == "index")'>
-						<!-- <b:if cond='(data:blog.url == data:blog.homepageUrl) or (data:blog.pageType == "index")'> -->
+							<!-- <b:if cond='(data:blog.url == data:blog.homepageUrl) or (data:blog.pageType == "index")'> -->
 							<!-- search, search label -->
 							<b:section class='main'  id='blog-search-result' name='Blog Detail' showaddelement='yes'>
 								<b:widget id='Blog100'  locked='true' title='Blog Posts' type='Blog' version='1'>
@@ -330,21 +324,25 @@
 										<!-- posts -->
 										<div class='blog-posts hfeed'>
 											<b:include data='top' name='status-message'/>
+											<div class="w-full bg-white rounded-md text-sm p-2">
 												<b:include name='nextprev'/>
-											<div class="bg-gray-100 p-2 mt-[5px]">
-												<b:loop values='data:posts' var='post'>
-													<div class="flex items-center space-x-4 p-2 ">
-														<div class="w-[350px] hover:scale-110  ">
+											</div>
+											<div class="shadow-lg bg-white rounded-md p-2 mt-2">
+												<b:loop values='data:posts' var='post'> 
+													<div class="w-full  p-2">
+														<h1 class="mt-[5px] font-bold bg-[color:var(--blue)] text-white p-2">
+															<data:post.title/>
+														</h1>
+													</div>
+													<div class="flex items-center space-x-4 p-2"> 
+														<a expr:href='data:post.url' class="w-[350px]  main-image hover:scale-110 bg-white shadow-lg p-2">
 															<img expr:src='data:post.firstImageUrl' class="object-contain" />
-														</div>
-														<div class="flex flex-col space-y-[5px] shadow-lg bg-white p-2">
-															<h1 class="mt-[5px] font-bold bg-[color:var(--blue)] text-white p-2">
-																<data:post.title/>
-															</h1>
+														</a>
+														<div class="main-content flex flex-col space-y-[5px] ">
 															<div class="italic text-xs flex space-x-2 items-center">
 																<div class=" m-[5px] flex space-x-2 items-center">
 																	<b:loop values='data:post.labels' var='label'>
-																		<div class='hover:scale-110 text-sm text-white font-medium bg-[color:var(--blue)] rounded-md p-2 ml-[-2px]'>
+																		<div class='hover:scale-110 text-sm text-white font-medium bg-[color:var(--blue)] rounded-r-md p-2 ml-[-2px]'>
 																			<a expr:href='data:label.url' rel='tag noopener noreferrer' target="_blank" >
 																				<data:label.name/>
 																			</a>
@@ -409,17 +407,19 @@
 																	<data:post.numComments/>
 																</div>
 															</div>
-															<div class="text-xs text-justify">
+															<div class="text-xs text-justify italic">
 																<data:post.snippet/>
 															</div>
-															<div class="bg-[color:var(--blue)] text-white shadow-lg text-xs p-2 w-[95px]">
+															<div class="bg-[color:var(--orange)] text-white shadow-lg text-xs p-2 w-[102px] uppercase">
 																<a expr:href='data:post.url'> Read now ... </a>
 															</div>
 														</div>
-													</div>
+													</div> 
 												</b:loop>
 											</div>
-											<b:include name='nextprev'/>
+											<div class="w-full bg-white rounded-md text-sm p-2 ">
+												<b:include name='nextprev'/>
+											</div>
 										</div>
 									</b:includable>
 									<b:includable id='nextprev'>
@@ -484,7 +484,6 @@
 								</b:widget>
 							</b:section>
 						</b:if>
-					
 						<!-- item, static_page -->
 						<b:if cond='(data:blog.pageType == "item") or (data:blog.pageType == "static_page")'>
 							<!-- detail, static page -->
@@ -739,15 +738,12 @@
 									</b:widget-settings>
 									<b:includable id='main'>
 										<!-- popular -->
-										<div class="bg-white shadow-lg rounded-md p-2 ">
-											<b:if cond='data:blog.url == data:blog.homepageUrl'>
-												<!-- home page will show this -->
-												<b:if cond='data:title != &quot;&quot;'>
-													<div class="w-full bg-[color:var(--orange)]  p-2 text-center text-white uppercase rounded-md ">
-														<a href="/search/label/Tips" class="font-bold"> Popular Blog </a>
-													</div>
-												</b:if>
-											</b:if>
+										<div class="bg-white shadow-lg rounded-md p-2 mt-2">   
+											<b:if cond='data:title != &quot;&quot;'>
+												<div class="w-full bg-[color:var(--orange)]  p-2 text-center text-white uppercase rounded-md ">
+													Related technical topic maybe you will be like it - by <a href="https://learn-tech-tips.blogspot.com "><span class="bg-[color:var(--orange)] p-2">Learn Tech Tips</span> - Zidane </a>
+												</div>
+											</b:if> 
 											<div class='widget-content popular-posts'>
 												<div class="bg-gray-100 grid grid-cols-3 gap-4" >
 													<b:loop values='data:posts' var='post'>
