@@ -5,7 +5,7 @@
 /*
 		<![CDATA[ */
 		
-#blog-pager{
+.blog-pager{
 	text-align:center;
 	font-size:16px;line-height:normal;margin:0 20px;padding:2em 0
 }
