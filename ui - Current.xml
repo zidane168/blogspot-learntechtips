@@ -487,22 +487,24 @@
 												<div class="bg-gray-100 p-2 mt-[5px] rounded-md">
 													<b:loop values='data:posts' var='post'>
 														<div class="flex items-center space-x-2 mt-2"> 
-															<div class="hover:scale-110 hover:cursor-pointer">
-																<img expr:alt='data:post.title' class="w-[350px] p-2 shadow-lg rounded-md" border='0' expr:src='data:post.firstImageUrl'/>
+															<div class="hover:scale-110 hover:cursor-pointer w-[350px]">
+																<img expr:alt='data:post.title' class="p-2 shadow-lg rounded-md object-cover" border='0' expr:src='data:post.firstImageUrl'/>
 															</div>
-															<div>
-																<div>
+															<div class="p-2">
+																<h1 class="text-[color:var(--orange)] text-lg">
 																	<a class="hover:text-[color:var(blue)]" expr:href="data:post.url" target="_blank" rel='noopener noreferrer'>
 																		<data:post.title />  
 																	</a>
-																</div>
-																<div class="flex space-x-2 p-2 rounded-r-lg"> 
+																</h1>
+																<div class="flex space-x-2 "> 
 																	<b:loop values='data:post.labels' var='label'> 
-																		<data:label.name/>
+																		<div class="rounded-r-lg bg-[color:var(--blue)] p-2  text-white text-sm">
+																			<data:label.name/>
+																		</div>
 																	</b:loop>
 																</div>
 																
-																<div class="text-sm italic"> 
+																<div class="text-sm italic  "> 
 																	Comment: <data:post.numComments/>
 																</div>
 																<div class="text-sm italic"> 
@@ -806,7 +808,7 @@
 																</div>
 																<b:loop values='data:post.labels' var='label'>
 																	<!-- <b:if cond='data:label.isLast == "true"'> -->
-																	<div class='hover:scale-110 text-sm text-white font-medium bg-[color:var(--blue)] rounded-md p-2 ml-[-2px]'>
+																	<div class='hover:scale-110 text-sm text-white font-medium bg-[color:var(--blue)] rounded-r-lg p-2 ml-[-2px]'>
 																		<a expr:href='data:label.url' rel='tag noopener noreferrer' target="_blank" >
 																			<data:label.name/>
 																		</a>
