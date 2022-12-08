@@ -503,6 +503,7 @@
 																		</div>
 																	</b:loop>
 																</div>
+																<!-- date and author -->
 																<div class='text-sm italic m-[5px] flex justify-between '>
 																	<div class="flex space-x-2 items-center ">
 																		<!-- calendar -->
