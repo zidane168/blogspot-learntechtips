@@ -1145,6 +1145,24 @@
 								</div>
 							</b:includable>
 						</b:widget>
+						<!-- adsense -->
+						<b:widget id='AdSense1' locked='false' title='' type='AdSense'>
+							<b:widget-settings>
+								<b:widget-setting name='style.bgcolor'>#ffffff</b:widget-setting>
+								<b:widget-setting name='style.textcolor'>#ffffff</b:widget-setting>
+								<b:widget-setting name='style.layout'>1x1</b:widget-setting>
+								<b:widget-setting name='style.bordercolor'>#ffffff</b:widget-setting>
+								<b:widget-setting name='style.urlcolor'>#ffffff</b:widget-setting>
+								<b:widget-setting name='style.linkcolor'>#ffffff</b:widget-setting>
+								<b:widget-setting name='style.unittype'>TextAndImage</b:widget-setting>
+							</b:widget-settings>
+							<b:includable id='main'>
+								<div class='widget-content'>
+									<data:adCode/>
+									<b:include name='quickedit'/>
+								</div>
+							</b:includable>
+						</b:widget>
 						<!-- tiktok implement -->
 						<b:widget id='HTML1' locked='false' title='' type='HTML'>
 							<b:widget-settings>
