@@ -179,6 +179,11 @@
 	</b:skin>
 	<head>
 		<!-- title -->
+		
+<!-- <meta content='s_oqe4A7m-z-kZOkqT4G1VOUg35qAVpr8CSXVbRwoQo' name='google-site-verification'/>
+<script async='async' data-ad-client='ca-pub-8160046229618018' src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'/> -->
+		<meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
+
 		<title>
 			<b:if cond='data:blog.pageType == "index"'>
 				<data:blog.pageTitle/>
@@ -264,7 +269,35 @@
 			html {
 				scroll-behavior: smooth;
 			}
+ 
+			.template-background {
+				background: var(--orange);
+				border: 3px solid orange;
+				padding: 10px;
+				border-radius: 5px;
+			}
+      
+			.color-white {
+				color: white;
+			}
+      
+			.follow-me {
+				border-radius: 5px; 
+				border: 1px solid blue; 
+				box-shadow: rgb(163, 210, 239) 3px 3px; 
+				padding: 10px;
+			}
+      
+			.thank-for-reading {
+				border-radius: 5px; 
+				border: 1px solid blue; 
+				box-shadow: rgb(163, 210, 239) 3px 3px; 
+				padding: 10px;
+			} 
+
 		</style>
+
+		<b:include data='blog' name='google-analytics'/>
 	</head>
 	<body>
 		<button class="btn-scroll-to-top" type="button" onclick="scrollWin()" id="myTopBtn">
@@ -287,10 +320,10 @@
 						<b:widget-setting name='text-2'>🎨 C# Code Snippet</b:widget-setting>
 					</b:widget-settings>
 					<b:includable id='main'>
-						<div class="flex space-x-2 justify-around uppercase">
+						<div class="flex space-x-2 justify-around uppercase mobile:flex-col mobile:space-x-0 desktop:flex-row">
 							<b:loop values='data:links' var='link'>
-								<div itemprop='name' class="hover:font-bold">
-									<a expr:href='data:link.target' itemprop='url' target="_blank"   rel="noopener noreferrer">
+								<div itemprop='name' class="hover:font-bold mobile:text-[10px] ">
+									<a class="mobile:text-xs" expr:href='data:link.target' itemprop='url' target="_blank"   rel="noopener noreferrer">
 										<data:link.name/>
 									</a>
 								</div>
@@ -327,8 +360,9 @@
 					<b:includable id='main'>
 						<!-- cannot change id='main' -->
 						<div class='widget-content mt-[10px]'>
-							<div id='social' class='flex items-center space-x-[10px] justify-between mb-[10px]'>
-								<div>
+							<div id='social' class='flex items-center space-x-[10px] desktop:justify-between mb-[10px] mobile:justify-center'>
+							 
+								<div class="desktop:block mobile:hidden">
 									<a target="_blank" rel="noopener noreferrer" href="/" class="hover:text-[color:var(--blue)] uppercase"> 👋 Welcome to Learn Tech Tips Blogspot, I am Zidane 🙇🏼 </a>
 								</div>
 								<div class="bg-white shadow-lg p-4 flex space-x-2 rounded-lg">
@@ -362,10 +396,10 @@
 				</b:widget>
 			</b:section>
 			<!-- Menu -->
-			<div class='bg-[color:var(--blue)]  rounded-md relative'>
-				<div class='mx-auto max-w-7xl px-2 sm:px-6 lg:px-8'>
+			<div class='bg-[color:var(--blue)]  mobile:p-2 desktop:rounded-md desktop:relative mobile:flex mobile:justify-center'>
+				<div class='mx-auto max-w-7xl px-2  desktop:px-8 mobile:hidden'>
 					<div class='relative flex h-16 items-center justify-between'>
-						<div class='absolute inset-y-0 left-0 flex items-center sm:hidden'>
+						<!-- <div class='absolute inset-y-0 left-0 flex items-center sm:hidden'>
 							<button aria-controls='mobile-menu' aria-expanded='false' class='inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white' type='button'>
 								<span class='sr-only'>
 									Open main menu
@@ -377,7 +411,7 @@
 									<path d='M6 18L18 6M6 6l12 12' stroke-linecap='round' stroke-linejoin='round'/>
 								</svg>
 							</button>
-						</div>
+						</div> -->
 						<div class='flex items-center justify-center'>
 							<div class='flex space-x-4'>
 								<a class='hover:scale-125'  target="_blank" rel="noopener noreferrer" href='/'>
@@ -402,19 +436,7 @@
 						</div>
 					</div>
 				</div>
-				<div class='sm:hidden' id='mobile-menu'>
-					<div class='space-y-1 px-2 pt-2 pb-3'>
-						<a aria-current='page' class='bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium' target="_blank" rel="noopener noreferrer" href='/search/max-results=20?q=tips'>
-								Tips
-							</a>
-						<a class='text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium' target="_blank" rel="noopener noreferrer" href='/search/max-results=20?q=tips'>
-								Database
-							</a>
-						<a class='text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium' target="_blank" rel="noopener noreferrer" href='https://learn-tech-tips.blogspot.com/search/label/Design%20Pattern'>
-								Design Partner
-							</a>
-					</div>
-				</div>
+			 
 				<b:section class='menu' id='main-menu' maxwidgets='1' name='Main Menu' showaddelement='yes'>
 					<b:widget id='BlogSearch1' locked='false' title='Search This Blog' type='BlogSearch'>
 						<b:includable id='main'>
@@ -422,7 +444,7 @@
 								<div expr:id='data:widget.instanceId + &quot;_form&quot;'>
 									<form class='gsc-search-box' expr:action='data:blog.searchUrl'>
 										<b:attr cond='not data:view.isPreview' name='target' value='_top'/>
-										<div class="absolute top-[15px] right-[10px] flex space-x-2 items-center">
+										<div class="desktop:absolute desktop:top-[15px] desktop:right-[10px] flex space-x-2 items-center">
 											<input autocomplete='off' class='w-[250px] rounded-md p-2 h-[35px]' expr:value='data:view.isSearch ? data:view.search.query.escaped : &quot;&quot;' name='q' size='10' title='search' type='text'/>
 											<button class='bg-[color:var(--orange)] text-white px-4 py-2 rounded-md' expr:value='data:messages.search' title='search' type='submit'> Search </button>
 										</div>
@@ -781,12 +803,12 @@
 																	<g id="Layer_1"/>
 																</svg>
 															</div>
-															<b:loop values='data:post.labels' var='label'> 
+															<b:loop values='data:post.labels' var='label'>
 																<div class='hover:scale-110 text-sm text-white font-medium bg-[color:var(--blue)] rounded-r-lg p-2 ml-[-2px]'>
 																	<a expr:href='data:label.url' rel='tag noopener noreferrer' target="_blank" >
 																		<data:label.name/>
 																	</a>
-																</div> 
+																</div>
 															</b:loop>
 														</div>
 														<!-- Date && Author -->
@@ -1238,7 +1260,8 @@
 										<li class='archivedate'>
 											<a expr:href='data:i.url'>
 												<data:i.name/>
-											</a> (<data:i.post-count/>)
+											</a> (
+											<data:i.post-count/>)
 										</li>
 									</b:loop>
 								</ul>
@@ -1253,7 +1276,8 @@
 													<data:interval.name/>
 												</a>
 												<span class='post-count text-[color:var(--orange)]' dir='ltr'>
-													(<data:interval.post-count/>)
+													(
+													<data:interval.post-count/>)
 												</span>
 											</strong>
 											<b:include cond='data:interval.data' data='interval.data' name='interval'/>
@@ -1269,7 +1293,8 @@
 									</option>
 									<b:loop values='data:data' var='i'>
 										<option expr:value='data:i.url' class="text-sm" >
-											<data:i.name/> (<data:i.post-count/>)
+											<data:i.name/> (
+											<data:i.post-count/>)
 										</option>
 									</b:loop>
 								</select>
@@ -1302,7 +1327,7 @@
 										<data:title/>
 									</div>
 								</b:if>
-								<div class="grid mobile:grid-cols-3 desktop:grid-cols-1 gap-4 text-sm bg-white p-2 rounded-b-md w-full" > 
+								<div class="grid mobile:grid-cols-3 desktop:grid-cols-1 gap-4 text-sm bg-white p-2 rounded-b-md w-full" >
 									<b:if cond='data:display == &quot;list&quot;'>
 										<b:loop values='data:labels' var='label'>
 											<div class="flex items-center">
@@ -1358,14 +1383,15 @@
 													</a>
 												</b:if>
 												<b:if cond='data:showFreqNumbers'>
-													<div dir='ltr' class='text-[color:var(--orange)]'>(<data:label.count/>)
+													<div dir='ltr' class='text-[color:var(--orange)]'>(
+														<data:label.count/>)
 													</div>
 												</b:if>
 											</div>
 										</b:loop>
 										<b:else/>
 										<b:loop values='data:labels' var='label'>
-											<span class="text-sm" > 
+											<span class="text-sm" >
 												<b:if cond='data:blog.url == data:label.url'>
 													<span expr:dir='data:blog.languageDirection'>
 														<data:label.name/>
@@ -1376,7 +1402,8 @@
 													</a>
 												</b:if>
 												<b:if cond='data:showFreqNumbers'>
-													<span class='text-[color:var(--orange)]' dir='ltr'>(<data:label.count/>)
+													<span class='text-[color:var(--orange)]' dir='ltr'>(
+														<data:label.count/>)
 													</span>
 												</b:if>
 											</span>
