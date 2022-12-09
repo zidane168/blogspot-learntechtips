@@ -320,10 +320,10 @@
 						<b:widget-setting name='text-2'>🎨 C# Code Snippet</b:widget-setting>
 					</b:widget-settings>
 					<b:includable id='main'>
-						<div class="flex space-x-2 justify-around uppercase mobile:flex-col mobile:space-x-0 desktop:flex-row">
+						<div class="flex desktop:space-x-4 desktop:justify-center uppercase mobile:flex-col mobile:space-x-0 desktop:flex-row">
 							<b:loop values='data:links' var='link'>
 								<div itemprop='name' class="hover:font-bold mobile:text-[10px] ">
-									<a class="mobile:text-xs" expr:href='data:link.target' itemprop='url' target="_blank"   rel="noopener noreferrer">
+									<a class="mobile:text-xs desktop:text-lg" expr:href='data:link.target' itemprop='url' target="_blank"   rel="noopener noreferrer">
 										<data:link.name/>
 									</a>
 								</div>
@@ -396,22 +396,9 @@
 				</b:widget>
 			</b:section>
 			<!-- Menu -->
-			<div class='bg-[color:var(--blue)]  mobile:p-2 desktop:rounded-md desktop:relative mobile:flex mobile:justify-center'>
-				<div class='mx-auto max-w-7xl px-2  desktop:px-8 mobile:hidden'>
-					<div class='relative flex h-16 items-center justify-between'>
-						<!-- <div class='absolute inset-y-0 left-0 flex items-center sm:hidden'>
-							<button aria-controls='mobile-menu' aria-expanded='false' class='inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white' type='button'>
-								<span class='sr-only'>
-									Open main menu
-								</span>
-								<svg aria-hidden='true' class='block h-6 w-6' fill='none' stroke='currentColor' stroke-width='1.5' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
-									<path d='M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5' stroke-linecap='round' stroke-linejoin='round'/>
-								</svg>
-								<svg aria-hidden='true' class='hidden h-6 w-6' fill='none' stroke='currentColor' stroke-width='1.5' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
-									<path d='M6 18L18 6M6 6l12 12' stroke-linecap='round' stroke-linejoin='round'/>
-								</svg>
-							</button>
-						</div> -->
+			<div class='bg-[color:var(--blue)]  mobile:p-2 desktop:rounded-md desktop:relative flex mobile:justify-center desktop:justify-between '>
+				<div class=' px-2  desktop:px-8 mobile:hidden desktop:block'>
+					<div class='relative flex h-16 items-center justify-between'> 
 						<div class='flex items-center justify-center'>
 							<div class='flex space-x-4'>
 								<a class='hover:scale-125'  target="_blank" rel="noopener noreferrer" href='/'>
@@ -569,13 +556,13 @@
 									<!-- posts -->
 									<div class='blog-posts hfeed'>
 										<b:include data='top' name='status-message'/>
-										<div class="w-full bg-white rounded-md text-sm p-2">
+										<div class="w-full bg-white rounded-md text-sm p-2 mobile:text-xs">
 											<b:include name='nextprev'/>
 										</div>
 										<div class="shadow-lg bg-white rounded-md p-2 mt-2">
 											<b:loop values='data:posts' var='post'>
 												<div class="w-full  p-2">
-													<h1 class="mt-[5px] font-bold bg-[color:var(--blue)] text-white p-2">
+													<h1 class="mt-[5px] font-bold bg-[color:var(--blue)] text-white p-2 mobile:text-sm">
 														<data:post.title/>
 													</h1>
 												</div>
@@ -584,17 +571,17 @@
 														<img expr:src='data:post.firstImageUrl' class="object-contain" />
 													</a>
 													<div class="main-content flex flex-col space-y-[5px] ">
-														<div class="italic text-xs flex space-x-2 items-center">
-															<div class=" m-[5px] flex space-x-2 items-center">
+														<!-- <div class="italic text-xs flex space-x-2 items-center"> -->
+															<div class=" m-[5px] flex space-x-2 items-center mobile:space-x-0 mobile:flex-col desktop:flex-row">
 																<b:loop values='data:post.labels' var='label'>
-																	<div class='hover:scale-110 text-sm text-white font-medium bg-[color:var(--blue)] rounded-r-md p-2 ml-[-2px]'>
+																	<div class='hover:scale-110 mobile:text-[10px] text-sm text-white font-medium bg-[color:var(--blue)] rounded-r-md p-2 ml-[-2px]'>
 																		<a expr:href='data:label.url' rel='tag noopener noreferrer' target="_blank" >
 																			<data:label.name/>
 																		</a>
 																	</div>
 																</b:loop>
 															</div>
-														</div>
+														<!-- </div> -->
 														<div class="italic text-xs flex space-x-2 items-center">
 															<div class="w-[20px]">
 																<!-- calendar -->
@@ -628,7 +615,7 @@
 																	</g>
 																</svg>
 															</div>
-															<div>
+															<div class="mobile:text-[10px]">
 																<data:post.dateHeader/>
 															</div>
 														</div>
@@ -642,12 +629,12 @@
 																	</svg>
 																</div>
 																<include name="shareButtons" />
-																<h2 class="font-bold text-[color:var(--orange)]">
+																<h2 class="font-bold text-[color:var(--orange)] mobile:text-[10px]">
 																	<data:post.author />
 																</h2>
 															</div>
 															<div class="border border-l-2 border-color-black">  </div>
-															<div>
+															<div class="mobile:text-[10px]">
 																	Comment:
 																<data:post.numComments/>
 															</div>
@@ -662,7 +649,7 @@
 												</div>
 											</b:loop>
 										</div>
-										<div class="w-full bg-white rounded-md text-sm p-2 mt-2">
+										<div class="w-full bg-white rounded-md text-sm p-2 mt-2 mobile:text-xs">
 											<b:include name='nextprev'/>
 										</div>
 									</div>
