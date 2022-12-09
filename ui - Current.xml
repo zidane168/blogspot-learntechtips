@@ -243,6 +243,7 @@
 					{ 
 						screens: {
 							'mobile': '375px',
+							'desktop': '1420px'
 						}
 					}
 				}
@@ -453,8 +454,8 @@
 				</marquee>
 			</div>
 			<!-- Main Tag -->
-			<div class="flex mt-[10px] space-x-2 mobile:flex-col">
-				<div id="left" class='w-[1100px] bg-gray-200 rounded-lg shadow-lg p-2'>
+			<div class="flex desktop:flex-row mt-[10px] space-x-2 mobile:flex-col desktop:max-w-[1420px] desktop:mx-auto">
+				<div id="left" class='desktop:w-[1100px] bg-gray-200 rounded-lg shadow-lg p-2 mobile:w-full'>
 					<b:if cond='(data:blog.searchQuery) or (data:blog.searchLabel) or (data:blog.url == data:blog.homepageUrl) or (data:blog.pageType == "index")'>
 						<div class="w-full p-2">
 							<div class="container mx-auto">
@@ -462,7 +463,7 @@
 									<div class="item hover:cursor-pointer ">
 										<a href="https://helloabd.blogspot.com/2017/01/tips-how-to-use-google-authenticator-on.html">
 											<div class="image ">
-												<img class=" w-full object-cover" src=" https://1.bp.blogspot.com/-ND3CVFNBv2c/V435PUrdA3I/AAAAAAAACf4/rBWSh9nKwaoXY_JG4B0bwL2L09su6dPSwCLcB/s1600/stragery%2Bpattern.png"  />
+												<img class="w-full object-cover" src=" https://1.bp.blogspot.com/-ND3CVFNBv2c/V435PUrdA3I/AAAAAAAACf4/rBWSh9nKwaoXY_JG4B0bwL2L09su6dPSwCLcB/s1600/stragery%2Bpattern.png"  />
 											</div>
 											<div class="content">
 												<div class="right">
@@ -639,7 +640,7 @@
 												</div>
 											</b:loop>
 										</div>
-										<div class="w-full bg-white rounded-md text-sm p-2 ">
+										<div class="w-full bg-white rounded-md text-sm p-2 mt-2">
 											<b:include name='nextprev'/>
 										</div>
 									</div>
@@ -1029,7 +1030,7 @@
 						</b:section>
 					</b:if>
 				</div>
-				<div id="right" class="bg-gray-200 rounded-lg shadow-lg p-2 w-[320px] mobile:w-full">
+				<div id="right" class="desktop:w-[320px] bg-gray-200 rounded-lg shadow-lg p-2 mobile:w-full">
 					<!-- progress learning -->
 					<div class="text-sm">
 						<div class="bg-[color:var(--orange)] text-white p-2 rounded-t-md flex space-x-4 items-center">
@@ -1058,7 +1059,7 @@
 								Way to become FullStack developer
 						</div>
 						<div class="flex space-x-2 w-full bg-white rounded-b-md p-2">
-							<div class="grow">
+							<div class="grow mobile:w-1/2  mobile:flex-none">
 								<span class="text-bold bg-[color:var(--blue)] p-2 w-full text-white">1. Backend</span>
 								<div class="mt-2">
 									<a target="_blank" href="/search/label/PHP" class="hover:text-[color:var(--orange)]">1.1 PHP</a> 
@@ -1074,7 +1075,7 @@
 									<a target="_blank" href="/search/label/C%23" class="hover:text-[color:var(--orange)]">1.3 CSharp</a>
 								</div>
 							</div>
-							<div class="grow">
+							<div class="grow  mobile:w-1/2 mobile:flex-none">
 								<span class="text-bold bg-[color:var(--blue)] p-2 w-full text-white ">2. Frontend</span>
 								<div class="mt-2">
 									<span>2.1 Basic</span>
@@ -1089,10 +1090,10 @@
 							</div>
 						</div>
 						<div class="flex space-x-2 w-full bg-white rounded-b-md p-2">
-							<div class="grow">
+							<div class="grow mobile:w-1/2 mobile:flex-none">
 								<a target="_blank" href="/search/label/Docker%20compose" class="text-bold bg-[color:var(--blue)] p-2 w-full text-white ">3. DevOps </a>
 							</div>
-							<div class="grow">
+							<div class="grow mobile:w-1/2 mobile:flex-none">
 								<span class="text-bold bg-[color:var(--blue)] p-2 w-full text-white ">4. Database</span>
 								<div class="mt-2">
 									<a target="_blank" href="/search/label/Microsoft%20SQL%20Server" class="hover:text-[color:var(--orange)]">Microsoft SQL Server</a>
@@ -1100,7 +1101,7 @@
 							</div>
 						</div>
 						<div class="flex space-x-2 w-full bg-white rounded-b-md p-2">
-							<div class="grow">
+							<div class="grow mobile:w-1/2 mobile:flex-none">
 								<a target="_blank" href="/search/label/design%pattern" class="text-bold bg-[color:var(--blue)] p-2 w-full text-white ">5. Design Pattern</a>
 								<div class="mt-2">
 									<div>Singleton Pattern </div>
@@ -1112,7 +1113,7 @@
 									<div> Builder Pattern</div>
 								</div>
 							</div>
-							<div class="grow">
+							<div class="grow mobile:w-1/2 mobile:flex-none">
 								<a target="_blank" href="/search/label/Photoshop" class="text-bold bg-[color:var(--blue)] p-2 w-full text-white ">6. Photoshop</a>
 							</div>
 						</div>
@@ -1380,8 +1381,8 @@
 				</div>
 			</div>
 		</div>
-		<div class="mt-[10px] flex justify-center w-full mx-auto bg-gray-900 text-white p-4 text-center space-x-2 mobile:flex-col mobile:space-x-0" >
-			<div class="w-[360px] border rounded-md border-white text-justify p-2 text-sm mobile:w-full">
+		<div class="mt-[10px] flex desktop:flex-row justify-center w-full mx-auto bg-gray-900 text-white p-4 text-center space-x-2 mobile:flex-col mobile:space-x-0" >
+			<div class="desktop:w-[360px] border rounded-md border-white text-justify p-2 text-sm mobile:w-full">
 				<div>
 					<span class="text-[color:var(--orange)] text-[32px]">T</span>hanks for Blogspot, I was joined Blogspot community in the begin of the year 2014. Blogspot helped me so much when I was a student.
 					Now I had been working about 13 years (From 2009). Let Blogspot plentiful as thank its. So I decide sharing my little knowledge for help another students and developers.
@@ -1402,7 +1403,7 @@
 					<span class="text-[color:var(--blue)] text-[32px] italic">Z</span>idane (huuvi168@gmail.com)
 				</div>
 			</div>
-			<div class="w-[360px] border rounded-md border-white text-justify p-2 text-sm mobile:w-full mobile:mx-auto">
+			<div class="desktop:w-[360px] border rounded-md border-white text-justify p-2 text-sm mobile:w-full mobile:flex mobile:items-center">
 				<div id="fb-root"></div>
 				<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v12.0&amp;appId=1023778454307695&amp;autoLogAppEvents=1" nonce="e3IwLNr5"></script>
 				<div class="w-full fb-page" data-href="https://www.facebook.com/learntechtips168" data-tabs="timeline" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
@@ -1411,7 +1412,7 @@
 					</blockquote>
 				</div>
 			</div>
-			<div class="w-[630px] border rounded-md border-white text-justify p-2 text-sm mobile:w-full">
+			<div class="desktop:w-[630px] border rounded-md border-white text-justify p-2 text-sm mobile:w-full">
 				<div>
 					<span class="text-[color:var(--orange)]  text-[32px]">I</span>'m developer, I like code, I like to learn new technology and want to be friend with people for learn each other
 				</div>
