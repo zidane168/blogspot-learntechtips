@@ -970,7 +970,7 @@
 									<!-- popular -->
 									<div class="bg-white shadow-lg rounded-md p-2 mt-2">
 										<b:if cond='data:title != &quot;&quot;'>
-											<div class="w-full bg-[color:var(--orange)]  p-2 text-center text-white uppercase rounded-md ">
+											<div class="w-full bg-[color:var(--orange)] mobile:text-xs desktop:text-sm p-2 text-center text-white uppercase rounded-md ">
 													Related technical topic maybe you will be like it - by
 												<a href="https://learn-tech-tips.blogspot.com ">
 													<span class="bg-[color:var(--orange)] p-2">Learn Tech Tips</span> - Zidane
@@ -978,23 +978,23 @@
 											</div>
 										</b:if>
 										<div class='widget-content popular-posts'>
-											<div class="bg-gray-100 grid grid-cols-3 gap-4" >
+											<div class="bg-gray-100 grid desktop:grid-cols-3 mobile:grid-cols-1 gap-4" >
 												<b:loop values='data:posts' var='post'>
 													<div class="basis-[330px]">
 														<b:if cond='!data:showThumbnails'>
 															<b:if cond='!data:showSnippets'>
 																<!-- (1) No snippet/thumbnail -->
-																<a expr:href='data:post.href'>
+																<a expr:href='data:post.href' class="mobile:text-xs desktop:text-sm">
 																	<data:post.title/>
 																</a>
 																<b:else/>
 																<!-- (2) Show only snippets -->
 																<div class='item-title'>
-																	<a expr:href='data:post.href'>
+																	<a expr:href='data:post.href' class="mobile:text-xs desktop:text-sm">
 																		<data:post.title/>
 																	</a>
 																</div>
-																<div class='item-snippet'>
+																<div class='item-snippet mobile:text-xs desktop:text-sm'>
 																	<data:post.snippet/>
 																</div>
 															</b:if>
@@ -1012,12 +1012,12 @@
 																		</div>
 																	</b:if>
 																	<h1 class='p-4 absolute top-0  bg-[color:var(--blue)] text-white uppercase rounded-t-md shadow-lg'>
-																		<a expr:href='data:post.href' class="font-bold" >
+																		<a expr:href='data:post.href' class="font-bold mobile:text-xs desktop:text-sm" >
 																			<data:post.title/>
 																		</a>
 																	</h1>
 																	<b:if cond='data:showSnippets'>
-																		<div class='item-snippet mt-2 p-2 text-justify bg-white text-sm'>
+																		<div class='item-snippet mt-2 p-2 text-justify bg-white mobile:text-xs desktop:text-sm'>
 																			<!-- <data:post.dateHeader/> ko co thuoc tinh nay -->
 																			<data:post.snippet/>
 																		</div>
@@ -1472,7 +1472,7 @@
 		<div class="flex justify-center flex-col w-full mx-auto bg-gray-900 text-white p-4 h-[200px] text-center">
 			<div>
 				Copyright @2022(November) Version 1.0.0 - By
-				<span class="bg-[color:var(--orange)] text-white p-2 ">Learn Tech Tips</span>
+				<span class="bg-[color:var(--orange)] text-white px-2 py-[1px] ">Learn Tech Tips</span>
 				<span class="text-[color:var(--blue)] font-bold italic">Z</span>idane
 			</div>
 			<div class="mt-[10px]">
