@@ -572,9 +572,9 @@
 													</a>
 													<div class="main-content flex flex-col space-y-[5px] ">
 														<!-- <div class="italic text-xs flex space-x-2 items-center"> -->
-															<div class=" m-[5px] flex space-x-2 items-center mobile:space-x-0 mobile:flex-col desktop:flex-row">
+															<div class=" mt-[5px] flex desktop:space-x-2 desktop:items-center mobile:space-x-0 mobile:space-y-[2px] mobile:flex-col   desktop:flex-row">
 																<b:loop values='data:post.labels' var='label'>
-																	<div class='hover:scale-110 mobile:text-[10px] text-sm text-white font-medium bg-[color:var(--blue)] rounded-r-md p-2 ml-[-2px]'>
+																	<div class='hover:scale-110 mobile:text-[10px] desktop:text-sm text-white font-medium bg-[color:var(--blue)] rounded-r-md p-2'>
 																		<a expr:href='data:label.url' rel='tag noopener noreferrer' target="_blank" >
 																			<data:label.name/>
 																		</a>
@@ -615,7 +615,7 @@
 																	</g>
 																</svg>
 															</div>
-															<div class="mobile:text-[10px]">
+															<div class="mobile:text-[10px] desktop:text-sm">
 																<data:post.dateHeader/>
 															</div>
 														</div>
@@ -629,20 +629,20 @@
 																	</svg>
 																</div>
 																<include name="shareButtons" />
-																<h2 class="font-bold text-[color:var(--orange)] mobile:text-[10px]">
+																<h2 class="font-bold text-[color:var(--orange)] mobile:text-[10px] desktop:text-sm">
 																	<data:post.author />
 																</h2>
 															</div>
 															<div class="border border-l-2 border-color-black">  </div>
-															<div class="mobile:text-[10px]">
+															<div class="mobile:text-[10px] desktop:text-sm">
 																	Comment:
 																<data:post.numComments/>
 															</div>
 														</div>
-														<div class="text-xs text-justify italic">
+														<div class="desktop:text-sm mobile:text-xs text-justify italic">
 															<data:post.snippet/>
 														</div>
-														<div class="bg-[color:var(--orange)] text-white shadow-lg text-xs p-2 w-[102px] uppercase">
+														<div class="bg-[color:var(--orange)] text-white shadow-lg desktop:text-xs mobile:text-[10px] p-2 w-[102px] uppercase">
 															<a target="_blank" expr:href='data:post.url'> Read now ... </a>
 														</div>
 													</div>
