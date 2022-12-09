@@ -84,7 +84,7 @@
 }
 #slide .item .image{
     position: absolute;
-    top:0;
+    top:80px;
     left:0;
     width:100%;
     height:75%;
@@ -178,10 +178,9 @@
 	/* ]]>*/
 	</b:skin>
 	<head>
-		<!-- title -->
 		
-<!-- <meta content='s_oqe4A7m-z-kZOkqT4G1VOUg35qAVpr8CSXVbRwoQo' name='google-site-verification'/>
-<script async='async' data-ad-client='ca-pub-8160046229618018' src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'/> -->
+<meta content='s_oqe4A7m-z-kZOkqT4G1VOUg35qAVpr8CSXVbRwoQo' name='google-site-verification'/>
+<script async='async' data-ad-client='ca-pub-8160046229618018' src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'/>
 		<meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
 
 		<title>
@@ -404,7 +403,7 @@
 								<a class='hover:scale-125'  target="_blank" rel="noopener noreferrer" href='/'>
 									<img class="w-[40px]" src="https://learn-tech-tips.blogspot.com/favicon.ico" alt="learn tech tips logo"/>
 								</a>
-								<a aria-current='page' class='text-white hover:bg-[color:var(--orange)] block px-3 py-2 rounded-md text-base font-medium'  target="_blank" rel="noopener noreferrer" href='/search/label/tips'>
+								<a aria-current='page' class='text-white hover:bg-[color:var(--orange)] block px-3 py-2 rounded-md text-base font-medium'  target="_blank" rel="noopener noreferrer" href='/search/label/Tips'>
 										Tips For Coding
 									</a>
 								<a class='text-white hover:bg-[color:var(--orange)]  block px-3 py-2 rounded-md text-base font-medium' target="_blank" rel="noopener noreferrer" href='/search/label/Useful%20Tool'>
@@ -457,8 +456,8 @@
 				</div>
 				<marquee width="100%" direction="left" class=" p-4 bg-gray-900 text-white rounded-l-none rounded-r-md  ">
 					<div>
-						<a target="_blank" href="https://helloabd.blogspot.com/2016/07/tutorial-design-pattern-strategy-pattern.html"> What is blockchain? </a>
-						<a target="_blank" href="https://helloabd.blogspot.com/2016/07/tutorial-design-pattern-strategy-pattern.html"> What is blockchain? </a>
+						<a target="_blank" href="https://learn-tech-tips.blogspot.com/2022/11/how-to-add-local-font-to-tailwindcss-and-nextjs.html"> How to add local font to Tailwind Css and NextJS? </a>
+						<a target="_blank" href="https://learn-tech-tips.blogspot.com/2016/08/flyweight-pattern.html"> Tutorial Design Pattern? </a>
 					</div>
 				</marquee>
 			</div>
@@ -470,44 +469,41 @@
 							<div class="container mx-auto">
 								<div id="slide">
 									<div class="item hover:cursor-pointer ">
-										<a href="https://helloabd.blogspot.com/2017/01/tips-how-to-use-google-authenticator-on.html">
+										<a href="https://learn-tech-tips.blogspot.com/2022/09/how-to-create-docker-compose-for-mssql-database-service.html">
 											<div class="image ">
-												<img class="w-full object-cover" src=" https://1.bp.blogspot.com/-ND3CVFNBv2c/V435PUrdA3I/AAAAAAAACf4/rBWSh9nKwaoXY_JG4B0bwL2L09su6dPSwCLcB/s1600/stragery%2Bpattern.png"  />
+												<img class="w-full object-cover" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh6mTj-dv8mgyuse85fuH6NKVbGqZ4R8igNtA-D4rrF3iIvUbzgxPy8zqfGHQAt8o0myEhGp4uJLtfMmlHpQ1z6iAqiI3a1i7xJxPLPcAavQ_vkaTPCjA9QUF1z6twNsWbymqtjCDsnmY5w17w49tzUoO6eYC54Jx-Qoh_joP28Q2CqM4IkmkseC8aO/s1024/MSSQL.webp"  />
 											</div>
 											<div class="content">
-												<div class="right">
-													<a href="https://helloabd.blogspot.com/2017/01/tips-how-to-use-google-authenticator-on.html">
-														<h2> Tailwind for css </h2>
-														<div> This topic is show you how to coding with TailwindCSS </div>
-													</a>
+												<div class="right"> 
+													<h2> How to create a Docker Compose file for MSSQL Database Service  </h2>
+													<div> Docker is a set of platform as a service products that use OS-level virtualization to deliver software in packages called containers. The service has both free and premium tiers. The software that hosts the containers is called Docker Engine. It was first started in 2013 and is developed by Docker, Inc </div>
+													 
 												</div>
 											</div>
 										</a>
 									</div>
 									<div class="item hover:cursor-pointer ">
-										<a href="https://helloabd.blogspot.com/2017/01/tips-how-to-use-google-authenticator-on.html">
+										<a href="https://learn-tech-tips.blogspot.com/2022/11/fast-build-sal-category-items-with-tailwindcss-nextjs.html">
 											<div class="image">
-												<img class=" w-full object-cover" src="https://2.bp.blogspot.com/-KGjxfUM32eQ/WD5Jl0hqAKI/AAAAAAAAC3I/enstvD1Qs5Qn77nFG0va_DO5WGg78YXtQCLcB/s1600/ls%2Bcommand.png"  />
+												<img class=" w-full object-cover" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEju5ylBP8qf-d7jznEGySRspAu3JsRBgnYs40-2LxRYbaPHE3EnjBRQcI9WhNnPqE62ydy90-AadtpjeeYojujl5gG10dotHBKTq86XuQjpnzSaqkb8yYA9xoBNf8rQUm0QG2KkIqGtkivgkxNo_PHx5KM0FnmxJtBuWOzCVEvTOKNpg1Mnc_YpXew9/s1088/fast%20build%20sale%20cateogry%20items%20with%20tailwind%20css%20and%20nextjs.png"  />
 											</div>
 											<div class="content">
 												<div class="right">
-													<h2> Tailwind for css </h2>
-													<div> This topic is show you how to coding with TailwindCSS </div>
+													<h2> Fast build sale category items with Tailwind CSS and NextJS  </h2>
+													<div> On this topic I will use Tailwind css (Slogan: Rapid build modern website without ever leaving your HTML - The slogan is so impressive that I was fascinated and curious when I first met, The Tailwind is very cool and very useful for frontend developer now </div>
 												</div>
 											</div>
 										</a>
 									</div>
 									<div class="item hover:cursor-pointer ">
-										<a href="https://helloabd.blogspot.com/2017/01/tips-how-to-use-google-authenticator-on.html">
+										<a href="https://learn-tech-tips.blogspot.com/2022/02/how-to-easily-use-select2-into-cakephp.html">
 											<div class="image">
-												<img class=" w-full object-cover" src="https://2.bp.blogspot.com/-46hfMsf7Osg/V39iLMXfuOI/AAAAAAAACdw/U9hPCKxzcOUqkRldEoqVZlpIALZB_WcDQCLcB/s1600/oop2.png"  />
+												<img class=" w-full object-cover" src="https://blogger.googleusercontent.com/img/a/AVvXsEjvAGb8y4pBeRAYqDSgU8xvYat1tFvMCqh10SOpJEPy-paJ95NRqJC1oP7Zxrc6JY9qvKW18s4YBSHnMPXUpo23GxIYez9LoZgDDm4avTugIYfMgJm9_KO_-GeJ10ns3HTetrscOsZALjK22MZXzaBYAka0W0Z6e0yPl0RVmI_T0zzdbrj-HRY7oEEm=s1161"  />
 											</div>
 											<div class="content">
 												<div class="right">
-													<a href="https://helloabd.blogspot.com/2017/01/tips-how-to-use-google-authenticator-on.html">
-														<h2> Tailwind for css </h2>
-														<div> This topic is show you how to coding with TailwindCSS </div>
-													</a>
+													<h2> How to EASILY use Select2 into CAKEPHP  </h2>
+													<div> This Topic I will share with you how to easy integrated Select2 Library into CAKEPHP </div>
 												</div>
 											</div>
 										</a>
@@ -1104,7 +1100,7 @@
 						</div>
 						<div class="flex space-x-2 w-full bg-white rounded-b-md p-2">
 							<div class="grow mobile:w-1/2 mobile:flex-none">
-								<a target="_blank" href="/search/label/design%pattern" class="text-bold bg-[color:var(--blue)] p-2 w-full text-white ">5. Design Pattern</a>
+								<a target="_blank" href="/search/label/Design Pattern" class="text-bold bg-[color:var(--blue)] p-2 w-full text-white ">5. Design Pattern</a>
 								<div class="mt-2">
 									<div>Singleton Pattern </div>
 									<div> Composite Pattern </div>
