@@ -382,17 +382,20 @@
 										<img class="w-[40px]" src="https://learn-tech-tips.blogspot.com/favicon.ico" alt="learn tech tips logo"/>
 									</a>
 									<a aria-current='page' class='text-white hover:bg-[color:var(--orange)] block px-3 py-2 rounded-md text-base font-medium'  target="_blank" rel="noopener noreferrer" href='/search/label/tips'>
-											Best Tips
-										</a>
+										Tips For Coding
+									</a>
 									<a class='text-white hover:bg-[color:var(--orange)]  block px-3 py-2 rounded-md text-base font-medium' target="_blank" rel="noopener noreferrer" href='/search/label/Useful%20Tool'>
-											Useful Tool
-										</a>
+										Useful Tool
+									</a>
 									<a class='text-white hover:bg-[color:var(--orange)] h block px-3 py-2 rounded-md text-base font-medium'  target="_blank" rel="noopener noreferrer" href='/search/label/Design%20Pattern'>
-											Design Partten
-										</a>
+										Design Partten
+									</a>
 									<a class='text-white hover:bg-[color:var(--orange)] h block px-3 py-2 rounded-md text-base font-medium'  target="_blank" rel="noopener noreferrer" href='/search/label/Blockchain'>
-											BlockChain Technology
-										</a>
+										BlockChain Technology
+									</a>
+									<a class='text-white hover:bg-[color:var(--orange)] h block px-3 py-2 rounded-md text-base font-medium'  target="_blank" rel="noopener noreferrer" href='/search/label/DevOps'>
+										DevOps
+									</a>
 								</div>
 							</div>
 						</div>
@@ -1055,7 +1058,7 @@
 							</div>
 							<div class="flex space-x-2 w-full bg-white rounded-b-md p-2">
 								<div class="grow">
-									<span class="text-bold bg-[color:var(--blue)] p-2 w-full text-white uppercase">1. Backend</span>
+									<span class="text-bold bg-[color:var(--blue)] p-2 w-full text-white">1. Backend</span>
 									<div class="mt-2">
 										<a target="_blank" href="/search/label/PHP" class="hover:text-[color:var(--orange)]">1.1 PHP</a> 
 										(<a class="hover:cursor-pointer hover:text-[color:var(--orange)]" target="_blank" href="/search/label/Cakephp">CakePHP  </a>
@@ -1072,12 +1075,12 @@
 								</div>
 
 								<div class="grow">
-									<span class="text-bold bg-[color:var(--blue)] p-2 w-full text-white uppercase">2. Frontend</span>
+									<span class="text-bold bg-[color:var(--blue)] p-2 w-full text-white ">2. Frontend</span>
 									<div class="mt-2">
 										<span>2.1 Basic</span>
-										<a target="_blank" href="/search/label/HTML" class="hover:text-[color:var(--orange)]">HTML</a>
+										(<a target="_blank" href="/search/label/HTML" class="hover:text-[color:var(--orange)]">HTML</a>
 										<a target="_blank" href="/search/label/CSS" class="hover:text-[color:var(--orange)]">CSS</a>
-										<a target="_blank" href="/search/label/Tailwind" class="hover:text-[color:var(--orange)]">Tailwind CSS</a>
+										<a target="_blank" href="/search/label/Tailwind" class="hover:text-[color:var(--orange)]">Tailwind CSS</a>)
 									</div>
 									<div class="mt-2">
 										<a target="_blank" href="/search/label/NextJs" class="hover:text-[color:var(--orange)]">2.2 NextJs</a>
@@ -1086,34 +1089,36 @@
 							</div>
 							<div class="flex space-x-2 w-full bg-white rounded-b-md p-2">
 								<div class="grow">
-									<a target="_blank" href="/search/label/design%pattern" class="text-bold bg-[color:var(--blue)] p-2 w-full text-white uppercase">3. Design Pattern</a>
-									<div class="mt-2">
-										<a target="_blank" href="/search/label/PHP" class="hover:text-[color:var(--orange)]">1.1 PHP</a> 
-										(<a class="hover:cursor-pointer hover:text-[color:var(--orange)]" target="_blank" href="/search/label/Cakephp">CakePHP  </a>
-										<a class="hover:cursor-pointer hover:text-[color:var(--orange)]" target="_blank" href="/search/label/Mangento"> Mangento  </a>
-										<a class="hover:cursor-pointer hover:text-[color:var(--orange)]" target="_blank" href="/search/label/Laravel"> Laravel</a>)
-									 
-									</div>
-									<div class="mt-2">
-										<a target="_blank" href="/search/label/Nodejs" class="hover:text-[color:var(--orange)]">1.2 NodeJS</a>
-									</div>
-									<div class="mt-2">
-										<a target="_blank" href="/search/label/C%23" class="hover:text-[color:var(--orange)]">1.3 CSharp</a>
-									</div>
+									<a target="_blank" href="/search/label/Docker%20compose" class="text-bold bg-[color:var(--blue)] p-2 w-full text-white ">3. DevOps </a>
 								</div>
 
 								<div class="grow">
-									<span class="text-bold bg-[color:var(--blue)] p-2 w-full text-white uppercase">4. Database</span>
-									<div class="mt-2">
-										<span>2.1 Basic</span>
-										<a target="_blank" href="/search/label/HTML" class="hover:text-[color:var(--orange)]">HTML</a>
-										<a target="_blank" href="/search/label/CSS" class="hover:text-[color:var(--orange)]">CSS</a>
-										<a target="_blank" href="/search/label/Tailwind" class="hover:text-[color:var(--orange)]">Tailwind CSS</a>
-									</div>
-									<div class="mt-2">
-										<a target="_blank" href="/search/label/NextJs" class="hover:text-[color:var(--orange)]">2.2 NextJs</a>
-									</div>
+									<span class="text-bold bg-[color:var(--blue)] p-2 w-full text-white ">4. Database</span>
+									<div class="mt-2"> 
+										<a target="_blank" href="/search/label/Microsoft%20SQL%20Server" class="hover:text-[color:var(--orange)]">Microsoft SQL Server</a>
+									</div> 
 								</div>
+							</div>
+
+							<div class="flex space-x-2 w-full bg-white rounded-b-md p-2">
+								<div class="grow">
+									<a target="_blank" href="/search/label/design%pattern" class="text-bold bg-[color:var(--blue)] p-2 w-full text-white ">5. Design Pattern</a>
+									<div class="mt-2">
+										<div>Singleton Pattern </div> 
+										<div> Composite Pattern </div>
+										<div> Flyweighr Pattern </div>
+										<div> Facade Pattern </div>
+										<div> Adapter Pattern </div> 
+										<div> Template Method </div>
+										<div> Builder Pattern</div>
+									</div> 
+								</div>
+
+								<div class="grow">
+									<a target="_blank" href="/search/label/Photoshop" class="text-bold bg-[color:var(--blue)] p-2 w-full text-white ">6. Photoshop</a>
+									 
+								</div>
+								
 							</div>
 						</div>
 						<!-- Feature Ads-->
