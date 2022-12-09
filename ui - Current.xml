@@ -566,22 +566,21 @@
 														<data:post.title/>
 													</h1>
 												</div>
-												<div class="flex items-center space-x-4 p-2">
-													<a expr:href='data:post.url' class="w-[350px]  main-image hover:scale-110 bg-white shadow-lg p-2">
+												<div class="flex items-center desktop:space-x-4 mobile:space-x-0 p-2 desktop:flex-row mobile:flex-col">
+													<a expr:href='data:post.url' class="w-[350px] main-image hover:scale-110 bg-white shadow-lg p-2">
 														<img expr:src='data:post.firstImageUrl' class="object-contain" />
 													</a>
-													<div class="main-content flex flex-col space-y-[5px] ">
-														<!-- <div class="italic text-xs flex space-x-2 items-center"> -->
-															<div class=" mt-[5px] flex desktop:space-x-2 desktop:items-center mobile:space-x-0 mobile:space-y-[2px] mobile:flex-col   desktop:flex-row">
-																<b:loop values='data:post.labels' var='label'>
-																	<div class='hover:scale-110 mobile:text-[10px] desktop:text-sm text-white font-medium bg-[color:var(--blue)] rounded-r-md p-2'>
-																		<a expr:href='data:label.url' rel='tag noopener noreferrer' target="_blank" >
-																			<data:label.name/>
-																		</a>
-																	</div>
-																</b:loop>
-															</div>
-														<!-- </div> -->
+													<div class="main-content flex flex-col space-y-[5px] "> 
+															
+														<div class=" mt-[5px] flex space-x-2 desktop:items-center">
+															<b:loop values='data:post.labels' var='label'>
+																<div class='hover:scale-110 mobile:text-[10px] desktop:text-sm text-white font-medium bg-[color:var(--blue)] rounded-r-md p-2'>
+																	<a expr:href='data:label.url' rel='tag noopener noreferrer' target="_blank" >
+																		<data:label.name/>
+																	</a>
+																</div>
+															</b:loop>
+														</div> 
 														<div class="italic text-xs flex space-x-2 items-center">
 															<div class="w-[20px]">
 																<!-- calendar -->
@@ -751,7 +750,7 @@
 										</b:if>
 										<!-- if detail page will show -->
 										<b:loop values='data:posts' var='post'>
-											<h1 class="mt-[5px] text-xl bg-[color:var(--blue)] text-white p-4 shadow-lg rounded-md uppercase">
+											<h1 class="mt-[5px] desktop:text-xl mobile:text-[12px] bg-[color:var(--blue)] text-white p-4 shadow-lg rounded-md uppercase">
 												<data:post.title/>
 											</h1>
 											<b:if cond='data:post.isDateStart and not data:post.isFirstPost'> &lt;/div&gt;&lt;/div&gt;  </b:if>
@@ -761,7 +760,7 @@
 													<div class="shadow-lg bg-white rounded-lg p-2 mt-[5px] mb-[5px]">
 														<!-- Labels -->
 														<div class=" m-[5px] flex space-x-2 items-center">
-															<div>
+															<div class="mobile:hidden desktop:block">
 																<!-- tag icon -->
 																<svg  width="32px" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 																	<g id="_x35_52_x2C__Tag_x2C__Sale_x2C__valentine_x2C__Discount_x2C__Offer">
@@ -791,7 +790,7 @@
 																</svg>
 															</div>
 															<b:loop values='data:post.labels' var='label'>
-																<div class='hover:scale-110 text-sm text-white font-medium bg-[color:var(--blue)] rounded-r-lg p-2 ml-[-2px]'>
+																<div class='hover:scale-110 desktop:text-sm mobile:text-xs text-white font-medium bg-[color:var(--blue)] rounded-r-lg p-2 ml-[-2px]'>
 																	<a expr:href='data:label.url' rel='tag noopener noreferrer' target="_blank" >
 																		<data:label.name/>
 																	</a>
@@ -799,8 +798,8 @@
 															</b:loop>
 														</div>
 														<!-- Date && Author -->
-														<div class='text-sm italic m-[5px] flex justify-between '>
-															<div class="flex space-x-2 items-center ">
+														<div class='desktop:text-sm mobile:text-xs italic m-[5px] flex desktop:flex-row mobile:flex-col desktop:justify-between '>
+															<div class="flex desktop:flex-row mobile:flex-col desktop:space-x-2 mobile:space-x-0 desktop:items-center desktop:text-sm mobile-xs">
 																<!-- calendar -->
 																<div class="flex space-x-2 items-center">
 																	<svg width="32px" id="Layer_1" style="enable-background:new 0 0 24 24;" version="1.1" viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -836,9 +835,8 @@
 																		<data:post.dateHeader/>
 																	</div>
 																</div>
-																<div> | </div>
-																<div> Comment: </div>
-																<div>
+																<div class="desktop:block mobile:hidden"> | </div>
+																<div class="mobile:hidden desktop:block"> Comment:  
 																	<data:post.numComments/>
 																</div>
 															</div>
@@ -971,10 +969,7 @@
 									<div class="bg-white shadow-lg rounded-md p-2 mt-2">
 										<b:if cond='data:title != &quot;&quot;'>
 											<div class="w-full bg-[color:var(--orange)] mobile:text-xs desktop:text-sm p-2 text-center text-white uppercase rounded-md ">
-													Related technical topic maybe you will be like it - by
-												<a href="https://learn-tech-tips.blogspot.com ">
-													<span class="bg-[color:var(--orange)] p-2">Learn Tech Tips</span> - Zidane
-												</a>
+												Related technical topic maybe you will be like it - by <a href="https://learn-tech-tips.blogspot.com ">Learn Tech Tips - Zidane </a>
 											</div>
 										</b:if>
 										<div class='widget-content popular-posts'>
