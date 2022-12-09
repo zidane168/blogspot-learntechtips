@@ -1056,7 +1056,7 @@
 							</div>
 								Way to become FullStack developer
 						</div>
-						<div class="flex space-x-2 w-full bg-white rounded-b-md p-2">
+						<div class="flex space-x-2 w-full bg-white   p-2">
 							<div class="grow mobile:w-1/2  mobile:flex-none">
 								<span class="text-bold bg-[color:var(--blue)] p-2 w-full text-white">1. Backend</span>
 								<div class="mt-2">
@@ -1087,7 +1087,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="flex space-x-2 w-full bg-white rounded-b-md p-2">
+						<div class="flex space-x-2 w-full bg-white   p-2">
 							<div class="grow mobile:w-1/2 mobile:flex-none">
 								<a target="_blank" href="/search/label/Docker%20compose" class="text-bold bg-[color:var(--blue)] p-2 w-full text-white ">3. DevOps </a>
 							</div>
@@ -1128,7 +1128,7 @@
 								<b:widget-setting name='timeRange'>ALL_TIME</b:widget-setting>
 							</b:widget-settings>
 							<b:includable id='main'>
-								<div class='widget-content'>
+								<div class='widget-content mt-2'>
 									<!-- Content is going to be visible when data will be fetched from server. -->
 									<div expr:id='data:widget.instanceId + &quot;_content&quot;' style='display: none;'>
 										<!-- Counter and image will be injected later via AJAX call. -->
@@ -1195,7 +1195,7 @@
 							</b:widget-settings>
 							<b:includable id='main'>
 								<b:if cond='data:title != ""'>
-									<div class="bg-[color:var(--orange)] text-white p-2 rounded-t-md flex space-x-4 items-center">
+									<div class="bg-[color:var(--orange)] mt-2 text-white p-2 rounded-t-md flex space-x-4 items-center">
 										<div>
 											<svg id="Layer_1" width="30px" fill="white" style="enable-background:new 0 0 100 100;" version="1.1" viewBox="0 0 100 100" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 												<g>
@@ -1302,7 +1302,7 @@
 										<data:title/>
 									</div>
 								</b:if>
-								<div class="grid grid-cols-2 gap-4 text-sm bg-white p-2 rounded-b-md w-full" > 
+								<div class="grid mobile:grid-cols-3 desktop:grid-cols-1 gap-4 text-sm bg-white p-2 rounded-b-md w-full" > 
 									<b:if cond='data:display == &quot;list&quot;'>
 										<b:loop values='data:labels' var='label'>
 											<div class="flex items-center">
