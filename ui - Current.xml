@@ -781,14 +781,12 @@
 																	<g id="Layer_1"/>
 																</svg>
 															</div>
-															<b:loop values='data:post.labels' var='label'>
-																<!-- <b:if cond='data:label.isLast == "true"'> -->
+															<b:loop values='data:post.labels' var='label'> 
 																<div class='hover:scale-110 text-sm text-white font-medium bg-[color:var(--blue)] rounded-r-lg p-2 ml-[-2px]'>
 																	<a expr:href='data:label.url' rel='tag noopener noreferrer' target="_blank" >
 																		<data:label.name/>
 																	</a>
-																</div>
-																<!-- </b:if> -->
+																</div> 
 															</b:loop>
 														</div>
 														<!-- Date && Author -->
@@ -1164,14 +1162,13 @@
 							</b:includable>
 						</b:widget>
 						<!-- tiktok implement -->
-						<b:widget id='HTML1' locked='false' title='' type='HTML'>
+						<!-- <b:widget id='HTML1' locked='false' title='' type='HTML'>
 							<b:widget-settings>
 								<b:widget-setting name='content'>
 									<![CDATA[<blockquote class="tiktok-embed" cite="https://www.tiktok.com/@learntechtips/video/7080090973325249819" data-video-id="7080090973325249819"> <section> <a target="_blank" title="@learntechtips" href="https://www.tiktok.com/@learntechtips">@learntechtips</a> How to build Favour Arrow in HTML <a title="html" target="_blank" href="https://www.tiktok.com/tag/html">#html</a>  <a title="favourarrow" target="_blank" href="https://www.tiktok.com/tag/favourarrow">#favourarrow</a> <a title="sourcecode" target="_blank" href="https://www.tiktok.com/tag/sourcecode">#sourcecode</a> <a title="learnontiktok" target="_blank" href="https://www.tiktok.com/tag/learnontiktok">#learnontiktok</a>  <a title="learntechtips" target="_blank" href="https://www.tiktok.com/tag/learntechtips">#learntechtips</a> <a title="frontend" target="_blank" href="https://www.tiktok.com/tag/frontend">#frontend</a> <a target="_blank" title="♬ 一定要爱你 - 腾金涛&#38;歌者凌风&#38;凡离" href="https://www.tiktok.com/music/一定要爱你-6876313376964741133">♬ 一定要爱你 - 腾金涛&#38;歌者凌风&#38;凡离</a> </section> </blockquote> <script async="async" src="https://www.tiktok.com/embed.js" ></script>]]>
 								</b:widget-setting>
 							</b:widget-settings>
-							<b:includable id='main'>
-								<!-- only display title if it's non-empty -->
+							<b:includable id='main'> 
 								<b:if cond='data:title != &quot;&quot;'>
 									<h2 class='title'>
 										<data:title/>
@@ -1182,7 +1179,8 @@
 								</div>
 								<b:include name='quickedit'/>
 							</b:includable>
-						</b:widget>
+						</b:widget> -->
+						<!-- Blog Archive -->
 						<b:widget id='BlogArchive1' locked='false' title='Blog Archive' type='BlogArchive'>
 							<b:widget-settings>
 								<b:widget-setting name='showStyle'>HIERARCHY</b:widget-setting>
@@ -1240,8 +1238,7 @@
 										<li class='archivedate'>
 											<a expr:href='data:i.url'>
 												<data:i.name/>
-											</a> (
-											<data:i.post-count/>)
+											</a> (<data:i.post-count/>)
 										</li>
 									</b:loop>
 								</ul>
@@ -1256,8 +1253,7 @@
 													<data:interval.name/>
 												</a>
 												<span class='post-count text-[color:var(--orange)]' dir='ltr'>
-														(
-													<data:interval.post-count/>)
+													(<data:interval.post-count/>)
 												</span>
 											</strong>
 											<b:include cond='data:interval.data' data='interval.data' name='interval'/>
@@ -1273,8 +1269,7 @@
 									</option>
 									<b:loop values='data:data' var='i'>
 										<option expr:value='data:i.url' class="text-sm" >
-											<data:i.name/> (
-											<data:i.post-count/>)
+											<data:i.name/> (<data:i.post-count/>)
 										</option>
 									</b:loop>
 								</select>
@@ -1307,8 +1302,7 @@
 										<data:title/>
 									</div>
 								</b:if>
-								<div class="grid grid-cols-2 gap-4 text-sm bg-white p-2 rounded-b-md w-full" >
-									<!-- expr:class='&quot;widget-content &quot; + data:display + &quot;-label-widget-content&quot;' -->
+								<div class="grid grid-cols-2 gap-4 text-sm bg-white p-2 rounded-b-md w-full" > 
 									<b:if cond='data:display == &quot;list&quot;'>
 										<b:loop values='data:labels' var='label'>
 											<div class="flex items-center">
@@ -1364,16 +1358,14 @@
 													</a>
 												</b:if>
 												<b:if cond='data:showFreqNumbers'>
-													<div dir='ltr' class='text-[color:var(--orange)]'>(
-														<data:label.count/>)
+													<div dir='ltr' class='text-[color:var(--orange)]'>(<data:label.count/>)
 													</div>
 												</b:if>
 											</div>
 										</b:loop>
 										<b:else/>
 										<b:loop values='data:labels' var='label'>
-											<span class="text-sm" >
-												<!-- expr:class='&quot;label-size label-size-&quot; + data:label.cssSize' -->
+											<span class="text-sm" > 
 												<b:if cond='data:blog.url == data:label.url'>
 													<span expr:dir='data:blog.languageDirection'>
 														<data:label.name/>
@@ -1384,8 +1376,7 @@
 													</a>
 												</b:if>
 												<b:if cond='data:showFreqNumbers'>
-													<span class='text-[color:var(--orange)]' dir='ltr'>(
-														<data:label.count/>)
+													<span class='text-[color:var(--orange)]' dir='ltr'>(<data:label.count/>)
 													</span>
 												</b:if>
 											</span>
