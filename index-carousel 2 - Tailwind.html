@@ -14,10 +14,7 @@
 		}
 
 		.container {
-			position: relative; 
-			/* left: 50%;
-			top: 50%; */
-			/* transform: translate(-50%, -50%); */
+			position: relative;  
 			height: 600px;
 			padding: 50px;
 			background-color: #f5f5f5;
@@ -26,8 +23,7 @@
 
 		#slide {
 			width: max-content;
-			margin-top: 50px;
-
+			margin-top: 50px; 
 		}
 
 		.item {
@@ -62,16 +58,15 @@
 		}
 
 		.item:nth-child(4) {
-			left: calc(50% + 220px);
+			left: calc(50% + 205px);
 		}
 
 		.item:nth-child(5) {
-			left: calc(50% + 440px);
-            opacity: 0;
+			left: calc(50% + 410px); 
 		}
 
 		.item:nth-child(n + 6) {
-			left: calc(50% + 660px);
+			left: calc(50% + 615px);
 			opacity: 0;
 		}
 
@@ -94,7 +89,7 @@
 		.item .title {
 			font-size: 20px;
 			font-weight: bold;
-			animation: showContent 1s ease-in-out forwards;
+			animation: showItem 1s ease-in-out forwards;
 			opacity: 0;
 		}
 
@@ -102,14 +97,14 @@
 			margin: 10px 0;
 			font-style: italic;
 			opacity: 0;
-			animation: showContent 1s ease-in-out 0.2s forwards;
+			animation: showItem 1s ease-in-out 0.2s forwards;
 			text-align: end;
 		}
 
 		.item a {
 			padding: 10px 20px;
 			opacity: 0;
-			animation: showContent 1s ease-in-out 0.4s forwards;
+			animation: showItem 1s ease-in-out 0.4s forwards;
 			text-align: end
 		}
 
@@ -134,33 +129,8 @@
 			background-color: var(--orange);
 			border: 1px solid var(--orange);
 		}
-
-
-		@keyframes contentOut {
-			from {
-				opacity: 1;
-				transform: translate(0, 0);
-			}
-			to {
-				opacity: 0;
-				transform: translate(0, -100%);
-				filter:blur(100px)
-			}
-		}
-		@keyframes contentIn {
-			from {
-				opacity: 0;
-				transform: translate(0, 100%);
-				filter:blur(40px)
-			}
-			to {
-				opacity: 1;
-				transform: translate(0, 0);
-			}
-		}
-
-
-		@keyframes showContent {
+ 
+ 		@keyframes showItem {
 			from {
 				opacity: 0;
 				transform: translate(0, 100px);
@@ -282,30 +252,29 @@
 	<script src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js'></script>
 	<script>
 		$(document).ready(function () {
-let stop = false;
-let timer = setInterval(() => {
-if (! stop) {
-let lists = document.querySelectorAll('.item');
-document.getElementById('slide').appendChild(lists[0]);
-} else {
-clearInterval(timer)
-}
+            let stop = false;
+            let timer = setInterval(() => {
+                if (! stop) {
+                    let lists = document.querySelectorAll('.item');
+                    document.getElementById('slide').appendChild(lists[0]);
+                } else {
+                    clearInterval(timer)
+                    }
 
-}, 6000)
+            }, 6000)
 
-document.getElementById('next').onclick = function () {
-console.log('next')
-let lists = document.querySelectorAll('.item');
-document.getElementById('slide').appendChild(lists[0]);
-stop = true;
-}
+            document.getElementById('next').onclick = function () { 
+                let lists = document.querySelectorAll('.item');
+                document.getElementById('slide').appendChild(lists[0]);
+                stop = true;
+            }
 
-document.getElementById('prev').onclick = function () {
-console.log('prev')
-let lists = document.querySelectorAll('.item');
-document.getElementById('slide').prepend(lists[lists.length - 1]);
-stop = true;
-}
-})
+            document.getElementById('prev').onclick = function () {
+                let lists = document.querySelectorAll('.item');
+                document.getElementById('slide').prepend(lists[lists.length - 1]);
+                stop = true;
+            }   
+        })
 	</script>
-</body></html>
+</body>
+</html>
