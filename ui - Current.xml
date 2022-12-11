@@ -139,7 +139,7 @@
     transform: scale(1);
 }
 #slide .item:nth-child(2){
-    z-index: 3;
+    /* z-index: 3; */
 }
 @keyframes contentOut {
     from{
@@ -178,11 +178,9 @@
 	/* ]]>*/
 	</b:skin>
 	<head>
-		
-<meta content='s_oqe4A7m-z-kZOkqT4G1VOUg35qAVpr8CSXVbRwoQo' name='google-site-verification'/>
-<script async='async' data-ad-client='ca-pub-8160046229618018' src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'/>
+		<meta content='s_oqe4A7m-z-kZOkqT4G1VOUg35qAVpr8CSXVbRwoQo' name='google-site-verification'/>
+		<script async='async' data-ad-client='ca-pub-8160046229618018' src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'/>
 		<meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
-
 		<title>
 			<b:if cond='data:blog.pageType == "index"'>
 				<data:blog.pageTitle/>
@@ -295,7 +293,6 @@
 			} 
 
 		</style>
-
 		<b:include data='blog' name='google-analytics'/>
 	</head>
 	<body>
@@ -360,7 +357,6 @@
 						<!-- cannot change id='main' -->
 						<div class='widget-content mt-[10px]'>
 							<div id='social' class='flex items-center space-x-[10px] desktop:justify-between mb-[10px] mobile:justify-center'>
-							 
 								<div class="desktop:block mobile:hidden">
 									<a target="_blank" rel="noopener noreferrer" href="/" class="hover:text-[color:var(--blue)] uppercase"> 👋 Welcome to Learn Tech Tips Blogspot, I am Zidane 🙇🏼 </a>
 								</div>
@@ -397,7 +393,7 @@
 			<!-- Menu -->
 			<div class='bg-[color:var(--blue)]  mobile:p-2 desktop:rounded-md desktop:relative flex mobile:justify-center desktop:justify-between '>
 				<div class=' px-2  desktop:px-8 mobile:hidden desktop:block'>
-					<div class='relative flex h-16 items-center justify-between'> 
+					<div class='relative flex h-16 items-center justify-between'>
 						<div class='flex items-center justify-center'>
 							<div class='flex space-x-4'>
 								<a class='hover:scale-125'  target="_blank" rel="noopener noreferrer" href='/'>
@@ -422,7 +418,6 @@
 						</div>
 					</div>
 				</div>
-			 
 				<b:section class='menu' id='main-menu' maxwidgets='1' name='Main Menu' showaddelement='yes'>
 					<b:widget id='BlogSearch1' locked='false' title='Search This Blog' type='BlogSearch'>
 						<b:includable id='main'>
@@ -457,7 +452,7 @@
 				<marquee width="100%" direction="left" class=" p-4 bg-gray-900 text-white rounded-l-none rounded-r-md  ">
 					<div>
 						<a target="_blank" href="https://learn-tech-tips.blogspot.com/2022/11/how-to-add-local-font-to-tailwindcss-and-nextjs.html"> How to add local font to Tailwind Css and NextJS? </a>
-						<a target="_blank" href="https://learn-tech-tips.blogspot.com/2016/08/flyweight-pattern.html"> Tutorial Design Pattern? </a>
+						<a class="text-yellow-300" target="_blank" href="https://learn-tech-tips.blogspot.com/2016/08/flyweight-pattern.html"> Tutorial Design Pattern? </a>
 					</div>
 				</marquee>
 			</div>
@@ -469,21 +464,20 @@
 							<div class="container mx-auto">
 								<div id="slide">
 									<div class="item hover:cursor-pointer ">
-										<a href="https://learn-tech-tips.blogspot.com/2022/09/how-to-create-docker-compose-for-mssql-database-service.html">
+										<a class="mt-2 bg-[color:var(--orange)] p-2 " href="https://learn-tech-tips.blogspot.com/2022/09/how-to-create-docker-compose-for-mssql-database-service.html">
 											<div class="image ">
 												<img class="w-full object-cover" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh6mTj-dv8mgyuse85fuH6NKVbGqZ4R8igNtA-D4rrF3iIvUbzgxPy8zqfGHQAt8o0myEhGp4uJLtfMmlHpQ1z6iAqiI3a1i7xJxPLPcAavQ_vkaTPCjA9QUF1z6twNsWbymqtjCDsnmY5w17w49tzUoO6eYC54Jx-Qoh_joP28Q2CqM4IkmkseC8aO/s1024/MSSQL.webp"  />
 											</div>
 											<div class="content">
-												<div class="right"> 
+												<div class="right">
 													<h2> How to create a Docker Compose file for MSSQL Database Service  </h2>
 													<div> Docker is a set of platform as a service products that use OS-level virtualization to deliver software in packages called containers. The service has both free and premium tiers. The software that hosts the containers is called Docker Engine. It was first started in 2013 and is developed by Docker, Inc </div>
-													 
 												</div>
 											</div>
 										</a>
 									</div>
 									<div class="item hover:cursor-pointer ">
-										<a href="https://learn-tech-tips.blogspot.com/2022/11/fast-build-sal-category-items-with-tailwindcss-nextjs.html">
+										<a class="mt-2 bg-[color:var(--orange)] p-2" href="https://learn-tech-tips.blogspot.com/2022/11/fast-build-sal-category-items-with-tailwindcss-nextjs.html">
 											<div class="image">
 												<img class=" w-full object-cover" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEju5ylBP8qf-d7jznEGySRspAu3JsRBgnYs40-2LxRYbaPHE3EnjBRQcI9WhNnPqE62ydy90-AadtpjeeYojujl5gG10dotHBKTq86XuQjpnzSaqkb8yYA9xoBNf8rQUm0QG2KkIqGtkivgkxNo_PHx5KM0FnmxJtBuWOzCVEvTOKNpg1Mnc_YpXew9/s1088/fast%20build%20sale%20cateogry%20items%20with%20tailwind%20css%20and%20nextjs.png"  />
 											</div>
@@ -496,7 +490,7 @@
 										</a>
 									</div>
 									<div class="item hover:cursor-pointer ">
-										<a href="https://learn-tech-tips.blogspot.com/2022/02/how-to-easily-use-select2-into-cakephp.html">
+										<a class="mt-2 bg-[color:var(--orange)] p-2" href="https://learn-tech-tips.blogspot.com/2022/02/how-to-easily-use-select2-into-cakephp.html">
 											<div class="image">
 												<img class=" w-full object-cover" src="https://blogger.googleusercontent.com/img/a/AVvXsEjvAGb8y4pBeRAYqDSgU8xvYat1tFvMCqh10SOpJEPy-paJ95NRqJC1oP7Zxrc6JY9qvKW18s4YBSHnMPXUpo23GxIYez9LoZgDDm4avTugIYfMgJm9_KO_-GeJ10ns3HTetrscOsZALjK22MZXzaBYAka0W0Z6e0yPl0RVmI_T0zzdbrj-HRY7oEEm=s1161"  />
 											</div>
@@ -566,8 +560,7 @@
 													<a expr:href='data:post.url' class="w-[350px] main-image hover:scale-110 bg-white shadow-lg p-2">
 														<img expr:src='data:post.firstImageUrl' class="object-contain" />
 													</a>
-													<div class="main-content flex flex-col space-y-[5px] "> 
-															
+													<div class="main-content flex flex-col space-y-[5px] ">
 														<div class=" mt-[5px] flex space-x-2 desktop:items-center">
 															<b:loop values='data:post.labels' var='label'>
 																<div class='hover:scale-110 mobile:text-[10px] desktop:text-sm text-white font-medium bg-[color:var(--blue)] rounded-r-md p-2'>
@@ -576,7 +569,7 @@
 																	</a>
 																</div>
 															</b:loop>
-														</div> 
+														</div>
 														<div class="italic text-xs flex space-x-2 items-center">
 															<div class="w-[20px]">
 																<!-- calendar -->
@@ -832,7 +825,7 @@
 																	</div>
 																</div>
 																<div class="desktop:block mobile:hidden"> | </div>
-																<div class="mobile:hidden desktop:block"> Comment:  
+																<div class="mobile:hidden desktop:block"> Comment:
 																	<data:post.numComments/>
 																</div>
 															</div>
@@ -965,7 +958,8 @@
 									<div class="bg-white shadow-lg rounded-md p-2 mt-2">
 										<b:if cond='data:title != &quot;&quot;'>
 											<div class="w-full bg-[color:var(--orange)] mobile:text-xs desktop:text-sm p-2 text-center text-white uppercase rounded-md ">
-												Related technical topic maybe you will be like it - by <a href="https://learn-tech-tips.blogspot.com ">Learn Tech Tips - Zidane </a>
+												Related technical topic maybe you will be like it - by
+												<a href="https://learn-tech-tips.blogspot.com ">Learn Tech Tips - Zidane </a>
 											</div>
 										</b:if>
 										<div class='widget-content popular-posts'>
