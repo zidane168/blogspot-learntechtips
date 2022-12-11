@@ -4,6 +4,7 @@
 		<meta charset="UTF-8">
 		<meta title="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Carousel 2</title>
+        <meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
 		<script src='https://cdn.tailwindcss.com'></script>
 
 		<style>:root
@@ -13,11 +14,10 @@
 		}
 
 		.container {
-			position: absolute;
-			left: 50%;
-			top: 50%;
-			transform: translate(-50%, -50%);
-			width: 1000px;
+			position: relative; 
+			/* left: 50%;
+			top: 50%; */
+			/* transform: translate(-50%, -50%); */
 			height: 600px;
 			padding: 50px;
 			background-color: #f5f5f5;
@@ -67,6 +67,7 @@
 
 		.item:nth-child(5) {
 			left: calc(50% + 440px);
+            opacity: 0;
 		}
 
 		.item:nth-child(n + 6) {
@@ -77,7 +78,7 @@
 		.item .content {
 			position: absolute;
 			top: 300px;
-			left: 50px;
+			left: 30px;
 			width: 500px;
 			text-align: left;
 			color: white;
@@ -178,8 +179,8 @@
 </head>
 <body>
 
-	<div class="w-full p-2">
-		<div class="container mx-auto">
+	<div class="w-[1200px] p-2">
+		<div class="container mx-auto sm:hidden lg:block">
 			<div id="slide">
 				<div class="item" style="background-image: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh6mTj-dv8mgyuse85fuH6NKVbGqZ4R8igNtA-D4rrF3iIvUbzgxPy8zqfGHQAt8o0myEhGp4uJLtfMmlHpQ1z6iAqiI3a1i7xJxPLPcAavQ_vkaTPCjA9QUF1z6twNsWbymqtjCDsnmY5w17w49tzUoO6eYC54Jx-Qoh_joP28Q2CqM4IkmkseC8aO/s1024/MSSQL.webp)">
 					<a target="_blank" href="https://learn-tech-tips.blogspot.com/2022/09/how-to-create-docker-compose-for-mssql-database-service.html" class="hover:cursor-pointer">
