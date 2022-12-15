@@ -1,0 +1,68 @@
+{# https://www.youtube.com/watch?v=f8fjyJn8oAE&t=1558s #}
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<style>
+			.d-container {
+				width: 400px;
+				height: 400px;
+				perspective: 600px;
+				margin: 200px auto;
+			}
+
+			.card {
+				position: relative;
+				width: 200px;
+				height: 250px;
+				/* animation: flip 3s linear infinite; */
+				transition: transform 1s; /* xoay mất 1s */
+				transform-style: preserve-3d; /* to tranform with 3d effect */
+			}
+
+			.face {
+				width: 200px;
+				height: 250px;
+				backface-visibility: hidden;
+			}
+			.front {
+				background-color: tomato;
+			}
+			.back {
+				background-color: lavender;
+				transform: rotateY(180deg);
+			}
+
+
+			.card div {
+
+				position: absolute;
+			}
+
+			.card:hover {
+				transform: rotateX(180deg); /* lật mặt khi hover */
+			}
+
+			@keyframes flip {
+				30%,
+				70% {
+					transform: rotateY(0);
+				}
+				45%,
+				55% {
+					transform: rotateY(180deg);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="d-container">
+			<div class="card">
+				<div class="face front">Front</div>
+				<div class="face back">Back</div>
+			</div>
+		</div>
+
+	</body>
+</html>
